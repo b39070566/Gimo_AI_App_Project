@@ -1,14 +1,14 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 67, in script
+  File "game/script.rpy", line 85, in script
     with fade
-OSError: Couldn't find file 'audio/china.m4a'.
+OSError: Couldn't find file 'audio/chapter.wav'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 67, in script
+  File "game/script.rpy", line 85, in script
     with fade
   File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\ast.py", line 1363, in execute
     renpy.exports.with_statement(trans, paired=paired)
@@ -33,9 +33,9 @@ Full traceback:
     rv = renpy.loader.load(fn, directory="audio")
   File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\loader.py", line 672, in load
     raise IOError("Couldn't find file '%s'." % name)
-OSError: Couldn't find file 'audio/china.m4a'.
+OSError: Couldn't find file 'audio/chapter.wav'.
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.2.1.24030407
 Fantasy Ren'py GUI template 1.0
-Thu Jul 18 23:56:58 2024
+Fri Jul 19 19:19:47 2024

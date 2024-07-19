@@ -16,13 +16,23 @@
 
 # Ren'Py 腳本部分
 # 定義角色
+# 定義角色
 define j = Character("蔣中正")
 define w = Character("王采玉")
 define m = Character("毛福梅")
 define d = Character("董顯光")
 define n = Character("日本軍醫教官")
+define c = Character("陳其美")
+define z = Character("張群")
+define s = Character("校長")
+define sun = Character("孫中山")
+define sol = Character("小兵")
+define yao = Character("姚冶誠")
+define zhang = Character("張靜江")
+define chen = Character("陳潔如")
+define chenm = Character("陳母")
 
-define audio.gamemusic = "audio/china.m4a"
+define audio.gamemusic = "audio/chapter1.wav"
 image bg blackscreen = "bg blackscreen.png"
 image bg yutai = "imgoldhouse"
 image bg yutai2 = "imgyutai"
@@ -43,6 +53,14 @@ image johndraw = "johndraw.png"
 image maofumei = "maofumei.png"
 image maofumeicry = "maofumeicry.png"
 image maofumei happy = "maofumeihappy.png"
+
+image chenqimei = "maofumei.png"
+image zhangqun = "maofumei.png"
+image chenmother = "maofumei.png"
+image principal = "maofumei.png"
+image sunzhongshan = "maofumei.png"
+image soldier = "maofumei.png"
+image zhangdynasty = "maofumei.png"
 
 transform bounce:
     yalign 1.0
@@ -214,5 +232,169 @@ label chapter1_act5:
     voice "voichi6.wav"
     "由於我在陸軍速成學堂深受校長和教官賞識，第二年就成為第一批派往日本深造之四人之一。"
     
+
+# 第六幕：加入同盟會
+label chapter1_act6:
+    scene bg imgchi6
+    with fade
+    "1908年，東京"
+
+    show chenqimei at right
+    show johndraw at left
+
+    c "中正，我想邀請你加入同盟會。我們需要像你這樣有志之士。"
+    j "陳大哥，同盟會的宗旨是什麼？"
+    c "驅除韃虜，恢復中華，建立民國，平均地權。"
+    j "這與我的理想相符。我願意加入。"
+    c "很好。記住，革命是一條艱難的道路，需要堅強的意志。"
+    j "我明白。我已經準備好了。"
+
+# 第七幕：畢業與歸國
+label chapter1_act7:
+    scene bg imgchi11
+    with fade
+    "1910年11月，日本振武學校畢業典禮"
+
+    show principal at right
+    show johndraw at left
+
+    s "蔣中正同學，你的成績雖然不是最好的，但你的愛國熱情令人欽佩。"
+    j "感謝校長的教誨。我會將在這裡學到的知識用於振興中華。"
+
+    hide principal
+    show zhangqun at right
+
+    z "中正，聽說你要去陸軍實習？"
+    j "是的，這是一個難得的機會，可以學習日本軍隊的先進經驗。"
+    z "不要忘記我們的初心。總有一天，我們要用這些知識來服務於我們自己的國家。"
+    j "我永遠不會忘記的。"
+
+# 第八幕：參加辛亥革命
+label chapter1_act8:
+    scene bg imgchi4
+    with fade
+    "1911年10月，上海碼頭"
+
+    show zhangqun at right
+    show johndraw at left
+
+    j "張群，武昌起義的消息你聽說了嗎？"
+    z "聽說了。看來我們等待已久的機會終於來了。"
+    j "是啊，我們必須立即行動。陳其美大哥在上海已經開始準備了。"
+    z "那我們趕快去找他吧。祖國需要我們了。"
+
+    "上海，陳其美的住所"
+
+    show chenqimei at right
+
+    c "中正，你來得正好。我需要你率領一支敢死隊去杭州。"
+    j "我明白。這是我們改變中國命運的機會，我不會辜負您的期望。"
+    c "記住，革命是一項艱巨的事業。我們可能會失敗，但絕不能放棄。"
+    j "我準備好了，無論付出什麼代價。"
+
+    voice "voichi8.wav"
+    "就這樣，我開始了我的革命生涯，為日後成為中國的領導人奠定了基礎。"
+
+# 第九幕：革命與北伐
+label chapter1_act9:
+    scene bg imgchi8
+    with fade
+    "武昌起義開始，參加光復浙江之戰"
+
+    show soldier at right
+    show johndraw at left
+
+    "小兵" "報告! 我們已攻佔巡撫府，俘虜增韞!"
+    j "辛苦了，看來我們的第一步已經成功了。"
+
+    scene black
+    with fade
+    "小兵" "杭州將軍投降了，浙江是我們的了。"
+
+    "浙江之戰結束，成立新政府"
+
+    voice "Voichi9.wav"
+    "革命成功後，我的個人生活也發生了變化。"
+
+# 第十幕：二次革命
+label chapter1_act10:
+    scene bg imgchi9
+    with fade
+    "1913年，中華革命黨總部"
+
+    show sunzhongshan at right
+    show johndraw at left
+
+    sun "今日中國革命的成敗，完全寄託在你身上。為什麼不去搞軍隊？革命要成功，必須要有軍隊。"
+    j "先生您說的我會遵守，讓我們一起完成革命大業。"
+    sun "我期待你的表現。你是否想要任何職位？"
+    j "我蔣某人，不需要職位，只要先生能借我力量即可。"
+
+    voice "voichi13.wav"
+    "至此，我開始了我的軍政之路。"
+
+    scene bg imgchi10
+    with fade
+    "1913年7月，上海"
+
+    voice "voichi14.wav"
+    "1913年7月，孫先生發動二次革命討伐袁世凱，我在上海討袁軍總司令陳其美的指揮下參加攻打江南製造局之役。"
+
+    show chenqimei at right
+    show johndraw at left
+
+    c "中正，我們必須奪取江南製造局，切斷袁世凱的軍火供應。"
+    j "明白，我們一定要成功。"
+
+    voice "voichi15.wav"
+    "不幸的是，各地討袁軍先後失敗。上海滬軍都督楊善德下令緝捕我"
+
+    voice "voichi16.wav"
+    "我被迫逃進陳其美之娘姨姚冶誠臥室內，遂納姚納姚冶誠為側室。"
+
+    show yaoyecheng at right
+    hide chenqimei
+
+    j "姚小姐，謝謝你救了我。"
+    "姚冶誠" "蔣先生不必客氣，我們都是為了革命。"
+
+    voice "voichi17.wav"
+    "這次革命失敗後，我深刻認識到軍事力量的重要性。我決心要建立一支強大的革命軍隊，為未來的革命事業做準備。"
+
+# 第十一幕：新的愛情
+label chapter1_act11:
+    scene bg imgch11
+    with fade
+    "上海，張靜江家中，1919年"
+
+    show zhangdynasty at right
+    show johndraw at left
+
+    "張靜江" "中正，來，我給你介紹一下。這是陳潔如，我女兒的同學。"
+    j "陳小姐，幸會。"
+    "陳潔如" "蔣先生好。"
+
+    voice "voichi11.wav"
+    "我對陳潔如一見鍾情，開始了熱烈的追求。"
+
+    scene bg imgchi11
+    with fade
+    "陳家"
+
+    show chenmother at right
+    show johndraw at left
+
+    "陳母" "蔣先生，你已有妻妾，又無正當職業，我不能把女兒嫁給你。"
+    j "請給我一個機會，我會證明自己的。"
+
+    scene bg imgchi11
+    with fade
+    "陳家，幾個月後"
+
+    j "陳母，我已與原配及侍妾脫離關係。我向您保證，陳小姐將是我獨一無二的合法妻子。"
+    "陳母" "好吧，我同意了。"
+
+    voice "voichi12.wav"
+    "回顧我的婚姻生活，我確實有過四個妻子。當時覺得自己很幸運，但現在看來，我的行為確實有些不妥。"
 
     return
