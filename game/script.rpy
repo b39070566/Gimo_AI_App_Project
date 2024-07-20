@@ -14,6 +14,52 @@
     url = "https://travel.ettoday.net/category/%E6%A1%83%E5%9C%92/"
     title_text = get_first_title(url)
 
+    class place:
+        def __init__(self, location):
+            self.location = location
+
+
+    class Fighter:
+        def __init__(self, name, level=1, max_hp=10, hp=10, max_mp=4, mp=4, attack=2, defense=1, element="None"):
+            self.name = name
+            self.level = level
+            self.max_hp = max_hp
+            self.hp = hp
+            self.max_mp = max_mp
+            self.mp = mp
+            self.attack = attack
+            self.defense = defense
+            self.element = element
+
+    def calculate_damage(attacker, defender):
+        base_damage = attacker.attack - defender.defense
+        return max(1, base_damage + random.randint(-1, 1))
+
+screen battle_ui:
+    frame:
+        xpadding 13
+        ypadding 14
+        xalign 0.01 yalign 0.05
+        vbox:
+            text "[player.name] HP: [player.hp]/[player.max_hp]"
+            text "MP: [player.mp]/[player.max_mp]"
+    
+    frame:
+        xpadding 13
+        ypadding 14
+        xalign 0.99 yalign 0.05
+        vbox:
+            text "[enemy.name] HP: [enemy.hp]/[enemy.max_hp]"
+
+screen location_ui:
+    frame:
+        xpadding 13
+        ypadding 14
+        xalign 0.99 yalign 0.02
+        vbox:
+            text "位置: [now_venue.location]" size 40
+
+
 # Ren'Py 腳本部分
 # 定義角色
 # 定義角色
@@ -33,6 +79,8 @@ define chen = Character("陳潔如")
 define chenm = Character("陳母")
 
 define audio.gamemusic = "audio/chapter1.wav"
+
+#圖檔區域 角色跟背景要分開放，每個人不同的背景也都要分開
 image bg blackscreen = "bg blackscreen.png"
 image bg yutai = "imgoldhouse"
 image bg yutai2 = "imgyutai"
@@ -42,17 +90,25 @@ image bg imgchi2 = "imgchi2.jpg"
 image bg imgchi3 = "imgchi3(AI).png"
 image bg imgchi4 = "imgchi4.jpg"
 image bg imgchi5 = "imgchi5(AI).png"
-image bg imgchi6 = "imgchi6.jpg"
+image bg imgchi6 = "imgchi6.png"
 image bg imgchi7 = "imgchi7.jpg"
 image bg imgchi8 = "imgchi8.jpg"
 image bg imgchi9 = "imgchi9(AI).png"
 image bg imgchi10 = "imgchi10.jpg"
 image bg imgchi11 = "imgchi11.jpg"
+image bg imgchi12 = "imgchi12.jpg"
 
 image johndraw = "johndraw.png"
 image maofumei = "maofumei.png"
 image maofumeicry = "maofumeicry.png"
 image maofumei happy = "maofumeihappy.png"
+
+image knight idle = "johndraw.png"
+image knight attack = "johndraw.png"
+image knight hit = "johndraw.png"
+image skeleton idle = "maofumei.png"
+image skeleton attack = "maofumei.png"
+image skeleton hit = "maofumeicry.png"
 
 image chenqimei = "maofumei.png"
 image zhangqun = "maofumei.png"
@@ -61,7 +117,10 @@ image principal = "maofumei.png"
 image sunzhongshan = "maofumei.png"
 image soldier = "maofumei.png"
 image zhangdynasty = "maofumei.png"
+image Maozedong = "Maozedong@2.PNG"
 
+
+#角色動作的線性變化區域
 transform bounce:
     yalign 1.0
     linear 3.0 xalign 0
@@ -70,22 +129,80 @@ transform bounce:
 
 transform left_to_right:
     yalign 1.0
-    xalign 0.0
-    linear 2.0 xalign 1.0
-    repeat
+    linear 1.0 xalign 1.0
+    xzoom -1
+    linear 1.0 xalign 0.0
+    xzoom 1
+
+transform right_to_left:
+    yalign 1.0
+    linear 1.0 xalign 0.0
+    xzoom -1
+    linear 1.0 xalign 1.0
+    xzoom 1
+
+label battle_system:
+    $ player = Fighter("蔣中正", level=1, max_hp=20, hp=20, max_mp=10, mp=10, attack=3, defense=2)
+    $ enemy = Fighter("毛澤東", level=1, max_hp=15, hp=15, attack=3, defense=1)
+    scene bg imgchi8
+    hide screen location_ui
+    show screen battle_ui
+
+    show johndraw at left
+    show Maozedong at right
+
+    while player.hp > 0 and enemy.hp > 0:
+        # 玩家回合
+        menu:
+            "攻擊":
+
+                show johndraw at left_to_right
+                pause 2
+                $ damage = calculate_damage(player, enemy)
+                $ enemy.hp -= damage
+                "你對[enemy.name]造成了[damage]點傷害！"
+            "特殊技能" if player.mp >= 3:
+                $ player.mp -= 3
+                $ damage = calculate_damage(player, enemy) * 2
+                $ enemy.hp -= damage
+                "你使用特殊技能，對[enemy.name]造成了[damage]點傷害！"
+            "防禦":
+                $ player.defense += 1
+                "你提高了防禦力！"
+
+        if enemy.hp <= 0:
+            "你贏了戰鬥！"
+            hide screen battle_ui
+            return "victory"
+
+        # 敵人回合
+        show Maozedong at right_to_left
+        pause 2
+        $ damage = calculate_damage(enemy, player)
+        $ player.hp -= damage
+        "[enemy.name]對你造成了[damage]點傷害！"
+
+        if player.hp <= 0:
+            "你輸了戰鬥..."
+            hide screen battle_ui
+            return "defeat"
+
 
 # 遊戲開始
 label start:
     play music gamemusic
     jump chapter1_act1
 
+
 # 第一幕：家世背景
 label chapter1_act1:
     scene bg yutai
     with fade
-
+    $ now_venue = place("玉泰鹽鋪")
     "第一章：早年生活與革命生涯"
 
+
+    show screen location_ui
     show johndraw at left
     voice "john01_01.wav"
     j "我是西元1887年10月31日出生於浙江奉化溪口鎮玉泰鹽鋪。家裡很有錢，是當地的五大首富之一，我祖父開設的鹽鋪後來給我爸經營"
@@ -121,7 +238,8 @@ label chapter1_act2:
     scene bg yutai2
     with fade
     
-    "1895年，奉化溪口鎮蔣家"
+    $ now_venue.location = "奉化蔣家外"
+    "1895年，奉化蔣家外"
 
     show wang at right:
         yalign 0.5
@@ -142,7 +260,8 @@ label chapter1_act3:
     scene bg imgchi1
     with fade
 
-    "1901年冬，奉化蔣家"
+    $ now_venue.location = "蔣家內"
+    "1901年冬，蔣家內"
 
     show johndraw at left
     show wang at right:
@@ -211,7 +330,7 @@ label chapter1_act5:
     with fade
 
     "1906年4月，上海碼頭"
-    show johndraw at left
+    show johndraw
 
     j "母親，我一定會在日本好好學習，為祖國爭光。"
     w "中正，要記住你的初心。無論遇到什麼困難，都不要放棄。"
@@ -219,7 +338,6 @@ label chapter1_act5:
     
     voice "voichi5.wav"
     j "結果，在我抵達日本後，才發現公費生不能入軍校，只好在同年冬天返回中國，並進入了清政府開辦的陸軍速成學堂"
-    
 
     scene bg imgchi5
     "學校教室"
@@ -231,7 +349,6 @@ label chapter1_act5:
 
     voice "voichi6.wav"
     "由於我在陸軍速成學堂深受校長和教官賞識，第二年就成為第一批派往日本深造之四人之一。"
-    
 
 # 第六幕：加入同盟會
 label chapter1_act6:
@@ -251,7 +368,7 @@ label chapter1_act6:
 
 # 第七幕：畢業與歸國
 label chapter1_act7:
-    scene bg imgchi11
+    scene bg imgchi12
     with fade
     "1910年11月，日本振武學校畢業典禮"
 
@@ -300,6 +417,16 @@ label chapter1_act9:
     scene bg imgchi8
     with fade
     "武昌起義開始，參加光復浙江之戰"
+
+        
+    "打倒你的敵人!"
+    call battle_system
+    if _return == "victory":
+        "克服了困難，你順利抵達了陸軍速成學堂。"
+    else:
+        "雖然遇到了一些挫折，但你還是堅持到達了陸軍速成學堂。"
+    show screen location_ui
+    scene bg imgchi8
 
     show soldier at right
     show johndraw at left
@@ -363,7 +490,7 @@ label chapter1_act10:
 
 # 第十一幕：新的愛情
 label chapter1_act11:
-    scene bg imgch11
+    scene bg imgchi11
     with fade
     "上海，張靜江家中，1919年"
 

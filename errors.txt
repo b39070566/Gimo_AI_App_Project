@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 110: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    yalign 0.5
-    ^
+File "game/script.rpy", line 120: add expects a non-empty block.
+    add Appearing("Maozedong.png", 100, 200): 
+                                              ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Thu Jul 18 23:38:59 2024
+Fri Jul 19 23:03:51 2024
