@@ -1,5 +1,6 @@
 ﻿################################################################################
 ## Initialization
+## test01
 ################################################################################
 
 ## The init offset statement causes the initialization statements in this file
