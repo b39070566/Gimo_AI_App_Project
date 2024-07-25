@@ -1,25 +1,15 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 254, in script
-    "1901年冬，奉化蔣家"
-  File "game/script.rpy", line 50, in execute
-    screen location_ui:
-  File "game/script.rpy", line 50, in execute
-    screen location_ui:
-  File "game/script.rpy", line 51, in execute
-    frame:
-  File "game/script.rpy", line 55, in execute
-    vbox:
-  File "game/script.rpy", line 56, in execute
-    text "位置: [now_venue.location]" size 40
-NameError: Name 'now_venue' is not defined.
+While loading <renpy.display.im.Image object ('flag1.jpg') at 0x0000000006926640>:
+  File "game/script.rpy", line 393, in script
+    j "陳大哥，同盟會的宗旨是什麼？"
+OSError: Couldn't find file 'flag1.jpg'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 254, in script
-    "1901年冬，奉化蔣家"
+  File "game/script.rpy", line 393, in script
+    j "陳大哥，同盟會的宗旨是什麼？"
   File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\ast.py", line 2557, in execute
     Say.execute(self)
   File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\ast.py", line 615, in execute
@@ -36,52 +26,48 @@ Full traceback:
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\core.py", line 2165, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\core.py", line 2687, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\displayable.py", line 431, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\displayable.py", line 431, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\displayable.py", line 431, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\core.py", line 2687, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\screen.py", line 697, in update
-    self.screen.function(**self.scope)
-  File "game/script.rpy", line 50, in execute
-    screen location_ui:
-  File "game/script.rpy", line 50, in execute
-    screen location_ui:
-  File "game/script.rpy", line 51, in execute
-    frame:
-  File "game/script.rpy", line 55, in execute
-    vbox:
-  File "game/script.rpy", line 56, in execute
-    text "位置: [now_venue.location]" size 40
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\text\text.py", line 1738, in __init__
-    self.set_text(text, scope, substitute) # type: ignore
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\text\text.py", line 1868, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\substitutions.py", line 368, in substitute
-    s = interpolate(s, kwargs) # type: ignore
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\substitutions.py", line 86, in interpolate
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\core.py", line 2818, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\core.py", line 1352, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 486, in renpy.display.render.render_screen
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\transform.py", line 957, in render
+    return RenderTransform(self).render(width, height, st, at)
+  File "accelerator.pyx", line 978, in renpy.display.accelerator.RenderTransform.render
+  File "accelerator.pyx", line 413, in renpy.display.accelerator.RenderTransform.render_child
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\image.py", line 513, in render
+    return wrap_render(self.target, width, height, st, at)
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\image.py", line 316, in wrap_render
+    rend = render(child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\im.py", line 626, in render
+    return cache.get(self, render=True)
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\im.py", line 309, in get
+    surf = image.load()
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\im.py", line 761, in load
     raise e
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\substitutions.py", line 78, in interpolate
-    value = renpy.python.py_eval(code, {}, scope)
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\python.py", line 1209, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\python.py", line 1202, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "<none>", line 1, in <module>
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\substitutions.py", line 310, in __getitem__
-    raise NameError("Name '{}' is not defined.".format(key))
-NameError: Name 'now_venue' is not defined.
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\im.py", line 711, in load
+    filelike = renpy.loader.load(self.filename, directory="images")
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\loader.py", line 672, in load
+    raise IOError("Couldn't find file '%s'." % name)
+OSError: Couldn't find file 'flag1.jpg'.
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.2.1.24030407
 Fantasy Ren'py GUI template 1.0
-Fri Jul 19 23:08:17 2024
+Thu Jul 25 19:16:00 2024
