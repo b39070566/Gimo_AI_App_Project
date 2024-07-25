@@ -126,12 +126,15 @@ image enemyminion idle = "maofumei.png"
 image enemyminion attack = "maofumei.png"
 image enemyminion hit = "maofumeicry.png"
 
-image chenqimei = "maofumei.png"
+image chenqimei = "chenqimei.png"
+image chenqimei glasses = "chenqimeiglasses.png"
 image zhangqun = "maofumei.png"
 image chenmother = "maofumei.png"
 image principal = "maofumei.png"
 image sunzhongshan = "sunzhongshan.png"
-image soldier = "maofumei.png"
+image minion = "minion.png"
+image soldier = "minion.png"
+image minionenemy = "minionenemy.png"
 image zhangdynasty = "maofumei.png"
 image Maozedong = "Maozedong@2.PNG"
 
@@ -178,35 +181,39 @@ label battle_system:
     hide screen location_ui
     show screen battle_ui
 
-    show johndraw at left
-    show Maozedong at right
+    show minion at left
+    show minionenemy at right
 
     while player.hp > 0 and enemy.hp > 0:
         # 玩家回合
         menu:
             "攻擊":
 
-                show johndraw at left_to_right
+                show minion at left_to_right
+                $ renpy.block_rollback()
                 pause 2
                 $ damage = calculate_damage(player, enemy)
                 $ enemy.hp -= damage
                 "你對[enemy.name]造成了[damage]點傷害！"
             "特殊技能" if player.mp >= 3:
+                $ renpy.block_rollback()
                 $ player.mp -= 3
                 $ damage = calculate_damage(player, enemy) * 2
                 $ enemy.hp -= damage
                 "你使用特殊技能，對[enemy.name]造成了[damage]點傷害！"
             "防禦":
+                $ renpy.block_rollback()
                 $ player.defense += 1
                 "你提高了防禦力！"
 
         if enemy.hp <= 0:
             "你贏了戰鬥！"
             hide screen battle_ui
+            $ renpy.block_rollback()
             return "victory"
 
         # 敵人回合
-        show Maozedong at right_to_left
+        show minionenemy at right_to_left
         pause 2
         $ damage = calculate_damage(enemy, player)
         $ player.hp -= damage
@@ -215,6 +222,7 @@ label battle_system:
         if player.hp <= 0:
             "你輸了戰鬥..."
             hide screen battle_ui
+            $ renpy.block_rollback()
             return "defeat"
 
 
@@ -406,6 +414,8 @@ label chapter1_act5:
     j "(蔣中正聽後非常生氣，衝上講臺，把泥土碎成八塊) 日本有五千萬人，是否也像五千萬微生蟲，寄生在這八分之一方寸的土塊中？"
     n "........... 你是不是革命黨？??"
     j "..........."
+    j "我只是一個愛國青年!!!"
+    n "........"
 
     voice "voichi6.wav"
     "由於我在陸軍速成學堂深受校長和教官賞識，第二年就成為第一批派往日本深造之四人之一。"
@@ -417,11 +427,13 @@ label chapter1_act6:
     $ now_venue = place("東京")
     "1908年，東京"
 
-    show chenqimei at right
-    show johndraw at left
+    
     show flag1:
+        zoom 0.7
         yalign 0.45 
-        xalign 0.5
+        xalign 0.1
+    show chenqimei glasses
+
     c "中正，我想邀請你加入同盟會。我們需要像你這樣有志之士。"
     "這是同盟會的旗幟圖案"(what_color="#808080")
     j "陳大哥，同盟會的宗旨是什麼？"
@@ -463,10 +475,10 @@ label chapter1_act8:
 
     $ now_venue = place("陳其美居所")
     scene bg imgchi13 
-    show chenqimei
+    
     "上海，陳其美的住所"
 
-
+    show chenqimei glasses
     c "中正，你來得正好。我需要你率領一支敢死隊去杭州。"
     j "我明白。這是我們改變中國命運的機會，我不會辜負您的期望。"
     c "記住，革命是一項艱巨的事業。我們可能會失敗，但絕不能放棄。"
@@ -489,18 +501,18 @@ label chapter1_act9:
         "你成功了擊敗了敵人。"
     else:
         "你失敗了..."
-        jump chapter1_act9
+        call battle_system
     show screen location_ui
     scene bg imgchi8
 
-    show soldier at right
-    show johndraw at left
+    show soldier
 
     "小兵" "報告! 我們已攻佔巡撫府，俘虜增韞!"
     j "辛苦了，看來我們的第一步已經成功了。"
 
     scene black
     with fade
+    show soldier
     "小兵" "杭州將軍投降了，浙江是我們的了。"
 
     "浙江之戰結束，成立新政府"
@@ -538,6 +550,7 @@ label chapter1_act10:
     c "中正，我們必須奪取江南製造局，切斷袁世凱的軍火供應。"
     j "明白，我們一定要成功。"
 
+    hide chenqimei
     voice "voichi15.wav"
     "不幸的是，各地討袁軍先後失敗。上海滬軍都督楊善德下令緝捕我"
 
