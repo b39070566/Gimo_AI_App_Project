@@ -78,6 +78,14 @@ define zhang = Character("張靜江")
 define chen = Character("陳潔如")
 define chenm = Character("陳母")
 
+define xueliang = Character("張學良")
+define guard = Character("守衛")
+define xiaozhen = Character("蔣孝鎮")
+define soldier = Character("東北軍士兵")
+define yang = Character("楊虎城")
+define zhou = Character("周恩來")
+
+
 define audio.gamemusic = "audio/chapter1.wav"
 
 #圖檔區域 角色跟背景要分開放，每個人不同的背景也都要分開
@@ -97,6 +105,12 @@ image bg imgchi9 = "imgchi9(AI).png"
 image bg imgchi10 = "imgchi10.jpg"
 image bg imgchi11 = "imgchi11.jpg"
 image bg imgchi12 = "imgchi12.jpg"
+
+image bg imgfeng1 = "imgfeng1.png"
+image bg imgfeng2 = "imgfeng2.jpg"
+image bg imgfeng3 = "imgfeng3.png"
+image bg imgfeng4 = "imgfeng4.jpg"
+image bg imgfeng5 = "imgfeng5.png"
 
 image johndraw = "johndraw.png"
 image maofumei = "maofumei.png"
@@ -220,7 +234,7 @@ label chapter1_act1:
 
     show wang:
         xalign 0.5
-        yalign 0.5 
+        yalign 0.5
     j "右邊就是我的母親王采玉~"
 
     "OS:製作組每次看到照片就嚇到一次"(what_color="#808080")
@@ -523,5 +537,147 @@ label chapter1_act11:
 
     voice "voichi12.wav"
     "回顧我的婚姻生活，我確實有過四個妻子。當時覺得自己很幸運，但現在看來，我的行為確實有些不妥。"
+
+    jump chapter2_act1
+
+
+# 第一幕：事變前夕
+label chapter2_act1:
+    scene bg imgfeng1
+
+    with fade
+    $ now_venue = place("西安行營")
+    "1936年12月11日，西安行營"
+
+    show screen location_ui
+    show johndraw at left
+
+    voice "voifeng1.wav"
+    j "1936年12月11日，我察覺到張學良的行為有些異常，這引起了我的警覺。我在日記中寫道：『今日漢卿形色急遽，精神恍惚，甚覺有異。』但我沒想到第二天凌晨就發生了驚人的變故。"
+
+    voice "voifeng2.wav"
+    j "張將軍，你最近看起來心事重重啊。是否有什麼困擾？"
+
+    show xueliang at right
+    xueliang "委座，只是有些疲勞罷了，請不必擔心。我們在剿共問題上或許有些分歧，但這並不影響我對您的忠誠。"
+
+    voice "voifeng3.wav"
+    j "希望如此。記得好好休息，我們還有很多事情要做。明天我們還要討論新一輪的剿共計劃。"
+
+    hide xueliang
+    xueliang "(內心獨白) 委座啊，您怎麼就不明白呢？現在最重要的是抗日，而不是繼續內戰啊！"
+
+    jump chapter2_act2
+
+
+#第二幕：突襲與逃脫
+label chapter2_act2:
+    scene bg imgfeng2
+    with fade
+
+    $ now_venue.location = "臨潼華清池"
+    "1936年12月12日凌晨，臨潼華清池"
+    "（突然槍聲四起，喊叫聲不斷）"
+
+    show guard at left
+    guard "委座！有人襲擊，是東北軍！我們必須立刻撤離！"
+
+    show johndraw at right
+    voice "voifeng4.wav"
+    j "什麼？張學良竟敢...快，準備撤退！"
+
+    hide guard
+    show xiaozhen at left
+    xiaozhen "委座，我來掩護您，跟我來！"
+
+    voice "voifeng5.wav"
+    j "在那混亂之中，蔣孝鎮背著我翻牆逃走。我甚至來不及穿鞋，是他將自己的鞋子脫下給我穿上。我們分頭逃跑，希望能分散追兵的注意力。"
+
+    hide xiaozhen
+    voice "voifeng6.wav"
+    j "啊！"
+
+    voice "voifeng7.wav"
+    j "我從牆上跳下，重重地摔進了牆外的溝裡，腰部劇痛。但我不敢停下，忍著疼痛繼續向驪山方向逃去。最後，我躲進了一個窪坑裡。"
+
+    jump chapter2_act3
+
+
+#第三幕：被俘
+label chapter2_act3:
+    scene bg imgfeng3
+    with fade
+
+    $ now_venue.location = "華清池附近的山坡"
+    "華清池附近的山坡，天色漸明"
+    show soldier at left
+    soldier "在這裡！我們找到蔣委員長了！"
+
+    show johndraw at right
+    voice "voifeng8.wav"
+    j "你們...你們這是要做什麼？知道自己在犯什麼罪嗎？"
+
+    hide soldier
+    show xueliang at left
+    xueliang "委座，請原諒我們的無禮。我知道這樣做很冒險，但這是為了國家的未來。我們只是想請您聽聽我們的想法。"
+
+    voice "voifeng9.wav"
+    j "張學良！你可知道這樣做的後果？"
+
+    jump chapter2_act4
+
+
+#第四幕：談判過程
+label chapter2_act4:
+    scene bg imgfeng4
+    with fade
+
+    $ now_venue.location = "西安新城大樓會議室"
+    "西安新城大樓會議室"
+
+    show xueliang at left
+    xueliang "委座，我們苦苦哀求您停止內戰已經很久了。現在日本虎視眈眈，我們再不團結起來抗日，國家就真的危險了！"
+
+    show johndraw at right
+    voice "voifeng10.wav"
+    j "你們以為用這種方式能解決問題嗎？這只會讓國家更加動盪！你們這是在破壞國家統一！"
+
+    hide xueliang
+    show yang at left
+    yang "但是委座，如果我們不團結一致對外，國家將會面臨更大的危機。請您三思啊！"
+
+    hide yang
+    show zhou at left
+    zhou "蔣委員長，我代表中國共產黨，也希望能與您坦誠相談。我們願意在您的領導下，共同抗日。"
+
+    voice "voifeng11.wav"
+    j "在多次艱難的談判後，我逐漸理解了他們的用意。雖然我依然認為他們的方式是錯誤的，但我也意識到，國家確實需要改變。最終，我同意了停止內戰，改組政府，加強對日抗戰，並進行一系列政治改革。"
+
+    jump chapter2_act5
+
+
+#第五幕：釋放與反思
+label chapter2_act5:
+    scene bg imgfeng5
+    with fade
+
+    $ now_venue.location = "西安機場"
+    "1936年12月25日，西安機場"
+
+    show xueliang at left
+    xueliang "委座，我們已經準備好送您回南京了。我知道我的行為可能會招致嚴重後果，但為了國家，我願意承擔。"
+
+    show johndraw at right
+    voice "voifeng12.wav"
+    j "張學良，你們的行為雖然錯誤，但出發點我能理解。記住，國家的未來需要我們共同努力。我會考慮你們的建議，但你必須為自己的行為負責。"
+
+    voice "voifeng13.wav"
+    j "1936年12月25日，我終於重獲自由。這次西安事變，讓我深刻認識到國內的矛盾和挑戰，也讓我更加重視對外的抗戰準備。這段經歷對我來說，既是挑戰，也是轉機。"
+
+    voice "voifeng14.wav"
+    j "當飛機起飛時，我望著窗外的西安，心中充滿了複雜的情緒。這次事變雖然結束了，但它所揭示的問題卻遠未解決。"
+
+    voice "voifeng15.wav"
+    j "我知道，未來還有更艱巨的任務等待著我，等待著整個中國。西安事變後，我更加堅定了抗日的決心，也開始重新思考國內政策。這次經歷，無疑是我政治生涯中的一個重要轉折點。"
 
     return
