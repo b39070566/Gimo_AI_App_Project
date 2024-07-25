@@ -1,13 +1,23 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
+<<<<<<< HEAD
 While running game code:
   File "game/script.rpy", line 625, in script
     j "張學良！你可知道這樣做的後果？"
 OSError: Couldn't find file 'voifeng9.wav'.
+=======
+Compiling ATL code at game/script.rpy:156
+  File "game/script.rpy", line 320, in script
+    show johndraw at left_out_to_middle_rotate
+  File "game/script.rpy", line 156, in <module>
+    transform_anchor true
+NameError: name 'true' is not defined
+>>>>>>> c7afc759917cd8df06be27738d28adbfc398a1d0
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
+<<<<<<< HEAD
   File "game/script.rpy", line 625, in script
     j "張學良！你可知道這樣做的後果？"
   File "D:\專題\renpy-8.2.1-sdk\renpy\ast.py", line 615, in execute
@@ -40,8 +50,45 @@ Full traceback:
   File "D:\專題\renpy-8.2.1-sdk\renpy\loader.py", line 672, in load
     raise IOError("Couldn't find file '%s'." % name)
 OSError: Couldn't find file 'voifeng9.wav'.
+=======
+  File "game/script.rpy", line 320, in script
+    show johndraw at left_out_to_middle_rotate
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\ast.py", line 1113, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\ast.py", line 1076, in show_imspec
+    renpy.config.show(name,
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\exports.py", line 765, in show
+    sls.add(layer, img, key, zorder, behind, at_list=at_list, name=name, atl=atl, default_transform=default_transform, transient=transient)
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\scenelists.py", line 474, in add
+    thing.visit_all(lambda d : None)
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\displayable.py", line 421, in visit_all
+    for d in self.visit():
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\atl.py", line 764, in visit
+    block = self.compile()
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\atl.py", line 671, in compile
+    block = self.atl.compile(self.context)
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\atl.py", line 873, in compile
+    statements = [ i.compile(ctx) for i in self.statements ]
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\atl.py", line 873, in <listcomp>
+    statements = [ i.compile(ctx) for i in self.statements ]
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\atl.py", line 1214, in compile
+    value = ctx.eval(expr)
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\atl.py", line 392, in eval
+    return renpy.python.py_eval(expr, locals=self.context)
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 156, in <module>
+    transform_anchor true
+NameError: name 'true' is not defined
+>>>>>>> c7afc759917cd8df06be27738d28adbfc398a1d0
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.2.1.24030407
 Fantasy Ren'py GUI template 1.0
+<<<<<<< HEAD
 Thu Jul 25 22:13:16 2024
+=======
+Thu Jul 25 21:30:07 2024
+>>>>>>> c7afc759917cd8df06be27738d28adbfc398a1d0
