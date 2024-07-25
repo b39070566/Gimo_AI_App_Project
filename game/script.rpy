@@ -105,12 +105,12 @@ image maofumeicry = "maofumeicry.png"
 image maofumei happy = "maofumeihappy.png"
 
 
-image knight idle = "johndraw.png"
-image knight attack = "johndraw.png"
-image knight hit = "johndraw.png"
-image skeleton idle = "maofumei.png"
-image skeleton attack = "maofumei.png"
-image skeleton hit = "maofumeicry.png"
+image minion idle = "johndraw.png"
+image minion attack = "johndraw.png"
+image minion hit = "johndraw.png"
+image enemyminion idle = "maofumei.png"
+image enemyminion attack = "maofumei.png"
+image enemyminion hit = "maofumeicry.png"
 
 image chenqimei = "maofumei.png"
 image zhangqun = "maofumei.png"
@@ -144,6 +144,12 @@ transform left_to_right_out:
     yalign 1.0
     linear 1.0 xalign 1.5
 
+
+transform left_to_right_out_slow:
+    yalign 1.0
+    linear 3.0 xalign 1.5
+    
+
 transform right_to_left:
     yalign 1.0
     linear 1.0 xalign 0.0
@@ -152,8 +158,8 @@ transform right_to_left:
     xzoom 1
 
 label battle_system:
-    $ player = Fighter("蔣中正", level=1, max_hp=20, hp=20, max_mp=10, mp=10, attack=3, defense=2)
-    $ enemy = Fighter("毛澤東", level=1, max_hp=15, hp=15, attack=3, defense=1)
+    $ player = Fighter("我方士兵", level=1, max_hp=20, hp=20, max_mp=10, mp=10, attack=3, defense=2)
+    $ enemy = Fighter("敵方士兵", level=1, max_hp=15, hp=15, attack=3, defense=1)
     scene bg imgchi8
     hide screen location_ui
     show screen battle_ui
@@ -292,11 +298,19 @@ label chapter1_act3:
 
     hide maofumei happy
     "蔣中正在外面跟小孩子們搶爆竹蒂頭"
-    show maofumei
+    show maofumei 
     m "果然是小孩子....我居然要跟這種小孩"
+    show maofumei:
+        yalign 1.0
+        linear 0.5 xalign 0.6
+        xzoom -1
+        linear 0.5 xalign 0.45
+
     m "我該不會這輩子就這樣了吧...."
-    show wang at right:
-        yalign 0.5 
+    show maofumei:
+        yalign 1.0
+        xzoom -1
+        linear 2.5 xalign -0.5
     w "!!!!!!! 這孩子，怎麼在這種時候還這麼調皮!"
 
     voice "voichi3.wav"
@@ -304,11 +318,15 @@ label chapter1_act3:
     
     scene bg imgchi2
     "新婚之夜"
-    show johndraw at right:
-        xzoom -1
+    show johndraw:
+        yalign 1.0
+        xalign -0.5
+        linear 3.0 xalign 0.71
+        transform_anchor True
+        linear 0.5 rotate 65
 
     "蔣中正疲倦地進入新房，倒在床上就睡"
-    show maofumeicry at left
+    show maofumeicry
     "毛福梅默默地看著熟睡的丈夫，眼中含淚"
     m"討厭... 嫁給不認識的小孩，還要被這樣對待"
     m"真希望以後情況能越變越好..."
@@ -447,7 +465,7 @@ label chapter1_act8:
 label chapter1_act9:
     scene bg imgchi8
     with fade
-    $ now_venue = place("浙江")
+    $ now_venue = place("浙江杭州")
     "武昌起義開始，參加光復浙江之戰"
 
         

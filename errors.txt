@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 531: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    show johndraw
-    ^
+File "game/script.rpy", line 156: expected 'simple_expression' not found.
+    transform_anchor: true
+                    ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Thu Jul 25 19:43:32 2024
+Thu Jul 25 21:30:42 2024
