@@ -2,18 +2,9 @@
 errors listed below, and try again.
 
 
-<<<<<<< HEAD
-File "game/script.rpy", line 552: expected statement.
-    Copyshow screen location_ui
-                               ^
+File "game/script.rpy", line 315: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    xalign 0.5 
+    ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Thu Jul 25 22:05:44 2024
-=======
-File "game/script.rpy", line 156: expected 'simple_expression' not found.
-    transform_anchor: true
-                    ^
-
-Ren'Py Version: Ren'Py 8.2.1.24030407
-Thu Jul 25 21:30:42 2024
->>>>>>> c7afc759917cd8df06be27738d28adbfc398a1d0
+Fri Jul 26 21:51:58 2024

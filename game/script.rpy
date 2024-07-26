@@ -141,6 +141,7 @@ image wang2 = "wang@7.png"
 image johnkid = "johnyoung@7.png"
 image johnkidsad = "johnyoungsad@7.png"
 
+image johnyoungpic = "johnyoung1.jpg"
 
 image paper1 = "paper.jpg"
 image flag1 = "flag1.png"
@@ -251,7 +252,7 @@ label chapter1_act1:
     
 
 
-    show johnyoung at right
+    show johnyoungpic at right
     voice "john01_02.wav"
     j "你看看，我年輕時有多帥"
     
@@ -283,17 +284,15 @@ label chapter1_act2:
     $ now_venue.location = "奉化蔣家外"
     "1895年，奉化蔣家外"
 
-    show wang2 at right:
-        yalign 0.5
-    show johnkid at left
+    show wang2:
+        xalign 0.5
+        yalign 0.6
 
     w "中正，你父親走了，今後家裡就靠你了。"
     j "母親，我一定會努力讀書，光耀門楣的。"
     w "孩子。記住，要刻苦讀書，但更要懂得做人的道理。"
     
     hide wang2
-    hide johnkid
-    show johndraw
 
     voice "voichi7.wav"
     "父親去世後，我由母親王采玉撫育成人。這段經歷深深影響了我的性格形成。"
@@ -309,15 +308,18 @@ label chapter1_act3:
     $ now_venue.location = "蔣家內"
     "1901年冬，蔣家內"
 
-    show johnkidsad at left
-    show wang2 at right:
-        yalign 0.5 
+    show johnkidsad
+
 
     j "母親，我才14歲，真的要結婚嗎？"
-    w "中正，這是我們家族的決定。毛家姑娘比你大5歲，賢良淑德，會是個好媳婦的。"
-
     hide johnkidsad
-    show johnkid at left
+    show wang2:
+        xalign 0.5
+        yalign 0.6
+    w "中正，這是我們家族的決定。毛家姑娘比你大5歲，賢良淑德，會是個好媳婦的。"
+    hide wang2
+    
+    show johnkid
 
     j "我明白了，母親。我會盡到丈夫的責任的。"
 
@@ -380,15 +382,15 @@ label chapter1_act4:
     $ now_venue = place("奉化鳳麓學堂")
     "1903年，奉化鳳麓學堂"
 
-    show johndraw
+    show johnyoung
     d "蔣同學，你又在看報紙了？"
     show paper1:
         yalign 0.25 
         xalign 0.5
-    hide johndraw 
+    hide johnyoung
     j "是的，董老師。我覺得了解時事很重要。"
     d "很好。但不要忘了課本上的內容。"
-    show johndraw
+    show johnyoung
     hide paper1
     j "老師，您覺得我們應該如何改變中國的命運？"
     d "這個問題很深奧。也許你應該先學好英文，看看外面的世界是什麼樣子。"
@@ -401,14 +403,14 @@ label chapter1_act5:
     with fade
     $ now_venue = place("上海碼頭")
     "1906年4月，上海碼頭"
-    show johndraw
+    show johnyoung
 
     j "母親，我一定會在日本好好學習，為祖國爭光。"
     w "中正，要記住你的初心。無論遇到什麼困難，都不要放棄。"
     j "我明白，母親。我會努力的。"
-    show johndraw at left_to_right_out
+    show johnyoung at left_to_right_out
     pause 2
-    hide johndraw
+    hide johnyoung
     voice "voichi5.wav"
     j "結果，在我抵達日本後，才發現公費生不能入軍校，只好在同年冬天返回中國，並進入了清政府開辦的陸軍速成學堂"
 
