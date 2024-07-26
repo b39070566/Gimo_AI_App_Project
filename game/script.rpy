@@ -137,6 +137,10 @@ image soldier = "minion.png"
 image minionenemy = "minionenemy.png"
 image zhangdynasty = "maofumei.png"
 image Maozedong = "Maozedong@2.PNG"
+image wang2 = "wang@7.png"
+image johnkid = "johnyoung@7.png"
+image johnkidsad = "johnyoungsad@7.png"
+
 
 image paper1 = "paper.jpg"
 image flag1 = "flag1.png"
@@ -279,13 +283,17 @@ label chapter1_act2:
     $ now_venue.location = "奉化蔣家外"
     "1895年，奉化蔣家外"
 
-    show wang at right:
+    show wang2 at right:
         yalign 0.5
-    show johndraw at left
+    show johnkid at left
 
     w "中正，你父親走了，今後家裡就靠你了。"
     j "母親，我一定會努力讀書，光耀門楣的。"
     w "孩子。記住，要刻苦讀書，但更要懂得做人的道理。"
+    
+    hide wang2
+    hide johnkid
+    show johndraw
 
     voice "voichi7.wav"
     "父親去世後，我由母親王采玉撫育成人。這段經歷深深影響了我的性格形成。"
@@ -301,20 +309,26 @@ label chapter1_act3:
     $ now_venue.location = "蔣家內"
     "1901年冬，蔣家內"
 
-    show johndraw at left
-    show wang at right:
+    show johnkidsad at left
+    show wang2 at right:
         yalign 0.5 
 
     j "母親，我才14歲，真的要結婚嗎？"
     w "中正，這是我們家族的決定。毛家姑娘比你大5歲，賢良淑德，會是個好媳婦的。"
+
+    hide johnkidsad
+    show johnkid at left
+
     j "我明白了，母親。我會盡到丈夫的責任的。"
 
-    hide johndraw
+    hide johnkid
     hide wang
+    hide wang2
 
     "婚禮當天"
 
     show maofumei happy
+    
 
     m "(獨自坐在新房裡，低聲自語) 新郎怎麼還不來？"
 
@@ -340,7 +354,7 @@ label chapter1_act3:
     
     scene bg imgchi2
     "新婚之夜"
-    show johndraw:
+    show johnkid:
         yalign 1.0
         xalign -0.5
         linear 3.0 xalign 0.71
