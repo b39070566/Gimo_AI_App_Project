@@ -108,9 +108,9 @@ image bg imgchi12 = "imgchi12.jpg"
 image bg imgchi13 = "imgchi13.jpg"
 
 image bg imgfeng1 = "imgfeng1.png"
-image bg imgfeng2 = "imgfeng2.jpg"
+image bg imgfeng2 = "imgfeng2.png"
 image bg imgfeng3 = "imgfeng3.png"
-image bg imgfeng4 = "imgfeng4.jpg"
+image bg imgfeng4 = "imgfeng4.png"
 image bg imgfeng5 = "imgfeng5.png"
 
 image johndraw = "johndraw.png"
