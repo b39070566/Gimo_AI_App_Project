@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 315: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    xalign 0.5 
-    ^
+File "game/script.rpy", line 357: iterable argument unpacking follows keyword argument unpacking
+    renpy.pause(delay=None, *, hard=true, predict=False, modal=False)
+                              ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Fri Jul 26 21:51:58 2024
+Thu Aug  1 20:58:54 2024
