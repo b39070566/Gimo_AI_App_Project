@@ -2,21 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 718: show statement expects a non-empty block.
-    show imgfeng6:
-                  ^
-
-File "game/script.rpy", line 719: expected statement.
-    xalign 0.5
-            ^
-
-File "game/script.rpy", line 720: expected statement.
-    yalign 0.92
-            ^
-
-File "game/script.rpy", line 740: Line is indented, but the preceding with statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    with move
+File "game/script.rpy", line 786: expected 'comma or end of line' not found.
+    $ renpy.pause(delay=3.5,hard=True)
     ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Thu Aug  8 16:01:21 2024
+Thu Aug  8 21:40:21 2024

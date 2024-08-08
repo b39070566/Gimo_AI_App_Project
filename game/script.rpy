@@ -718,6 +718,8 @@ label chapter2_act2:
     show johndraw:
         xalign 1.0
         yalign 0.92 
+        parallel:
+            linear 0.0 xzoom -1 
 
     voice "voifeng4.wav"
     j "什麼？張學良竟敢...快，準備撤退！"
@@ -725,9 +727,11 @@ label chapter2_act2:
     hide guard
     xiaozhen "委座，我來掩護您，跟我來！"
 
-    show imgfeng6:
+    show wall:
         xalign 0.5
         yalign 0.92
+
+
 
     show johndraw:
         xalign 1.0
@@ -742,17 +746,16 @@ label chapter2_act2:
     with move
 
 
+
     voice "voifeng5.wav"
     j "在那混亂之中，蔣孝鎮背著我翻牆逃走。我甚至來不及穿鞋，是他將自己的鞋子脫下給我穿上。我們分頭逃跑，希望能分散追兵的注意力。"
 
 
-
-
-#    show imgfeng6:
-#        xalign 0.5
-#        yalign 1.2  # 將 yalign 值增加到大於 1,使圖像移動到更低的位置
-#        parallel:
-#            linear 0.1 yalign 3.0  # 將目標 yalign 值增加,使圖像移動到螢幕外
+    show wall:
+            xalign 0.5
+            yalign 0.92
+            parallel:
+                linear 3.0 yalign 1.0  # 將目標 yalign 值增加,使圖像移動到螢幕外
 
     show johndraw:
         yalign 20  
@@ -764,40 +767,39 @@ label chapter2_act2:
             block:
                 ease 0.08 xalign 0.58  
                 ease 0.08 xalign 0.62
-                repeat 10  
+                repeat 6  
     with move
 
     voice "voifeng6.wav"
     j "啊！"
 
-    show johndraw:
-        yalign 20
-        xalign 0.6
-        xzoom -1
-        parallel:
-            linear 2.0 rotate 0
-        
-        rotate 0
-        parallel:
-            ease 0.2 yalign 20
-        parallel:
-            ease 0.5 rotate -360
-        parallel:
-            ease 0.1 xzoom 1
-        rotate 90
-        yalign 10
-        
-        pause 0.5  
-        parallel:
-            ease 0.5 rotate 0  
-            ease 0.5 yalign 10  
-        parallel:
-            linear 1.0 xalign -0.5  
 
+
+    show johndraw at center zorder 1:
+        yalign 20  
+        xalign 0.5
+        xzoom -1
+
+        parallel:
+            linear 0.5 xalign 0.3
+        
+
+        parallel:
+            linear 1.0 rotate 40 
+        rotate 0  
+        
+        
+        parallel:
+            ease 2.0 rotate 0  # 快速調整姿勢站起來
+            ease 0.5 yalign 20  # 回到屏幕外底部，準備離開
+        
+        parallel:
+            linear 3.0 xalign -1.5  # 向左移出屏幕
+        
 
     voice "voifeng7.wav"
     j "我從牆上跳下，重重地摔進了牆外的溝裡，腰部劇痛。但我不敢停下，忍著疼痛繼續向驪山方向逃去。最後，我躲進了一個窪坑裡。"
-
+    $ renpy.pause(delay=2.0,hard=True)
     jump chapter2_act3
 
 
@@ -817,7 +819,8 @@ label chapter2_act3:
 
     show johndraw:
         xalign 1.0
-        yalign 0.92 
+        yalign 0.92
+        xzoom -1 
    
     voice "voifeng8.wav"
     j "你們...你們這是要做什麼？知道自己在犯什麼罪嗎？"
@@ -872,6 +875,7 @@ label chapter2_act4:
     show johndraw:
         xalign 1.0
         yalign 0.92 
+        xzoom -1
     voice "voifeng10.wav"
     j "你們以為用這種方式能解決問題嗎？這只會讓國家更加動盪！你們這是在破壞國家統一！"
 
@@ -887,11 +891,9 @@ label chapter2_act4:
     show johndraw:
         xalign 1.0
         yalign 0.95
-        xzoom 1  
+
         parallel:
-            linear 0.1 xzoom -1  
-        parallel:
-            linear 1.0 xalign 0.5  
+            linear 3.0 xalign 0.5  
     
     yang "但是委座，如果我們不團結一致對外，國家將會面臨更大的危機。請您三思啊！"
 
@@ -927,6 +929,7 @@ label chapter2_act5:
     show johndraw:
         xalign 1.0
         yalign 0.92 
+        xzoom -1
     voice "voifeng12.wav"
     j "張學良，你們的行為雖然錯誤，但出發點我能理解。記住，國家的未來需要我們共同努力。我會考慮你們的建議，但你必須為自己的行為負責。"
 
@@ -938,15 +941,16 @@ label chapter2_act5:
             linear 0.1 xzoom -1  
         parallel:
             linear 1.0 xalign -0.5  
+    with move  
+
+    
+    $ renpy.pause(0.5)
 
     show johndraw:
         xalign 1.0
         yalign 0.95
-        xzoom 1  
         parallel:
-            linear 0.1 xzoom -1  
-        parallel:
-            linear 1.0 xalign 0.5  
+            linear 3.0 xalign 0.5  
 
 
     voice "voifeng13.wav"
