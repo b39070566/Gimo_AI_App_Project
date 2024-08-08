@@ -112,7 +112,7 @@ image bg imgfeng2 = "imgfeng2.png"
 image bg imgfeng3 = "imgfeng3.png"
 image bg imgfeng4 = "imgfeng4.png"
 image bg imgfeng5 = "imgfeng5.png"
-image bg imgfeng6 = "imgfeng6.png"
+
 
 
 image johndraw = "johndraw.png"
@@ -149,6 +149,7 @@ image paper1 = "paper.jpg"
 image flag1 = "flag1.png"
 image dust = "dust.png"
 image dustbroken = "dustbroken.png"
+image wall = "wall.png"
 
 #角色動作的線性變化區域
 transform bounce:
@@ -672,15 +673,15 @@ label chapter2_act1:
     show johndraw:
         xalign 0.1
         yalign 0.95
-        xzoom 1  # 确保开始时是正常方向
+        xzoom 1  
         parallel:
-            linear 0.1 xzoom -1  # 在0.5秒内水平翻转
+            linear 0.1 xzoom -1  
         parallel:
-            linear 1.0 xalign -0.5  # 同时在1秒内移动到左边
+            linear 1.0 xalign -0.5  
 
-    with move  # 这会创建一个移动的过渡效果
+    with move  
 
-    # 暂停一小段时间，让两个动作之间有一个间隔
+    
     $ renpy.pause(0.5)
 
     show xueliang:
@@ -688,7 +689,7 @@ label chapter2_act1:
         yalign 0.92
         linear 1.0 xalign 0.1
 
-    with move  # 再次使用移动过渡效果
+    with move  
 
     xueliang "(內心獨白) 委座啊，您怎麼就不明白呢？現在最重要的是抗日，而不是繼續內戰啊！"
 
@@ -731,11 +732,11 @@ label chapter2_act2:
     show johndraw:
         xalign 1.0
         yalign 0.95
-        xzoom 1  # 确保开始时是正常方向
+        xzoom 1  
         parallel:
-            linear 0.1 xzoom -1  # 在0.1秒内水平翻转
+            linear 0.1 xzoom -1  
         parallel:
-            linear 1.0 xalign 0.6  # 在1秒内移动到中间偏左
+            linear 1.0 xalign 0.6  
             ease 0.5 yalign 20  
 
     with move
@@ -754,16 +755,16 @@ label chapter2_act2:
 #            linear 0.1 yalign 3.0  # 將目標 yalign 值增加,使圖像移動到螢幕外
 
     show johndraw:
-        yalign 20  # 从上一个动作结束的位置开始
+        yalign 20  
         xalign 0.6
         xzoom -1
         parallel:
-            ease 2.0 yalign 0.0  # 继续向上移动，但停在屏幕顶部附近
+            ease 2.0 yalign 0.0  
         parallel:
             block:
-                ease 0.08 xalign 0.58  # 增加震动幅度
+                ease 0.08 xalign 0.58  
                 ease 0.08 xalign 0.62
-                repeat 10  # 减少重复次数以适应更慢的震动
+                repeat 10  
     with move
 
     voice "voifeng6.wav"
@@ -775,7 +776,7 @@ label chapter2_act2:
         xzoom -1
         parallel:
             linear 2.0 rotate 0
-        # 旋轉和躺平
+        
         rotate 0
         parallel:
             ease 0.2 yalign 20
@@ -785,13 +786,13 @@ label chapter2_act2:
             ease 0.1 xzoom 1
         rotate 90
         yalign 10
-        # 新添加的動作：站起來並往左跑
-        pause 0.5  # 躺平後稍作停頓
+        
+        pause 0.5  
         parallel:
-            ease 0.5 rotate 0  # 站起來
-            ease 0.5 yalign 10  # 確保角色站在地面上
+            ease 0.5 rotate 0  
+            ease 0.5 yalign 10  
         parallel:
-            linear 1.0 xalign -0.5  # 同时在1秒内移动到左边
+            linear 1.0 xalign -0.5  
 
 
     voice "voifeng7.wav"
@@ -825,15 +826,15 @@ label chapter2_act3:
     show soldier:
         xalign 0.1
         yalign 0.95
-        xzoom 1  # 确保开始时是正常方向
+        xzoom 1  
         parallel:
-            linear 0.1 xzoom -1  # 在0.5秒内水平翻转
+            linear 0.1 xzoom -1  
         parallel:
-            linear 1.0 xalign -0.5  # 同时在1秒内移动到左边
+            linear 1.0 xalign -0.5  
     
-    with move  # 这会创建一个移动的过渡效果
+    with move 
 
-    # 暂停一小段时间，让两个动作之间有一个间隔
+    
     $ renpy.pause(0.5)
 
     show xueliang:
@@ -877,20 +878,20 @@ label chapter2_act4:
     show xueliang:
         xalign 0.1
         yalign 0.95
-        xzoom 1  # 确保开始时是正常方向
+        xzoom 1  
         parallel:
-            linear 0.1 xzoom -1  # 在0.5秒内水平翻转
+            linear 0.1 xzoom -1  
         parallel:
-            linear 1.0 xalign -0.5  # 同时在1秒内移动到左边
+            linear 1.0 xalign -0.5  
 
     show johndraw:
         xalign 1.0
         yalign 0.95
-        xzoom 1  # 确保开始时是正常方向
+        xzoom 1  
         parallel:
-            linear 0.1 xzoom -1  # 在0.5秒内水平翻转
+            linear 0.1 xzoom -1  
         parallel:
-            linear 1.0 xalign 0.5  # 同时在1秒内移动到左边
+            linear 1.0 xalign 0.5  
     
     yang "但是委座，如果我們不團結一致對外，國家將會面臨更大的危機。請您三思啊！"
 
@@ -932,20 +933,20 @@ label chapter2_act5:
     show xueliang:
         xalign 0.1
         yalign 0.95
-        xzoom 1  # 确保开始时是正常方向
+        xzoom 1  
         parallel:
-            linear 0.1 xzoom -1  # 在0.5秒内水平翻转
+            linear 0.1 xzoom -1  
         parallel:
-            linear 1.0 xalign -0.5  # 同时在1秒内移动到左边
+            linear 1.0 xalign -0.5  
 
     show johndraw:
         xalign 1.0
         yalign 0.95
-        xzoom 1  # 确保开始时是正常方向
+        xzoom 1  
         parallel:
-            linear 0.1 xzoom -1  # 在0.5秒内水平翻转
+            linear 0.1 xzoom -1  
         parallel:
-            linear 1.0 xalign 0.5  # 同时在1秒内移动到左边
+            linear 1.0 xalign 0.5  
 
 
     voice "voifeng13.wav"
