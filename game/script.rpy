@@ -1,4 +1,4 @@
-﻿init python:
+init python:
     import random
     import time
     import requests
@@ -112,6 +112,8 @@ image bg imgfeng2 = "imgfeng2.png"
 image bg imgfeng3 = "imgfeng3.png"
 image bg imgfeng4 = "imgfeng4.png"
 image bg imgfeng5 = "imgfeng5.png"
+image bg imgfeng6 = "imgfeng6.png"
+
 
 image johndraw = "johndraw.png"
 image maofumei = "maofumei.png"
@@ -626,13 +628,17 @@ label chapter1_act11:
 # 第一幕：事變前夕
 label chapter2_act1:
     scene bg imgfeng1
-
+    
     with fade
     $ now_venue = place("西安行營")
     "1936年12月11日，西安行營"
 
     show screen location_ui
-    show johndraw at left
+
+    show johndraw:
+        xalign 0.5
+        yalign 0.92
+        
 
     voice "voifeng1.wav"
     j "1936年12月11日，我察覺到張學良的行為有些異常，這引起了我的警覺。我在日記中寫道：『今日漢卿形色急遽，精神恍惚，甚覺有異。』但我沒想到第二天凌晨就發生了驚人的變故。"
@@ -640,13 +646,41 @@ label chapter2_act1:
     voice "voifeng2.wav"
     j "張將軍，你最近看起來心事重重啊。是否有什麼困擾？"
 
-    show xueliang at right
+    show johndraw:
+        xalign 0.5
+        yalign 0.92
+        linear 1.0 xalign 0.1
+
+    show xueliang:
+        xalign 1.0
+        yalign 0.92 
+        
     xueliang "委座，只是有些疲勞罷了，請不必擔心。我們在剿共問題上或許有些分歧，但這並不影響我對您的忠誠。"
 
     voice "voifeng3.wav"
     j "希望如此。記得好好休息，我們還有很多事情要做。明天我們還要討論新一輪的剿共計劃。"
 
-    hide xueliang
+    show johndraw:
+        xalign 0.1
+        yalign 0.95
+        xzoom 1  # 确保开始时是正常方向
+        parallel:
+            linear 0.1 xzoom -1  # 在0.5秒内水平翻转
+        parallel:
+            linear 1.0 xalign -0.5  # 同时在1秒内移动到左边
+
+    with move  # 这会创建一个移动的过渡效果
+
+    # 暂停一小段时间，让两个动作之间有一个间隔
+    $ renpy.pause(0.5)
+
+    show xueliang:
+        xalign 1.0
+        yalign 0.92
+        linear 1.0 xalign 0.1
+
+    with move  # 再次使用移动过渡效果
+
     xueliang "(內心獨白) 委座啊，您怎麼就不明白呢？現在最重要的是抗日，而不是繼續內戰啊！"
 
     jump chapter2_act2
@@ -661,23 +695,95 @@ label chapter2_act2:
     "1936年12月12日凌晨，臨潼華清池"
     "（突然槍聲四起，喊叫聲不斷）"
 
-    show guard at left
+    show guard:
+        xalign 0.5
+        yalign 0.92
     guard "委座！有人襲擊，是東北軍！我們必須立刻撤離！"
 
-    show johndraw at right
+    show guard:
+        xalign 0.5
+        yalign 0.92
+        linear 1.0 xalign 0.1
+
+    show johndraw:
+        xalign 1.0
+        yalign 0.92 
+
     voice "voifeng4.wav"
     j "什麼？張學良竟敢...快，準備撤退！"
 
     hide guard
-    show xiaozhen at left
     xiaozhen "委座，我來掩護您，跟我來！"
+
+    show imgfeng6:
+        xalign 0.5
+        yalign 0.92
+
+    show johndraw:
+        xalign 1.0
+        yalign 0.95
+        xzoom 1  # 确保开始时是正常方向
+        parallel:
+            linear 0.1 xzoom -1  # 在0.1秒内水平翻转
+        parallel:
+            linear 1.0 xalign 0.6  # 在1秒内移动到中间偏左
+            ease 0.5 yalign 20  
+
+    with move
+
 
     voice "voifeng5.wav"
     j "在那混亂之中，蔣孝鎮背著我翻牆逃走。我甚至來不及穿鞋，是他將自己的鞋子脫下給我穿上。我們分頭逃跑，希望能分散追兵的注意力。"
 
-    hide xiaozhen
+
+
+
+#    show imgfeng6:
+#        xalign 0.5
+#        yalign 1.2  # 將 yalign 值增加到大於 1,使圖像移動到更低的位置
+#        parallel:
+#            linear 0.1 yalign 3.0  # 將目標 yalign 值增加,使圖像移動到螢幕外
+
+    show johndraw:
+        yalign 20  # 从上一个动作结束的位置开始
+        xalign 0.6
+        xzoom -1
+        parallel:
+            ease 2.0 yalign 0.0  # 继续向上移动，但停在屏幕顶部附近
+        parallel:
+            block:
+                ease 0.08 xalign 0.58  # 增加震动幅度
+                ease 0.08 xalign 0.62
+                repeat 10  # 减少重复次数以适应更慢的震动
+    with move
+
     voice "voifeng6.wav"
     j "啊！"
+
+    show johndraw:
+        yalign 20
+        xalign 0.6
+        xzoom -1
+        parallel:
+            linear 2.0 rotate 0
+        # 旋轉和躺平
+        rotate 0
+        parallel:
+            ease 0.2 yalign 20
+        parallel:
+            ease 0.5 rotate -360
+        parallel:
+            ease 0.1 xzoom 1
+        rotate 90
+        yalign 10
+        # 新添加的動作：站起來並往左跑
+        pause 0.5  # 躺平後稍作停頓
+        parallel:
+            ease 0.5 rotate 0  # 站起來
+            ease 0.5 yalign 10  # 確保角色站在地面上
+        parallel:
+            linear 1.0 xalign -0.5  # 同时在1秒内移动到左边
+
 
     voice "voifeng7.wav"
     j "我從牆上跳下，重重地摔進了牆外的溝裡，腰部劇痛。但我不敢停下，忍著疼痛繼續向驪山方向逃去。最後，我躲進了一個窪坑裡。"
@@ -692,15 +798,40 @@ label chapter2_act3:
 
     $ now_venue.location = "華清池附近的山坡"
     "華清池附近的山坡，天色漸明"
-    show soldier at left
+
+    show soldier:
+        xalign 0.5
+        yalign 0.92
+
     soldier "在這裡！我們找到蔣委員長了！"
 
-    show johndraw at right
+    show johndraw:
+        xalign 1.0
+        yalign 0.92 
+   
     voice "voifeng8.wav"
     j "你們...你們這是要做什麼？知道自己在犯什麼罪嗎？"
 
-    hide soldier
-    show xueliang at left
+
+    show soldier:
+        xalign 0.1
+        yalign 0.95
+        xzoom 1  # 确保开始时是正常方向
+        parallel:
+            linear 0.1 xzoom -1  # 在0.5秒内水平翻转
+        parallel:
+            linear 1.0 xalign -0.5  # 同时在1秒内移动到左边
+    
+    with move  # 这会创建一个移动的过渡效果
+
+    # 暂停一小段时间，让两个动作之间有一个间隔
+    $ renpy.pause(0.5)
+
+    show xueliang:
+        xalign 1.0
+        yalign 0.92
+        linear 1.0 xalign 0.1
+    
     xueliang "委座，請原諒我們的無禮。我知道這樣做很冒險，但這是為了國家的未來。我們只是想請您聽聽我們的想法。"
 
     voice "voifeng9.wav"
@@ -717,19 +848,45 @@ label chapter2_act4:
     $ now_venue.location = "西安新城大樓會議室"
     "西安新城大樓會議室"
 
-    show xueliang at left
+    show xueliang:
+        xalign 0.5
+        yalign 0.92
+    
     xueliang "委座，我們苦苦哀求您停止內戰已經很久了。現在日本虎視眈眈，我們再不團結起來抗日，國家就真的危險了！"
 
-    show johndraw at right
+    show xueliang:
+        xalign 0.5
+        yalign 0.92
+        linear 1.0 xalign 0.1
+
+    show johndraw:
+        xalign 1.0
+        yalign 0.92 
     voice "voifeng10.wav"
     j "你們以為用這種方式能解決問題嗎？這只會讓國家更加動盪！你們這是在破壞國家統一！"
 
-    hide xueliang
-    show yang at left
+    show xueliang:
+        xalign 0.1
+        yalign 0.95
+        xzoom 1  # 确保开始时是正常方向
+        parallel:
+            linear 0.1 xzoom -1  # 在0.5秒内水平翻转
+        parallel:
+            linear 1.0 xalign -0.5  # 同时在1秒内移动到左边
+
+    show johndraw:
+        xalign 1.0
+        yalign 0.95
+        xzoom 1  # 确保开始时是正常方向
+        parallel:
+            linear 0.1 xzoom -1  # 在0.5秒内水平翻转
+        parallel:
+            linear 1.0 xalign 0.5  # 同时在1秒内移动到左边
+    
     yang "但是委座，如果我們不團結一致對外，國家將會面臨更大的危機。請您三思啊！"
 
-    hide yang
-    show zhou at left
+    
+    
     zhou "蔣委員長，我代表中國共產黨，也希望能與您坦誠相談。我們願意在您的領導下，共同抗日。"
 
     voice "voifeng11.wav"
@@ -745,13 +902,42 @@ label chapter2_act5:
 
     $ now_venue.location = "西安機場"
     "1936年12月25日，西安機場"
-
-    show xueliang at left
+        
+    show xueliang:
+        xalign 0.5
+        yalign 0.92
+    
     xueliang "委座，我們已經準備好送您回南京了。我知道我的行為可能會招致嚴重後果，但為了國家，我願意承擔。"
 
-    show johndraw at right
+    show xueliang:
+        xalign 0.5
+        yalign 0.92
+        linear 1.0 xalign 0.1
+
+    show johndraw:
+        xalign 1.0
+        yalign 0.92 
     voice "voifeng12.wav"
     j "張學良，你們的行為雖然錯誤，但出發點我能理解。記住，國家的未來需要我們共同努力。我會考慮你們的建議，但你必須為自己的行為負責。"
+
+    show xueliang:
+        xalign 0.1
+        yalign 0.95
+        xzoom 1  # 确保开始时是正常方向
+        parallel:
+            linear 0.1 xzoom -1  # 在0.5秒内水平翻转
+        parallel:
+            linear 1.0 xalign -0.5  # 同时在1秒内移动到左边
+
+    show johndraw:
+        xalign 1.0
+        yalign 0.95
+        xzoom 1  # 确保开始时是正常方向
+        parallel:
+            linear 0.1 xzoom -1  # 在0.5秒内水平翻转
+        parallel:
+            linear 1.0 xalign 0.5  # 同时在1秒内移动到左边
+
 
     voice "voifeng13.wav"
     j "1936年12月25日，我終於重獲自由。這次西安事變，讓我深刻認識到國內的矛盾和挑戰，也讓我更加重視對外的抗戰準備。這段經歷對我來說，既是挑戰，也是轉機。"
