@@ -113,7 +113,11 @@ image bg imgfeng3 = "imgfeng3.png"
 image bg imgfeng4 = "imgfeng4.png"
 image bg imgfeng5 = "imgfeng5.png"
 
-
+image bg imghui1 = "imghui1.png"
+image bg imghui2 = "imghui2.png"
+image bg imghui3 = "imghui3.png"
+image bg imghui4 = "imghui4.png"
+image bg imghui5 = "imghui5.png"
 
 image johndraw = "johndraw.png"
 image maofumei = "maofumei.png"
@@ -181,6 +185,20 @@ transform right_to_left:
     xzoom -1
     linear 1.0 xalign 1.0
     xzoom 1
+
+transform left_to_middle:
+    yalign 1.0
+    linear 0.5 xalign 0.2
+    
+transform right_to_middle:
+    yalign 1.0
+    xalign 1.0
+    linear 0.5 xalign 0.75
+
+transform middle_to_left:
+    yalign 1.0
+    xalign 0.5
+    linear 0.5 xalign 0.25
 
 label battle_system:
     $ player = Fighter("我方士兵", level=1, max_hp=20, hp=20, max_mp=10, mp=10, attack=3, defense=2)
