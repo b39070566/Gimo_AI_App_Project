@@ -85,6 +85,10 @@ define soldier = Character("東北軍士兵")
 define yang = Character("楊虎城")
 define zhou = Character("周恩來")
 
+define chencheng = Character("陳誠")
+define heyingqin = Character("何應欽")
+define zhangzhizhong = Character("張治中")
+
 
 define audio.gamemusic = "audio/chapter1.wav"
 
@@ -118,6 +122,24 @@ image bg imghui2 = "imghui2.png"
 image bg imghui3 = "imghui3.png"
 image bg imghui4 = "imghui4.png"
 image bg imghui5 = "imghui5.png"
+
+image bg imgyalan1 = "imgyalan1.png"
+image bg imgyalan2 = "imgyalan2.png"
+image bg imgyalan3 = "imgyalan3.png"
+image bg imgyalan4 = "imgyalan4.png"
+image bg imgyalan5 = "imgyalan5.png"
+image bg imgyalan6 = "imgyalan6.png"
+image bg imgyalan7 = "imgyalan7.png"
+image bg imgyalan8 = "imgyalan8.png"
+image bg imgyalan9 = "imgyalan9.png"
+image bg imgyalan10 = "imgyalan10.png"
+image bg imgyalan11 = "imgyalan11.png"
+image bg imgyalan12 = "imgyalan12.png"
+image bg imgyalan13 = "imgyalan13.png"
+image bg imgyalan14 = "imgyalan14.png"
+image bg imgyalan15 = "imgyalan15.png"
+
+
 
 image johndraw = "johndraw.png"
 image maofumei = "maofumei.png"
@@ -199,6 +221,11 @@ transform middle_to_left:
     yalign 1.0
     xalign 0.5
     linear 0.5 xalign 0.25
+
+transform right_:
+    yalign 1.0
+    xalign 0.75
+
 
 label battle_system:
     $ player = Fighter("我方士兵", level=1, max_hp=20, hp=20, max_mp=10, mp=10, attack=3, defense=2)
@@ -663,9 +690,7 @@ label chapter2_act1:
 
     show screen location_ui
 
-    show johndraw:
-        xalign 0.5
-        yalign 0.92
+    show johndraw
         
 
     voice "voifeng1.wav"
@@ -674,14 +699,16 @@ label chapter2_act1:
     voice "voifeng2.wav"
     j "張將軍，你最近看起來心事重重啊。是否有什麼困擾？"
 
-    show johndraw:
+    show johndraw :
         xalign 0.5
-        yalign 0.92
-        linear 1.0 xalign 0.1
+        xzoom -1
+        linear 0.5 xalign 0.25
+        xzoom 1
 
-    show xueliang:
-        xalign 1.0
-        yalign 0.92 
+    with move
+    $ renpy.pause(0.2)
+    
+    show xueliang at right_to_middle
         
     xueliang "委座，只是有些疲勞罷了，請不必擔心。我們在剿共問題上或許有些分歧，但這並不影響我對您的忠誠。"
 
@@ -689,13 +716,10 @@ label chapter2_act1:
     j "希望如此。記得好好休息，我們還有很多事情要做。明天我們還要討論新一輪的剿共計劃。"
 
     show johndraw:
-        xalign 0.1
-        yalign 0.95
-        xzoom 1  
-        parallel:
-            linear 0.1 xzoom -1  
-        parallel:
-            linear 1.0 xalign -0.5  
+        xalign 0.25 
+        xzoom -1
+        linear 1.0 xalign -0.5
+
 
     with move  
 
@@ -704,8 +728,7 @@ label chapter2_act1:
 
     show xueliang:
         xalign 1.0
-        yalign 0.92
-        linear 1.0 xalign 0.1
+        linear 1.0 xalign 0.25
 
     with move  
 
@@ -723,101 +746,33 @@ label chapter2_act2:
     "1936年12月12日凌晨，臨潼華清池"
     "（突然槍聲四起，喊叫聲不斷）"
 
-    show guard:
-        xalign 0.5
-        yalign 0.92
+    show soldier
     guard "委座！有人襲擊，是東北軍！我們必須立刻撤離！"
 
-    show guard:
-        xalign 0.5
-        yalign 0.92
-        linear 1.0 xalign 0.1
+    hide soldier
 
-    show johndraw:
-        xalign 1.0
-        yalign 0.92 
-        parallel:
-            linear 0.0 xzoom -1 
+    show johndraw 
 
     voice "voifeng4.wav"
     j "什麼？張學良竟敢...快，準備撤退！"
 
-    hide guard
+    
     xiaozhen "委座，我來掩護您，跟我來！"
 
-    show wall:
-        xalign 0.5
-        yalign 0.92
+    show wall
 
-
-
-    show johndraw:
-        xalign 1.0
-        yalign 0.95
-        xzoom 1  
-        parallel:
-            linear 0.1 xzoom -1  
-        parallel:
-            linear 1.0 xalign 0.6  
-            ease 0.5 yalign 20  
-
-    with move
-
-
+    show johndraw at left
 
     voice "voifeng5.wav"
     j "在那混亂之中，蔣孝鎮背著我翻牆逃走。我甚至來不及穿鞋，是他將自己的鞋子脫下給我穿上。我們分頭逃跑，希望能分散追兵的注意力。"
 
 
-    show wall:
-            xalign 0.5
-            yalign 0.92
-            parallel:
-                linear 3.0 yalign 1.0  # 將目標 yalign 值增加,使圖像移動到螢幕外
-
-    show johndraw:
-        yalign 20  
-        xalign 0.6
-        xzoom -1
-        parallel:
-            ease 2.0 yalign 0.0  
-        parallel:
-            block:
-                ease 0.08 xalign 0.58  
-                ease 0.08 xalign 0.62
-                repeat 6  
-    with move
-
     voice "voifeng6.wav"
     j "啊！"
 
 
-
-    show johndraw at center zorder 1:
-        yalign 20  
-        xalign 0.5
-        xzoom -1
-
-        parallel:
-            linear 0.5 xalign 0.3
-        
-
-        parallel:
-            linear 1.0 rotate 40 
-        rotate 0  
-        
-        
-        parallel:
-            ease 2.0 rotate 0  # 快速調整姿勢站起來
-            ease 0.5 yalign 20  # 回到屏幕外底部，準備離開
-        
-        parallel:
-            linear 3.0 xalign -1.5  # 向左移出屏幕
-        
-
     voice "voifeng7.wav"
     j "我從牆上跳下，重重地摔進了牆外的溝裡，腰部劇痛。但我不敢停下，忍著疼痛繼續向驪山方向逃去。最後，我躲進了一個窪坑裡。"
-    $ renpy.pause(delay=2.0,hard=True)
     jump chapter2_act3
 
 
@@ -829,41 +784,28 @@ label chapter2_act3:
     $ now_venue.location = "華清池附近的山坡"
     "華清池附近的山坡，天色漸明"
 
-    show soldier:
-        xalign 0.5
-        yalign 0.92
+    show soldier
 
     soldier "在這裡！我們找到蔣委員長了！"
 
-    show johndraw:
-        xalign 1.0
-        yalign 0.92
-        xzoom -1 
+    hide soldier
+
+    show johndraw
    
     voice "voifeng8.wav"
     j "你們...你們這是要做什麼？知道自己在犯什麼罪嗎？"
 
 
-    show soldier:
-        xalign 0.1
-        yalign 0.95
-        xzoom 1  
-        parallel:
-            linear 0.1 xzoom -1  
-        parallel:
-            linear 1.0 xalign -0.5  
-    
-    with move 
+    hide johndraw
 
-    
-    $ renpy.pause(0.5)
-
-    show xueliang:
-        xalign 1.0
-        yalign 0.92
-        linear 1.0 xalign 0.1
+    show xueliang
     
     xueliang "委座，請原諒我們的無禮。我知道這樣做很冒險，但這是為了國家的未來。我們只是想請您聽聽我們的想法。"
+
+
+    hide xueliang
+
+    show johndraw
 
     voice "voifeng9.wav"
     j "張學良！你可知道這樣做的後果？"
@@ -879,39 +821,18 @@ label chapter2_act4:
     $ now_venue.location = "西安新城大樓會議室"
     "西安新城大樓會議室"
 
-    show xueliang:
-        xalign 0.5
-        yalign 0.92
+    show xueliang
+    
     
     xueliang "委座，我們苦苦哀求您停止內戰已經很久了。現在日本虎視眈眈，我們再不團結起來抗日，國家就真的危險了！"
 
-    show xueliang:
-        xalign 0.5
-        yalign 0.92
-        linear 1.0 xalign 0.1
+    hide xueliang
 
-    show johndraw:
-        xalign 1.0
-        yalign 0.92 
-        xzoom -1
+    show johndraw
+
     voice "voifeng10.wav"
     j "你們以為用這種方式能解決問題嗎？這只會讓國家更加動盪！你們這是在破壞國家統一！"
-
-    show xueliang:
-        xalign 0.1
-        yalign 0.95
-        xzoom 1  
-        parallel:
-            linear 0.1 xzoom -1  
-        parallel:
-            linear 1.0 xalign -0.5  
-
-    show johndraw:
-        xalign 1.0
-        yalign 0.95
-
-        parallel:
-            linear 3.0 xalign 0.5  
+  
     
     yang "但是委座，如果我們不團結一致對外，國家將會面臨更大的危機。請您三思啊！"
 
@@ -933,42 +854,16 @@ label chapter2_act5:
     $ now_venue.location = "西安機場"
     "1936年12月25日，西安機場"
         
-    show xueliang:
-        xalign 0.5
-        yalign 0.92
+    show xueliang
     
     xueliang "委座，我們已經準備好送您回南京了。我知道我的行為可能會招致嚴重後果，但為了國家，我願意承擔。"
 
-    show xueliang:
-        xalign 0.5
-        yalign 0.92
-        linear 1.0 xalign 0.1
+    hide xueliang
 
-    show johndraw:
-        xalign 1.0
-        yalign 0.92 
-        xzoom -1
+    show johndraw
+
     voice "voifeng12.wav"
     j "張學良，你們的行為雖然錯誤，但出發點我能理解。記住，國家的未來需要我們共同努力。我會考慮你們的建議，但你必須為自己的行為負責。"
-
-    show xueliang:
-        xalign 0.1
-        yalign 0.95
-        xzoom 1  
-        parallel:
-            linear 0.1 xzoom -1  
-        parallel:
-            linear 1.0 xalign -0.5  
-    with move  
-
-    
-    $ renpy.pause(0.5)
-
-    show johndraw:
-        xalign 1.0
-        yalign 0.95
-        parallel:
-            linear 3.0 xalign 0.5  
 
 
     voice "voifeng13.wav"
@@ -980,4 +875,588 @@ label chapter2_act5:
     voice "voifeng15.wav"
     j "我知道，未來還有更艱巨的任務等待著我，等待著整個中國。西安事變後，我更加堅定了抗日的決心，也開始重新思考國內政策。這次經歷，無疑是我政治生涯中的一個重要轉折點。"
 
+    jump chapter3_act1
+
+
+#第一幕：七七事變
+label chapter3_act1:
+    scene bg imgyalan1
+    with fade
+    $ now_venue = place("南京，國民政府軍事委員會")
+    "1937年7月7日"
+
+    show johndraw
+
+    voice "voiyalan1.wav"
+    j "1937年7月7日晚，駐紮在豐台的日軍在盧溝橋附近進行所謂的「夜間演習」。這次演習成為了全面抗戰的導火線。"
+
+    voice "voiyalan2.wav"
+    j "諸位，日軍已經在華北發動全面進攻，我們必須立即做出反應。這不再是局部衝突，而是關乎國家存亡的戰爭。"
+
+    show johndraw:
+        xalign 0.5
+        xzoom -1
+        linear 0.5 xalign 0.25
+        xzoom 1
+
+    with move
+    $ renpy.pause(0.2)
+
+    show heying at right_to_middle
+        
+    heyingqin "委座，是否考慮先與日方談判，爭取時間？我們的軍備還不足以應對全面戰爭。"
+
+    voice "voiyalan3.wav"
+    j "談判可以進行，但絕不能放棄抵抗。發布全國總動員令，我們要讓全國上下都明白，這是一場關乎民族存亡的戰爭。何應欽，你立即安排各戰區的防禦部署。"
+
+    hide heying
+
+    show chencheng at right_to_middle
+
+    chencheng "委座，我認為我們應該採取積極防禦的策略。在正面戰場上消耗日軍的實力，同時在敵後發動游擊戰。"
+
+    voice "voiyalan4.wav"
+    j "好主意。陳誠，你負責華北戰場，要靈活運用這種策略。張治中，你負責沿海地區的防務，特別是上海周邊。"
+
+    hide chencheng
+
+    show zhangzhizhong at right_to_middle
+
+    zhangzhizhong "是，委座。我會立即著手部署。"
+
+    voice "voiyalan5.wav"
+    j "記住，我們可能會失敗，可能會遭受巨大的損失，但我們絕不會屈服！我們要讓全世界都看到中國人民的決心！"
+
+    jump chapter3_act2
+
+
+#第二幕：淞滬會戰
+label chapter3_act2:
+    scene bg imgyalan2
+    with fade
+    $ now_venue.location = "上海指揮部"
+    "1937年8月，上海指揮部"
+
+    show johndraw
+
+    voice "voiyalan6.wav"
+    j "為了分散日軍注意力，減輕華北戰場的壓力，我決定在上海發動一場大規模戰役。這是一個冒險的決定，但我們別無選擇。"
+
+    voice "voiyalan7.wav"
+    j "張治中，你來指揮這次淞滬會戰。記住，我們不僅是在打仗，更是在向世界展示中國人民的抗戰決心。"
+
+    hide johndraw
+
+    show zhangzhizhong
+
+    zhangzhizhong "是，委座。我們的德械師已經做好了戰鬥準備，一定能給日軍一個迎頭痛擊！"
+
+    hide zhangzhizhong
+
+    show heyingqin
+
+    heyingqin "但是委座，我們在裝備上還是有劣勢。日軍的海空優勢明顯，我們可能會遭受重創。"
+
+    hide heyingqin
+
+    show johndraw
+
+#    voice "voiyalan8.wav"
+    j "我明白這個風險。但是我們有地利，有民心。更重要的是，我們是在保衛自己的國家。這種精神力量是無法估量的。"
+
+    hide johndraw
+
+    show chencheng
+
+    chencheng "我同意委座的看法。我們必須在上海一戰，否則日軍很快就會威脅南京了。"
+
+    hide chencheng
+
+    show johndraw
+
+#    voice "voiyalan9.wav"
+    j "沒錯。張治中，你要充分利用租界的特殊地位，在國際社會面前展示日軍的暴行。"
+
+    scene bg imgyalan3
+    with fade
+
+    $ now_venue.location = "上海戰場"
+    "上海戰場"
+
+    show zhangzhizhong
+
+    zhangzhizhong "弟兄們，堅持住！每一條街道，每一座房屋，都要與敵人爭奪！"
+
+    soldier "是，長官！我們誓死保衛上海！"
+
+    zhangzhizhong "報告委座，我軍在羅店一線給予日軍沈重打擊，但敵人正在增兵，形勢嚴峻。"
+
+    hide zhangzhizhong
+
+    show johndraw
+
+#    voice "voiyalan10.wav"
+    j "堅持住，張將軍。我會調集更多部隊支援上海。記住，我們是在為時間而戰。"
+
+#    voice "voiyalan11.wav"
+    j "淞滬會戰持續了三個月之久，我們的軍隊表現出了前所未有的勇氣和決心。雖然最終上海還是陷落了，但我們的頑強抵抗大大延緩了日軍的進攻步伐，為後續的戰略調整爭取了寶貴的時間。"
+
+    jump chapter3_act3
+
+
+#第三幕：南京保衛戰
+label chapter3_act3:
+    scene bg imgyalan4
+    with fade
+
+    $ now_venue.location = "南京指揮部"
+    "1937年12月，南京指揮部"
+
+    show johndraw
+
+#    voice "voiyalan12.wav"
+    j "1937年12月，日軍向南京推進。我面臨著一個艱難的抉擇。"
+
+#    voice "voiyalan13.wav"
+    j "諸位，南京是我們的首都，絕不能輕易放棄。但我們也要考慮長遠的抗戰大局。"
+
+    hide johndraw
+
+    show heyingqin
+
+    heyingqin "委座，我們是否應該考慮將政府遷往其他地方？敵軍兵鋒正盛，我們未必能守住南京。"
+
+    hide heyingqin
+
+    show johndraw
+
+#    voice "voiyalan14.wav"
+    j "是的，政府必須轉移，以保存實力。但我們絕不能放棄南京的防禦。陳誠，你留下來指揮防衛戰。"
+
+    hide johndraw
+
+    show chencheng
+
+    chencheng "是，委座。我們會死守南京，絕不讓日軍輕易得逞！"
+
+    hide chencheng
+
+    show zhangzhizhong
+
+    zhangzhizhong "委座，我建議我們在撤退時實行堅壁清野政策，不給日軍留下任何可用之物。"
+
+    hide zhangzhizhong
+
+    show johndraw
+
+#    voice "voiyalan15.wav"
+    j "好主意。但要注意保護平民。我們打仗，是為了保護百姓，而不是為了增加他們的苦難。"
+
+#    voice "voiyalan16.wav"
+    j "12月13日，南京陷落。日軍在南京犯下了令人髮指的暴行，這就是後來震驚世界的南京大屠殺。"
+
+    scene bg imgyalan5
+    with fade
+
+    $ now_venue.location = "重慶臨時指揮部"
+    "重慶臨時指揮部"
+
+    show johndraw
+
+#    voice "voiyalan17.wav"
+    j "南京的慘劇讓我們心如刀割，但也更堅定了我們抗戰到底的決心。從現在起，我們要實行持久戰略，消耗日軍的實力，等待國際局勢的變化。"
+
+    hide johndraw
+
+    show heyingqin
+
+    heyingqin "委座英明。我們確實需要調整戰略了。"
+
+    hide heyingqin
+
+    show chencheng
+
+    chencheng "我建議我們加強敵後游擊戰，擾亂日軍後勤補給線。"
+
+    hide chencheng
+
+    show johndraw
+
+#    voice "voiyalan18.wav"
+    j "很好。陳誠，你負責組織和協調各地的游擊隊。何應欽，你負責與國際社會聯絡，爭取更多支持。張治中，你負責重新整編我們的部隊，為下一階段的反攻做準備。"
+
+    jump chapter3_act4
+
+#第四幕：武漢會戰
+label chapter3_act4:
+    scene bg imgyalan6
+    with fade
+
+    $ now_venue.location = "武漢指揮部"
+    "1938年，武漢指揮部"
+
+    show johndraw
+
+#    voice "voiyalan19.wav"
+    j "1938年，日軍開始向武漢發起進攻。武漢是我們的臨時首都，也是抗戰的重要基地，我們必須全力防守。"
+
+#    voice "voiyalan20.wav"
+    j "諸位，武漢是我們最後的防線。我們必須不惜一切代價守住它！"
+
+    hide johndraw
+
+    show chencheng
+
+    chencheng "是，委座！我們已經做好了全面防守的準備。我們在武漢周圍構築了多道防線，並且集中了我們最精銳的部隊。"
+
+    hide chencheng
+
+    show heyingqin
+
+    heyingqin "委座，根據情報，日軍這次投入了大量兵力，他們顯然是想一舉拿下武漢。"
+
+    hide heyingqin
+
+    show zhangzhizhong
+
+    zhangzhizhong "我們已經動員了全城的百姓參與防禦工事的修築，全民皆兵！"
+
+    hide zhangzhizhong
+
+    show johndraw
+
+#    voice "voiyalan21.wav"
+    j "很好。我們還要充分利用地形優勢。長江、漢水，這些天然屏障要成為日軍的噩夢。"
+
+    scene bg imgyalan7
+
+    with fade
+
+    $ now_venue.location = "武漢戰場"
+    "武漢戰場"
+
+    show chencheng
+
+    chencheng "弟兄們，堅持住！我們要讓日本人付出慘重的代價！"
+
+    hide chencheng
+
+    show zhangzhizhong
+
+    zhangzhizhong "陳將軍，日軍的炮火太猛烈了，我們的防線快要撐不住了！"
+
+    hide zhangzhizhong
+
+    show chencheng
+
+    chencheng "不要怕！記住我們身後就是武漢，就是全中國的希望。死戰不退！"
+
+    hide chencheng
+
+    show johndraw
+
+#    voice "voiyalan22.wav"
+    j "儘管我們奮勇抵抗，但最終還是不得不放棄武漢。然而，這場戰役極大地消耗了日軍的實力，為我們的持久戰略贏得了時間。"
+
+    scene bg imgyalan8
+    with fade
+
+    $ now_venue.location = "撤退路上"
+    "撤退路上"
+
+    show johndraw
+
+#    voice "voiyalan23.wav"
+    j "諸位，武漢的失守並不意味著我們的失敗。相反，這標誌著我們抗戰進入了一個新的階段。我們將採取持久戰略，消耗日軍的實力，等待國際局勢的變化。"
+
+    hide johndraw
+
+    show heyingqin
+
+    heyingqin "委座，接下來我們該如何部署？"
+
+    hide heyingqin
+
+    show johndraw
+
+#    voice "voiyalan24.wav"
+    j "陳誠，你負責組織游擊戰，騷擾日軍後方。張治中，你負責重新整編我們的部隊。何應欽，你負責與國際社會聯絡，爭取更多支持。"
+
+    hide johndraw
+
+    show chencheng
+    show zhangzhizhong at left
+    show heyingqin at right
+
+    chencheng "是，委座！"
+    zhangzhizhong "是，委座！"
+    heyingqin "是，委座！"
+
+    hide chencheng
+    hide zhangzhizhong
+    hide heyingqin
+
+    show johndraw
+
+#    voice "voiyalan25.wav"
+    j "記住，這是一條艱難的道路，但我相信，只要我們堅持下去，最終的勝利一定是屬於我們的。"
+
+    jump chapter3_act5
+
+#第五幕：長沙會戰
+label chapter3_act5:
+    scene bg imgyalan9
+    with fade
+
+    $ now_venue.location = "長沙指揮部"
+    "1939年，長沙指揮部"
+
+    show johndraw
+
+#    voice "voiyalan26.wav"
+    j "1939年，日軍向長沙發起進攻。這是一個重要的轉折點，我們終於在正面戰場上取得了重大勝利。"
+
+#    voice "voiyalan27.wav"
+    j "陳誠，長沙的防務就交給你了。記住，這可能是我們扭轉戰局的機會。"
+
+    hide johndraw
+
+    show chencheng
+
+    chencheng "請委座放心，我一定不辱使命！我已經制定了一個詳細的防禦計劃。"
+
+    hide chencheng
+
+    show heyingqin
+
+    heyingqin "我們的情報顯示，日軍這次投入了約10萬兵力，由岡村寧次指揮。"
+
+    hide heyingqin
+
+    show zhangzhizhong
+
+    zhangzhizhong "但我們已經做好了充分的準備，相信能給日軍一個迎頭痛擊。"
+
+    hide zhangzhizhong
+
+    show johndraw
+
+#    voice "voiyalan28.wav"
+    j "很好。記住，我們不僅要防守，更要主動出擊。要充分利用地形優勢，實施誘敵深入、圍而殲之的策略。"
+
+    scene bg imgyalan10
+    with fade
+
+    $ now_venue.location = "長沙戰場"
+    "長沙戰場"
+
+    show chencheng
+
+    chencheng "按照計劃，先誘敵深入，然後實施包圍！"
+
+    hide chencheng
+
+    show zhangzhizhong
+
+    zhangzhizhong "陳將軍，日軍已經進入我們預設的包圍圈了！"
+
+    hide zhangzhizhong
+
+    show chencheng
+
+    chencheng "好！命令各部隊立即展開反擊！"
+
+    hide chencheng
+
+    show johndraw
+
+#    voice "voiyalan29.wav"
+    j "在陳誠的指揮下，我軍採用了聰明的戰術，先誘敵深入，然後實施包圍殲滅。這個策略取得了巨大的成功。"
+
+    scene bg imgyalan11
+    with fade
+
+    $ now_venue.location = "戰後的戰場"
+    "戰後的戰場"
+
+    show chencheng
+
+    chencheng "報告委座，我軍已經徹底殲滅了日軍的主力部隊！此役我軍殲敵近3萬，創下了抗戰以來最大的勝績！"
+
+    hide chencheng
+
+    show johndraw
+
+#    voice "voiyalan30.wav"
+    j "非常好！這是我們抗戰以來的第一個重大勝利，它將極大地鼓舞全國軍民的士氣！"
+
+    hide johndraw
+
+    show heyingqin
+
+    heyingqin "委座，這次勝利不僅在軍事上意義重大，在政治和外交上也會產生深遠影響。"
+
+    hide heyingqin
+
+    show zhangzhizhong
+
+    zhangzhizhong "是的，這證明了我們的持久戰略是正確的。日軍並非不可戰勝！"
+
+    hide zhangzhizhong
+
+    show johndraw
+
+#    voice "voiyalan31.wav"
+    j "諸位說得對。這次勝利向全世界證明了中國抗戰的決心和能力。我們要乘勝追擊，繼續削弱日軍的實力。"
+
+    jump chapter3_act6
+
+#第六幕：豫湘桂會戰與反攻
+label chapter3_act6:
+    scene bg imgyalan12
+    with fade
+
+    $ now_venue.location = "重慶指揮部"
+    "1944年，重慶指揮部"
+
+    show johndraw
+
+#    voice "voiyalan32.wav"
+    j "1944年，日軍發動了最後一次大規模進攻，即豫湘桂會戰。儘管我們遭受了重創，但這也為我們的最終反攻創造了條件。"
+
+#    voice "voiyalan33.wav"
+    j "諸位，日軍已經開始了他們的最後一搏。我們必須堅持住，等待反攻的時機。"
+
+    hide johndraw
+
+    show heyingqin
+
+    heyingqin "是的，委座。我們的美式裝備已經開始大量到達，我軍的實力正在迅速增強。"
+
+    hide heyingqin
+
+    show chencheng
+
+    chencheng "但日軍這次投入了大量兵力，我們在正面戰場上可能會遭受重創。"
+
+    hide chencheng
+
+    show zhangzhizhong
+
+    zhangzhizhong "我建議我們採取靈活機動的戰術，避免與日軍硬拼，保存實力。"
+
+    hide zhangzhizhong
+
+    show johndraw
+
+#    voice "voiyalan34.wav"
+    j "你們說得都對。我們要既堅持抵抗，又要保存實力。更重要的是，我們要開始為最後的反攻做準備。"
+
+    scene bg imgyalan13
+    with fade
+
+    $ now_venue.location = "戰場"
+    "戰場"
+
+    show chencheng
+
+    chencheng "報告委座，日軍已經攻佔了長沙和衡陽，正向貴州推進。"
+
+    hide chencheng
+
+    show johndraw
+
+#    voice "voiyalan35.wav"
+    j "我們必須在貴州設防，絕不能讓日軍威脅到重慶！"
+
+    hide johndraw
+
+    show heyingqin
+
+    heyingqin "委座，美國已經同意增加對我們的援助。我們很快就能獲得更多的武器裝備。"
+
+    hide heyingqin
+
+    show johndraw
+
+#    voice "voiyalan36.wav"
+    j "很好。我們要抓住這個機會，加快部隊的訓練和改編。"
+
+    scene bg imgyalan14
+    with fade
+
+    $ now_venue.location = "1945年，中國軍隊反攻"
+    "1945年，中國軍隊反攻"
+
+    show johndraw
+
+#    voice "voiyalan37.wav"
+    j "全軍聽令，現在是我們反攻的時候了！"
+
+    hide johndraw
+
+    show heyingqin
+
+    heyingqin "各路大軍已經準備就緒，隨時可以發起總攻擊！"
+
+    hide heyingqin
+
+    show chencheng
+
+    chencheng "委座，我軍已經收復了長沙和衡陽，正向武漢挺進。"
+
+    hide chencheng
+
+    show zhangzhizhong
+
+    zhangzhizhong "我部已經解放了南昌，正在向浙江推進。"
+
+    hide zhangzhizhong
+
+    show johndraw
+
+#    voice "voiyalan38.wav"
+    j "在盟軍的配合下，我們開始了大規模的反攻。我們收復了大片失地，日本侵略者節節敗退。"
+
+    scene bg imgyalan15
+    with fade
+
+    $ now_venue.location = "南京"
+    "1945年8月15日，南京"
+
+    show johndraw
+
+#    voice "voiyalan39.wav"
+    j "今天，我們終於迎來了這一天。日本無條件投降，我們的抗戰勝利了！"
+
+    hide johndraw
+
+    show heyingqin
+
+    heyingqin "委座，這是全國軍民共同奮鬥的結果！"
+
+    hide heyingqin
+
+    show chencheng
+
+    chencheng "我們終於實現了驅逐日寇、收復失地的目標！"
+
+    hide chencheng
+
+    show zhangzhizhong
+
+    zhangzhizhong "這場勝利來之不易，我們付出了巨大的犧牲。"
+
+    hide zhangzhizhong
+
+    show johndraw
+
+#    voice "voiyalan40.wav"
+    j "是的，這場勝利來之不易。我們付出了巨大的代價，但我們捍衛了國家的獨立和民族的尊嚴。現在，我們要開始重建我們的國家了。"
+
+#    voice "voiyalan41.wav"
+    j "抗日戰爭的勝利，標誌著中國近代以來反抗外來侵略的第一次完全勝利。這場戰爭改變了中國的命運，也改變了世界的格局。我們必須銘記這段歷史，珍惜來之不易的和平，為中華民族的偉大復興而繼續奮鬥。"
+
     return
+
+

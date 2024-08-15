@@ -1,15 +1,15 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <renpy.display.im.Image object ('imgfeng2.jpg') at 0x00000000054d81c0>:
-  File "game/script.rpy", line 661, in script
-    "1936年12月12日凌晨，臨潼華清池"
-OSError: Couldn't find file 'imgfeng2.jpg'.
+While loading <renpy.display.im.Image object ('imgyalan1.png') at 0x000000000e1d26a0>:
+  File "game/script.rpy", line 886, in script
+    "1937年7月7日"
+OSError: Couldn't find file 'imgyalan1.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 661, in script
-    "1936年12月12日凌晨，臨潼華清池"
+  File "game/script.rpy", line 886, in script
+    "1937年7月7日"
   File "D:\專題\renpy-8.2.1-sdk\renpy\ast.py", line 2557, in execute
     Say.execute(self)
   File "D:\專題\renpy-8.2.1-sdk\renpy\ast.py", line 615, in execute
@@ -65,9 +65,9 @@ Full traceback:
     filelike = renpy.loader.load(self.filename, directory="images")
   File "D:\專題\renpy-8.2.1-sdk\renpy\loader.py", line 672, in load
     raise IOError("Couldn't find file '%s'." % name)
-OSError: Couldn't find file 'imgfeng2.jpg'.
+OSError: Couldn't find file 'imgyalan1.png'.
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.2.1.24030407
 Fantasy Ren'py GUI template 1.0
-Thu Aug  1 19:47:07 2024
+Thu Aug 15 17:23:15 2024

@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 786: expected 'comma or end of line' not found.
-    $ renpy.pause(delay=3.5,hard=True)
-    ^
+The label chapter3_act1 is defined twice, at File "game/script.rpy", line 882:
+label chapter3_act1:
+and File "game/script.rpy", line 1008:
+label chapter3_act1:
+
+
+The label chapter3_act2 is defined twice, at File "game/script.rpy", line 933:
+label chapter3_act2:
+and File "game/script.rpy", line 1060:
+label chapter3_act2:
+
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Thu Aug  8 21:40:21 2024
+Thu Aug 15 17:21:24 2024
