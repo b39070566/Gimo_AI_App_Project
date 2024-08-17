@@ -111,9 +111,14 @@ define cpb = Character("嘉義居民乙")
 define cpc = Character("嘉義居民丙")
 define keyuanfen = Character("柯遠芬")
 
-
-
-
+define fusinian = Character("傅斯年")
+define zhujiahua = Character("朱家驊")
+define assistant = Character("助理")
+define peoples = Character("群眾")
+define faramy = Character("軍團長")
+define saramy = Character("軍官")
+define wangshijie = Character("王世傑")
+define allp = Character("全場")
 
 
 define audio.gamemusic = "audio/chapter1.wav"
@@ -1902,6 +1907,234 @@ label chapter6_act1:
     $ now_venue.location = "南京總統府"
     "南京總統府，1949年1月"
 
+    voice "voijcs1.wav"
+    "1949年，國共內戰進入最後階段。國民黨政府面臨著前所未有的危機。我們不僅要應對軍事失利，還要處理經濟崩潰、民心動搖等諸多問題。"
+
+    show johndraw
+
+    voice "voijcs2.wav"
+    j "（神情凝重，手指在地圖上移動）何應欽將軍，平津已經失守，華北幾乎全部淪陷。我們必須立即啟動『國光計劃』。"
+
+    hide johndraw
+
+    show heyingqin
+
+    heyingqin "是，委員長。但『國光計劃』涉及將近200萬軍民的撤退，時間緊迫，困難重重。"
+
+    hide heyingqin
+
+    show johndraw
+
+    voice "voijcs3.wav"
+    j "我明白。首先，空軍必須立即遷至台灣。你親自督促，確保300多架戰機和65艘艦艇24小時內準備就緒。"
+
+    hide johndraw
+
+    show heyingqin
+
+    heyingqin "遵命。但委座，您何時撤離？共軍推進速度遠超我們預期。"
+
+    hide heyingqin
+
+    show johndraw
+
+    voice "voijcs4.wav"
+    j "（沉重地）我會在最後時刻離開。現在，立即開始疏散重要人員和物資。記住，黃金儲備和文物是重中之重。"
+
+    hide johndraw
+
+    show heyingqin
+
+    heyingqin "是。那麼龐大的中央銀行黃金儲備..."
+
+    hide heyingqin
+
+    show johndraw
+
+    voice "voijcs5.wav"
+    j "由嚴密的武裝部隊護送，務必確保安全。這是我們在台灣重建的根基。"
+
+    hide johndraw
+
+    scene bg imgjcs2 :
+        size(1920,1080)
+    with fade
+
+    $ now_venue.location = "中央研究院"
+    "中央研究院，1949年2月"
+
+    show fusinian
+
+    fusinian "（焦急地翻閱文件）朱院長，日本投降後歸還的圖書文獻近30萬冊，我們根本無法全部帶走！"
+
+    hide fusinian
+
+    show zhujiahua
+
+    zhujiahua "形勢危急，我們必須有所取捨。優先保護珍本善本和重要檔案資料。"
+
+    hide zhujiahua
+
+    show fusinian
+
+    fusinian "這些都是中華文化的根基啊！每一本都彌足珍貴。"
+
+    hide fusinian
+
+    show zhujiahua
+
+    zhujiahua "我同意。但現實很殘酷，我們的運輸能力有限。"
+
+    hide zhujiahua
+
+    show assistant
+
+    assistant "（衝進房間）傅先生，朱先生，共軍已突破淮海戰場，隨時可能進入南京！"
+
+    hide assistant
+
+    show fusinian
+
+    fusinian "（痛苦地）好吧，我們必須立即行動。朱兄，你負責聯繫軍方協調運輸，我來組織人手分類裝箱。我們一定要盡最大努力保護這些文化瑰寶！"
+
+    hide fusinian
+
+    voice "voijcs6.wav"
+    "隨著共產黨的勢力不斷擴大，大規模撤退行動在各地展開。這是一場驚心動魄的大遷徙，也是一場悲壯的告別。"
+
+    scene bg imgjcs3 :
+        size(1920,1080)
+    with fade
+
+    $ now_venue.location = "上海港口"
+    "上海港口，1949年5月"
+
+    "碼頭上人山人海，混亂場面中充滿哭喊聲"
+
+    show johndraw
+
+    voice "voijcs7.wav"
+    j "（對著麥克風）同胞們，我們暫時撤離，但終將光復大陸！請保持秩序，相信政府！"
+
+    hide johndraw
+
+    peoples"（此起彼伏）我們的家園怎麼辦？共產黨會不會殺我們的家人？"
+
+    show faramy
+
+    faramy "委員長，民眾情緒激動，恐慌情緒可能引發踩踏事故。"
+
+    hide faramy
+
+    show johndraw
+
+    voice "voijcs8.wav"
+    j "加強警戒，維持秩序。優先撤離重要機構人員和家屬。"
+
+    hide johndraw
+
+    "突然，遠處傳來炮聲"
+
+    show saramy
+
+    saramy "（衝上甲板）委員長，共軍已攻入上海市區！"
+
+    hide saramy
+
+    show johndraw
+
+    voice "voijcs9.wav"
+    j "（看著岸上絕望的人群，痛苦地）「再等十分鐘。我們要盡力帶走每一個人！"
+
+    hide johndraw
+
+    voice "voijcs10.wav"
+    "1949年12月7日，國民政府正式宣布遷都台北。這不僅是一個政權的遷移，更是無數人命運的轉折點。"
+
+    scene bg imgjcs4 :
+        size(1920,1080)
+    with fade
+
+    $ now_venue.location = "台北臨時總統府 "
+    "台北臨時總統府，1950年3月"
+
+    show johndraw
+
+    voice "voijcs11.wav"
+    j "王部長，我們的經濟情況如何？"
+
+    hide johndraw
+
+    show wangshijie
+
+    wangshijie "報告委員長，情況危急。雖然我們帶來了約300萬兩黃金，但通貨膨脹嚴重，物價飛漲。"
+
+    hide wangshijie
+
+    show johndraw
+
+    voice "voijcs12.wav"
+    j "立即實施貨幣改革。以新台幣取代舊台幣，比率定為1:40,000。"
+
+    hide johndraw
+
+    show imgjcs5 :
+        yalign 0.45 
+        xalign 0.5
+        size(1024,576)
+
+    "當時歷史圖片"
+
+    hide imgjcs5
+
+    show wangshijie
+
+    wangshijie "這可能引起社會動盪..."
+
+    hide wangshijie
+
+
+    show johndraw
+
+    voice "voijcs13.wav"
+    j "別無選擇。同時，啟動土地改革，實施耕者有其田政策。我們必須在台灣站穩腳跟。"
+
+    hide johndraw
+
+    scene bg imgjcs6 :
+        size(1920,1080)
+    with fade
+
+    $ now_venue.location = "台北中山堂"
+    "台北中山堂，1952年"
+
+    show johndraw
+
+    voice "voijcs14.wav"
+    j "同志們，經過艱苦努力，我們的黨員從最初5萬人增加到近30萬，其中超過一半是台灣本省人。"
+
+    hide johndraw
+
+    show chencheng
+
+    chencheng "報告委員長，我們已在全台建立了3萬多個工作小組，深入社會各階層。"
+
+    hide chencheng
+
+    show johndraw
+
+    voice "voijcs15.wav"
+    j "很好。但我們面臨的挑戰還很多。必須加強軍事戒備，防範共軍進攻；同時推動經濟建設，為反攻大陸做準備。"
+
+    hide johndraw
+
+    allp"反攻大陸！收復河山！"
+
+    voice "voijcs16.wav"
+    "就這樣，中華民國政府在台灣艱難地站穩了腳跟。雖然『反攻大陸』的夢想最終未能實現，但這個曾經的小島在之後的幾十年裡，卻創造了驚人的經濟奇蹟和政治轉型。"
+
+    voice "voijcs17.wav"
+    "這段歷史，不僅見證了一個政權的轉折，一個島嶼的蛻變，更記錄了無數人在動盪中奮鬥、在逆境中重生的故事。"
 
     return
 
