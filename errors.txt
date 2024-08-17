@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-The label chapter3_act1 is defined twice, at File "game/script.rpy", line 882:
-label chapter3_act1:
-and File "game/script.rpy", line 1008:
-label chapter3_act1:
-
-
-The label chapter3_act2 is defined twice, at File "game/script.rpy", line 933:
-label chapter3_act2:
-and File "game/script.rpy", line 1060:
-label chapter3_act2:
-
+File "game/script.rpy", line 1872: is not terminated with a newline. (Check strings and parenthesis.)
+(Perhaps you left out a " at the end of the first line.)
+        "二二八事件不僅是一場悲劇，更成為臺灣社會長期分裂的根源。它深刻影響了臺灣的政治發展，也成為推動臺灣民主化的重要動力。
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Thu Aug 15 17:21:24 2024
+Sat Aug 17 18:19:47 2024

@@ -1,4 +1,4 @@
-init python:
+﻿init python:
     import random
     import time
     import requests
@@ -89,6 +89,32 @@ define chencheng = Character("陳誠")
 define heyingqin = Character("何應欽")
 define zhangzhizhong = Character("張治中")
 
+define igov = Character("專賣局查緝員")
+define cshop = Character("菸販")
+define peoplea = Character("群眾甲")
+define peopleb = Character("群眾乙")
+define peoplec = Character("群眾丙")
+define peopled = Character("群眾丁")
+define peoplee = Character("群眾戊")
+define peoplel = Character("民眾代表")
+define reporter = Character("記者")
+define tdstudent = Character("臺大學生")
+define ttp = Character("臺灣省參議會議員")
+define chenyi = Character("陳儀")
+define armyl = Character("憲兵團長")
+define armya = Character("士兵甲")
+define tpa = Character("臺灣居民甲")
+define tpb = Character("臺灣居民乙")
+define pal = Character("民軍領袖")
+define cpa = Character("嘉義居民甲")
+define cpb = Character("嘉義居民乙")
+define cpc = Character("嘉義居民丙")
+define keyuanfen = Character("柯遠芬")
+
+
+
+
+
 
 define audio.gamemusic = "audio/chapter1.wav"
 
@@ -139,6 +165,19 @@ image bg imgyalan13 = "imgyalan13.png"
 image bg imgyalan14 = "imgyalan14.png"
 image bg imgyalan15 = "imgyalan15.png"
 
+image bg imgjcf1 = "imgjcf1.jpg"
+image bg imgjcf2 = "imgjcf2.jpg"
+image bg imgjcf3 = "imgjcf3.jpg"
+image bg imgjcf4 = "imgjcf4.jpg"
+image bg imgjcf5 = "imgjcf5.jpg"
+image bg imgjcf6 = "imgjcf6.jpg"
+image bg imgjcf8 = "imgjcf8.jpg"
+
+image bg imgjcs1 = "imgjcs1.jpg"
+image bg imgjcs2 = "imgjcs2.jpg"
+image bg imgjcs3 = "imgjcs3.jpg"
+image bg imgjcs4 = "imgjcs4.jpg"
+image bg imgjcs6 = "imgjcs6.jpg"
 
 
 image johndraw = "johndraw.png"
@@ -176,6 +215,11 @@ image flag1 = "flag1.png"
 image dust = "dust.png"
 image dustbroken = "dustbroken.png"
 image wall = "wall.png"
+
+image imgjcf7 = "imgjcf7.jpg"
+
+image imgjcs5 = "imgjcs5.jpg"
+
 
 #角色動作的線性變化區域
 transform bounce:
@@ -1456,6 +1500,408 @@ label chapter3_act6:
 
 #    voice "voiyalan41.wav"
     j "抗日戰爭的勝利，標誌著中國近代以來反抗外來侵略的第一次完全勝利。這場戰爭改變了中國的命運，也改變了世界的格局。我們必須銘記這段歷史，珍惜來之不易的和平，為中華民族的偉大復興而繼續奮鬥。"
+
+
+    jump chapter4_act1
+
+# 第一幕：事件爆發
+label chapter4_act1:
+    scene bg imgjcf1
+    with fade
+
+    $ now_venue.location = "臺北市延平北路"
+    "1947年2月27日傍晚，臺北市延平北路"
+
+    show igov at right
+
+    igov "站住！交出私菸！"
+
+    show cshop at left
+
+    cshop "大人，求求您高抬貴手。我只是想養家糊口...至少把錢和一些香菸還給我吧。"
+
+    igov "法律就是法律！不許討價還價！"
+
+    cshop "（跪地哀求）大人，我家裡還有老小要養..."
+
+    "專賣局查緝員用槍柄擊打菸販，引發群眾憤怒"
+
+    hide cshop
+
+    hide igov
+
+    show imgjcf2 :
+        yalign 0.45 
+        xalign 0.5
+        size(1920,1080)  #size(1024,576)
+
+    show peoplea
+
+    peoplea "打人啦！欺負老百姓！"
+
+    hide peoplea
+
+    show peopleb
+
+    peopleb "太過分了！大家一起上！"
+
+    hide peopleb
+
+    show igov
+
+    igov "後退！否則我們就開槍了！"
+
+    hide igov
+
+    "專賣局查緝員開槍示警，誤殺一旁路人"
+
+    show peoplec
+
+    peoplec "天啊！有人中槍了！"
+
+    hide peoplec
+
+    show peopled
+
+    peopled "快叫救護車！"
+
+    hide peopled
+
+    show peoplee
+
+    peoplee "他們殺人了！抓住他們！"
+
+    hide peoplee
+
+    hide imgjcf2
+
+    jump chapter4_act2
+
+# 第二幕：局勢升級
+label chapter4_act2:
+    scene bg imgjcf3 :
+        size(1920,1080)
+    with fade
+
+    $ now_venue.location = "臺北市"
+    "1947年2月28日，臺北市"
+
+    show peoplel
+
+    peoplel "我們要求立即懲處兇手，廢除專賣制度！還要求政府公開道歉！"
+
+    hide peoplel
+
+    show reporter
+
+    reporter "各位同胞，我們必須組織起來，向政府表達我們的訴求。但要保持理性，避免暴力。"
+
+    hide reporter
+
+    show tdstudent
+
+    tdstudent "光是和平請願是不夠的！我們要罷市、罷課、罷工，讓政府知道我們的決心！"
+
+    hide tdstudent
+
+    show ttp
+
+    ttp "冷靜點，各位。我們可以組織一個處理委員會，代表民眾與政府談判。"
+
+    hide ttp
+
+    scene bg imgjcf4:
+        size(1920,1080) 
+    with fade
+
+    $ now_venue.location = "南京"
+    "南京，國民政府 "
+
+    show chenyi
+
+    chenyi "（通過電話）：委座，臺北局勢失控。民眾組織了「二二八事件處理委員會」，提出三十二條政治改革要求。"
+
+    hide chenyi
+
+    show johndraw
+
+    voice "voijcf1.wav"
+    j "具體要求是什麼？"
+
+    hide johndraw
+
+    show chenyi
+
+    chenyi "他們要求廢除長官公署，實施地方自治，甚至要求軍隊撤出臺灣。"
+
+    hide chenyi
+
+    show johndraw
+
+    voice "voijcf2.wav"
+    j "這已經超出了單純的民生訴求，變成了政治挑戰。陳儀，你立即採取行動穩定局勢，必要時請求軍事支援。"
+
+    hide johndraw
+
+    show chenyi
+
+    chenyi "是，委座。但是...如果動用軍隊，恐怕會造成更大的反彈。"
+
+    hide chenyi
+
+    show johndraw
+
+    voice "voijcf3.wav"
+    j "我們必須維護國家統一。你先試圖安撫民眾，同時準備軍事行動。"
+
+    hide johndraw
+
+    jump chapter4_act3
+
+
+# 第三幕：軍隊進駐
+label chapter4_act3:
+    scene bg imgjcf5 :
+        size(1920,1080)
+    with fade
+
+    $ now_venue.location = "基隆港"
+    "基隆港，1947年3月8日 "
+
+    show armyl
+
+    armyl "弟兄們，我們的任務是平定叛亂，恢復秩序。全面進攻！"
+
+    hide armyl
+
+    show armya
+
+    armya "長官，那些看起來只是普通百姓啊。"
+
+    hide armya
+
+    show armyl
+
+    armyl "執行命令！叛亂分子往往隱藏在平民中。"
+
+    hide armyl
+
+    show tpa
+
+    tpa "天啊！他們在開槍！快逃啊！"
+
+    hide tpa
+
+    show tpb
+
+    tpb "為什麼？我們又沒有做錯什麼！"
+
+    hide tpb
+
+    scene bg imgjcf6 :
+        size(1920,1080)
+    with fade
+
+    $ now_venue.location = "臺北市長官公署"
+    "臺北市長官公署 "
+
+    show chenyi 
+
+    chenyi "我已下令全臺戒嚴，解散處理委員會等非法組織。"
+
+    hide chenyi
+
+    show imgjcf7 :
+        yalign 0.45 
+        xalign 0.5
+        size(1024,576)
+
+    "當時戒嚴圖片"
+
+    hide imgjcf7
+
+    show johndraw
+
+    voice "voijcf4.wav"
+    j "（通過電話）：務必迅速恢復秩序，但要避免過度傷亡。我們的目標是穩定局勢，不是激化矛盾。"
+
+    hide johndraw
+
+    show chenyi
+
+    chenyi "明白，委座。但是...有些軍官似乎過於激進。"
+
+    hide chenyi
+
+    show johndraw
+
+    voice "voijcf5.wav"
+    j "那就約束他們！記住，我們最終還是要在臺灣長治久安。"
+
+    hide johndraw
+
+    jump chapter4_act4
+
+
+# 第四幕：衝突加劇
+label chapter4_act4:
+    scene bg imgjcf8 :
+        size(1920,1080)
+    with fade
+
+    $ now_venue.location = "嘉義市"
+    "嘉義市，1947年3月中旬 "
+
+    show peoplel
+
+    peoplel "同胞們！政府軍正在屠殺我們的親人！我們必須保衛家園！"
+
+    hide peoplel
+
+    show cpa
+
+    cpa "可是許大哥，我們怎麼可能抵抗正規軍？"
+
+    hide cpa
+
+    show cpb
+
+    cpb "對啊，他們有飛機、大炮，我們只有一些老舊的槍枝。"
+
+    hide cpb
+
+    show peoplel
+
+    peoplel "寧為玉碎，不為瓦全！我們別無選擇。拿起武器，保衛我們的權利！就算死，也要讓他們付出代價！"
+
+    hide peoplel
+
+    show cpc
+
+    cpc "許大哥說得對！為了我們的子孫後代，我們不能坐以待斃！"
+
+    hide cpc
+
+    jump chapter4_act5
+
+
+# 第五幕：鎮壓與清算
+label chapter4_act5:
+    scene bg imgjcf6 :
+        size(1920,1080)
+    with fade
+
+    $ now_venue.location = "臺北市"
+    "臺北市，1947年3月下旬  "
+
+    show keyuanfen
+
+    keyuanfen "（警備總司令部參謀長）：委座，我們已掌握大量參與叛亂者的名單。包括許多知識分子和社會領袖。"
+
+    hide keyuanfen
+
+    show johndraw
+
+    voice "voijcf6.wav"
+    j "具體有哪些人？"
+
+    hide johndraw
+
+    show keyuanfen
+
+    keyuanfen "有臺大教授、醫生、律師，還有一些地方上有影響力的人士。"
+
+    hide keyuanfen
+
+    show johndraw
+
+    voice "voijcf7.wav"
+    j "依法處置。但要注意區分首謀和跟從者。我們的目的是肅清叛亂，不是濫殺無辜。"
+
+    hide johndraw
+
+    show keyuanfen
+
+    keyuanfen "明白。那麼...對於那些逃跑的人，我們該如何處理？"
+
+    hide keyuanfen
+
+    show johndraw
+
+    voice "voijcf8.wav"
+    j "發布通緝令。必要時可以考慮赦免那些主動投案的人，以分化瓦解他們。"
+
+    hide johndraw
+
+    jump chapter4_act6
+
+
+# 第五幕：鎮壓與清算
+label chapter4_act6:
+    scene bg imgjcf6 :
+        size(1920,1080)
+    with fade
+
+    $ now_venue.location = "臺北市"
+    "臺北市，1949年"
+
+    show chencheng
+
+    chencheng "（臺灣省主席）：委座，二二八事件後，許多知識分子逃往海外或轉向地下活動。我們必須加強社會控制。"
+
+    hide chencheng
+
+    show johndraw
+
+    voice "voijcf9.wav"
+    j "具體情況如何？"
+
+    hide johndraw
+
+    show chencheng
+
+    chencheng "有人加入了共產黨的地下組織，也有人開始宣傳臺灣獨立的理念。"
+
+    hide chencheng
+
+    show johndraw
+
+    voice "voijcf10.wav"
+    j "這是個嚴峻的挑戰。威權統治是現階段的必要之舉。但長遠來看，我們需要贏得民心。"
+
+    hide johndraw
+
+    show chencheng
+
+    chencheng "是的。我們正在推行一些文化政策，強化中國認同。"
+
+    hide chencheng
+
+    show johndraw
+
+    voice "voijcf11.wav"
+    j "很好。記住，治臺灣，關鍵是要讓臺灣人認同我們。"
+
+    hide johndraw
+
+    voice "voijcf12.mp3"
+    "二二八事件不僅是一場悲劇，更成為臺灣社會長期分裂的根源。它深刻影響了臺灣的政治發展，也成為推動臺灣民主化的重要動力。"
+
+    voice "voijcf13.mp3"
+    "這段歷史提醒我們，面對矛盾與衝突，對話與理解比暴力更能解決問題。今天的臺灣，正是在這樣的反思和和解中，逐步走向更加開放、民主的社會。"
+
+    jump chapter6_act1 #跳過第五章
+
+
+# 第六章：中華民國政府遷台 (此章沒分幕)
+label chapter6_act1:
+    scene bg imgjcs1 :
+        size(1920,1080)
+    with fade
+
+    $ now_venue.location = "南京總統府"
+    "南京總統府，1949年1月"
+
 
     return
 
