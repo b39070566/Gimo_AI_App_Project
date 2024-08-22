@@ -215,6 +215,10 @@ image johnkidsad = "johnyoungsad@7.png"
 
 image johnyoungpic = "johnyoung1.jpg"
 
+image xueliang = "xueliang.png"
+image chencheng = "chencheng.png"
+
+
 image paper1 = "paper.jpg"
 image flag1 = "flag1.png"
 image dust = "dust.png"
@@ -1010,7 +1014,7 @@ label chapter3_act2:
 
     show johndraw
 
-#    voice "voiyalan8.wav"
+    voice "voiyalan8.wav"
     j "我明白這個風險。但是我們有地利，有民心。更重要的是，我們是在保衛自己的國家。這種精神力量是無法估量的。"
 
     hide johndraw
@@ -1023,7 +1027,7 @@ label chapter3_act2:
 
     show johndraw
 
-#    voice "voiyalan9.wav"
+    voice "voiyalan9.wav"
     j "沒錯。張治中，你要充分利用租界的特殊地位，在國際社會面前展示日軍的暴行。"
 
     scene bg imgyalan3
@@ -1036,7 +1040,15 @@ label chapter3_act2:
 
     zhangzhizhong "弟兄們，堅持住！每一條街道，每一座房屋，都要與敵人爭奪！"
 
+    hide zhangzhizhong
+
+    show soldier
+
     soldier "是，長官！我們誓死保衛上海！"
+
+    hide soldier
+
+    show zhangzhizhong
 
     zhangzhizhong "報告委座，我軍在羅店一線給予日軍沈重打擊，但敵人正在增兵，形勢嚴峻。"
 
@@ -1044,10 +1056,10 @@ label chapter3_act2:
 
     show johndraw
 
-#    voice "voiyalan10.wav"
+    voice "voiyalan10.wav"
     j "堅持住，張將軍。我會調集更多部隊支援上海。記住，我們是在為時間而戰。"
 
-#    voice "voiyalan11.wav"
+    voice "voiyalan11.wav"
     j "淞滬會戰持續了三個月之久，我們的軍隊表現出了前所未有的勇氣和決心。雖然最終上海還是陷落了，但我們的頑強抵抗大大延緩了日軍的進攻步伐，為後續的戰略調整爭取了寶貴的時間。"
 
     jump chapter3_act3
@@ -1063,10 +1075,10 @@ label chapter3_act3:
 
     show johndraw
 
-#    voice "voiyalan12.wav"
+    voice "voiyalan12.wav"
     j "1937年12月，日軍向南京推進。我面臨著一個艱難的抉擇。"
 
-#    voice "voiyalan13.wav"
+    voice "voiyalan13.wav"
     j "諸位，南京是我們的首都，絕不能輕易放棄。但我們也要考慮長遠的抗戰大局。"
 
     hide johndraw
@@ -1079,7 +1091,7 @@ label chapter3_act3:
 
     show johndraw
 
-#    voice "voiyalan14.wav"
+    voice "voiyalan14.wav"
     j "是的，政府必須轉移，以保存實力。但我們絕不能放棄南京的防禦。陳誠，你留下來指揮防衛戰。"
 
     hide johndraw
@@ -1098,10 +1110,10 @@ label chapter3_act3:
 
     show johndraw
 
-#    voice "voiyalan15.wav"
+    voice "voiyalan15.wav"
     j "好主意。但要注意保護平民。我們打仗，是為了保護百姓，而不是為了增加他們的苦難。"
 
-#    voice "voiyalan16.wav"
+    voice "voiyalan16.wav"
     j "12月13日，南京陷落。日軍在南京犯下了令人髮指的暴行，這就是後來震驚世界的南京大屠殺。"
 
     scene bg imgyalan5
@@ -1112,7 +1124,7 @@ label chapter3_act3:
 
     show johndraw
 
-#    voice "voiyalan17.wav"
+    voice "voiyalan17.wav"
     j "南京的慘劇讓我們心如刀割，但也更堅定了我們抗戰到底的決心。從現在起，我們要實行持久戰略，消耗日軍的實力，等待國際局勢的變化。"
 
     hide johndraw
@@ -1131,7 +1143,7 @@ label chapter3_act3:
 
     show johndraw
 
-#    voice "voiyalan18.wav"
+    voice "voiyalan18.wav"
     j "很好。陳誠，你負責組織和協調各地的游擊隊。何應欽，你負責與國際社會聯絡，爭取更多支持。張治中，你負責重新整編我們的部隊，為下一階段的反攻做準備。"
 
     jump chapter3_act4
@@ -1146,10 +1158,10 @@ label chapter3_act4:
 
     show johndraw
 
-#    voice "voiyalan19.wav"
+    voice "voiyalan19.wav"
     j "1938年，日軍開始向武漢發起進攻。武漢是我們的臨時首都，也是抗戰的重要基地，我們必須全力防守。"
 
-#    voice "voiyalan20.wav"
+    voice "voiyalan20.wav"
     j "諸位，武漢是我們最後的防線。我們必須不惜一切代價守住它！"
 
     hide johndraw
@@ -1174,7 +1186,7 @@ label chapter3_act4:
 
     show johndraw
 
-#    voice "voiyalan21.wav"
+    voice "voiyalan21.wav"
     j "很好。我們還要充分利用地形優勢。長江、漢水，這些天然屏障要成為日軍的噩夢。"
 
     scene bg imgyalan7
@@ -1204,7 +1216,7 @@ label chapter3_act4:
 
     show johndraw
 
-#    voice "voiyalan22.wav"
+    voice "voiyalan22.wav"
     j "儘管我們奮勇抵抗，但最終還是不得不放棄武漢。然而，這場戰役極大地消耗了日軍的實力，為我們的持久戰略贏得了時間。"
 
     scene bg imgyalan8
@@ -1215,7 +1227,7 @@ label chapter3_act4:
 
     show johndraw
 
-#    voice "voiyalan23.wav"
+    voice "voiyalan23.wav"
     j "諸位，武漢的失守並不意味著我們的失敗。相反，這標誌著我們抗戰進入了一個新的階段。我們將採取持久戰略，消耗日軍的實力，等待國際局勢的變化。"
 
     hide johndraw
@@ -1228,7 +1240,7 @@ label chapter3_act4:
 
     show johndraw
 
-#    voice "voiyalan24.wav"
+    voice "voiyalan24.wav"
     j "陳誠，你負責組織游擊戰，騷擾日軍後方。張治中，你負責重新整編我們的部隊。何應欽，你負責與國際社會聯絡，爭取更多支持。"
 
     hide johndraw
@@ -1247,7 +1259,7 @@ label chapter3_act4:
 
     show johndraw
 
-#    voice "voiyalan25.wav"
+    voice "voiyalan25.wav"
     j "記住，這是一條艱難的道路，但我相信，只要我們堅持下去，最終的勝利一定是屬於我們的。"
 
     jump chapter3_act5
@@ -1262,10 +1274,10 @@ label chapter3_act5:
 
     show johndraw
 
-#    voice "voiyalan26.wav"
+    voice "voiyalan26.wav"
     j "1939年，日軍向長沙發起進攻。這是一個重要的轉折點，我們終於在正面戰場上取得了重大勝利。"
 
-#    voice "voiyalan27.wav"
+    voice "voiyalan27.wav"
     j "陳誠，長沙的防務就交給你了。記住，這可能是我們扭轉戰局的機會。"
 
     hide johndraw
@@ -1290,7 +1302,7 @@ label chapter3_act5:
 
     show johndraw
 
-#    voice "voiyalan28.wav"
+    voice "voiyalan28.wav"
     j "很好。記住，我們不僅要防守，更要主動出擊。要充分利用地形優勢，實施誘敵深入、圍而殲之的策略。"
 
     scene bg imgyalan10
@@ -1319,7 +1331,7 @@ label chapter3_act5:
 
     show johndraw
 
-#    voice "voiyalan29.wav"
+    voice "voiyalan29.wav"
     j "在陳誠的指揮下，我軍採用了聰明的戰術，先誘敵深入，然後實施包圍殲滅。這個策略取得了巨大的成功。"
 
     scene bg imgyalan11
@@ -1336,8 +1348,8 @@ label chapter3_act5:
 
     show johndraw
 
-#    voice "voiyalan30.wav"
-    j "非常好！這是我們抗戰以來的第一個重大勝利，它將極大地鼓舞全國軍民的士氣！"
+    voice "voiyalan30.wav"
+    j "非常好！這是我們抗戰以來，第一個重大勝利，它將極大地鼓舞全國軍民的士氣！"
 
     hide johndraw
 
@@ -1355,7 +1367,7 @@ label chapter3_act5:
 
     show johndraw
 
-#    voice "voiyalan31.wav"
+    voice "voiyalan31.wav"
     j "諸位說得對。這次勝利向全世界證明了中國抗戰的決心和能力。我們要乘勝追擊，繼續削弱日軍的實力。"
 
     jump chapter3_act6
@@ -1370,10 +1382,10 @@ label chapter3_act6:
 
     show johndraw
 
-#    voice "voiyalan32.wav"
+    voice "voiyalan32.wav"
     j "1944年，日軍發動了最後一次大規模進攻，即豫湘桂會戰。儘管我們遭受了重創，但這也為我們的最終反攻創造了條件。"
 
-#    voice "voiyalan33.wav"
+    voice "voiyalan33.wav"
     j "諸位，日軍已經開始了他們的最後一搏。我們必須堅持住，等待反攻的時機。"
 
     hide johndraw
@@ -1398,7 +1410,7 @@ label chapter3_act6:
 
     show johndraw
 
-#    voice "voiyalan34.wav"
+    voice "voiyalan34.wav"
     j "你們說得都對。我們要既堅持抵抗，又要保存實力。更重要的是，我們要開始為最後的反攻做準備。"
 
     scene bg imgyalan13
@@ -1415,7 +1427,7 @@ label chapter3_act6:
 
     show johndraw
 
-#    voice "voiyalan35.wav"
+    voice "voiyalan35.wav"
     j "我們必須在貴州設防，絕不能讓日軍威脅到重慶！"
 
     hide johndraw
@@ -1428,7 +1440,7 @@ label chapter3_act6:
 
     show johndraw
 
-#    voice "voiyalan36.wav"
+    voice "voiyalan36.wav"
     j "很好。我們要抓住這個機會，加快部隊的訓練和改編。"
 
     scene bg imgyalan14
@@ -1439,7 +1451,7 @@ label chapter3_act6:
 
     show johndraw
 
-#    voice "voiyalan37.wav"
+    voice "voiyalan37.wav"
     j "全軍聽令，現在是我們反攻的時候了！"
 
     hide johndraw
@@ -1464,7 +1476,7 @@ label chapter3_act6:
 
     show johndraw
 
-#    voice "voiyalan38.wav"
+    voice "voiyalan38.wav"
     j "在盟軍的配合下，我們開始了大規模的反攻。我們收復了大片失地，日本侵略者節節敗退。"
 
     scene bg imgyalan15
@@ -1475,7 +1487,7 @@ label chapter3_act6:
 
     show johndraw
 
-#    voice "voiyalan39.wav"
+    voice "voiyalan39.wav"
     j "今天，我們終於迎來了這一天。日本無條件投降，我們的抗戰勝利了！"
 
     hide johndraw
@@ -1500,11 +1512,14 @@ label chapter3_act6:
 
     show johndraw
 
-#    voice "voiyalan40.wav"
+    voice "voiyalan40.wav"
     j "是的，這場勝利來之不易。我們付出了巨大的代價，但我們捍衛了國家的獨立和民族的尊嚴。現在，我們要開始重建我們的國家了。"
 
-#    voice "voiyalan41.wav"
-    j "抗日戰爭的勝利，標誌著中國近代以來反抗外來侵略的第一次完全勝利。這場戰爭改變了中國的命運，也改變了世界的格局。我們必須銘記這段歷史，珍惜來之不易的和平，為中華民族的偉大復興而繼續奮鬥。"
+    voice "voiyalan41.wav"
+    j "抗日戰爭的勝利，標誌著中國近代以來反抗外來侵略的第一次完全勝利。這場戰爭改變了中國的命運，也改變了世界的格局。"
+    
+    voice "voiyalan42.wav"
+    j"我們必須銘記這段歷史，珍惜來之不易的和平，為中華民族的偉大復興而繼續奮鬥。"
 
 
     jump chapter4_act1
