@@ -217,6 +217,7 @@ image johnyoungpic = "johnyoung1.jpg"
 
 image xueliang = "xueliang.png"
 image chencheng = "chencheng.png"
+image zhangzhizhong = "zhangzhizhong.png"
 
 
 image paper1 = "paper.jpg"
