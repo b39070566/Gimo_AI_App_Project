@@ -225,6 +225,7 @@ image flag1 = "flag1.png"
 image dust = "dust.png"
 image dustbroken = "dustbroken.png"
 image wall = "wall.png"
+image prison = "prison.png"
 
 image imgjcf7 = "imgjcf7.jpg"
 
@@ -845,12 +846,18 @@ label chapter2_act3:
     hide soldier
 
     show johndraw
+
+    show prison:
+        xalign 0.5
+        yalign 0.1
+        linear 1.0 yalign 0.7
    
     voice "voifeng8.wav"
     j "你們...你們這是要做什麼？知道自己在犯什麼罪嗎？"
 
 
     hide johndraw
+    hide prison
 
     show xueliang
     
@@ -860,6 +867,8 @@ label chapter2_act3:
     hide xueliang
 
     show johndraw
+
+    show prison
 
     voice "voifeng9.wav"
     j "張學良！你可知道這樣做的後果？"
@@ -913,13 +922,15 @@ label chapter2_act5:
     xueliang "委座，我們已經準備好送您回南京了。我知道我的行為可能會招致嚴重後果，但為了國家，我願意承擔。"
 
     hide xueliang
-
     show johndraw
 
     voice "voifeng12.wav"
     j "張學良，你們的行為雖然錯誤，但出發點我能理解。記住，國家的未來需要我們共同努力。我會考慮你們的建議，但你必須為自己的行為負責。"
 
-
+    "蔣介石最終沒有對張學良痛下殺手，而是讓張學良失去了54年的自由。"(what_color="#808080")
+    "臨終前更是對蔣經國說「絕對不可放虎歸山」。"(what_color="#808080")
+    "楊虎城的結局與張學良不同，楊虎城在事變後被處決，他的家人也遭到迫害。"(what_color="#808080")
+    
     voice "voifeng13.wav"
     j "1936年12月25日，我終於重獲自由。這次西安事變，讓我深刻認識到國內的矛盾和挑戰，也讓我更加重視對外的抗戰準備。這段經歷對我來說，既是挑戰，也是轉機。"
 
