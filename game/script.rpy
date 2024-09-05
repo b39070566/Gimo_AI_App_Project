@@ -159,6 +159,12 @@ define chd = Character("中共代表")
 
 define audio.gamemusic = "audio/chapter1.wav"
 
+define p = Character("彭孟緝")
+define g = Character("外交官")
+define l = Character("雷震")
+define y = Character("殷海光")
+define f = Character("傅正")
+define yan = Character("嚴家淦")
 
 #圖檔區域 角色跟背景要分開放，每個人不同的背景也都要分開
 image bg blackscreen = "bg blackscreen.png"
@@ -2627,6 +2633,268 @@ label chapter6_act1:
 
     return
 
+# 第七章：白色恐怖時期
+
+# 第一幕：戒嚴令頒布（1949年5月）
+label chapter7_act1:
+    scene bg imghui1
+    with fade
+    $ now_venue = place("台灣省政府會議室")
+    "台灣省政府會議室"
+    show screen location_ui
+    show chencheng at left_to_middle
+
+    chencheng "委座,《台灣省戒嚴令》草案已經擬好,請過目。"
+
+    show johndraw:
+        yalign 1.0
+        xalign 0.5
+        xzoom -1
+
+    voice "voihui1.wav"
+    j "內容很全面。陳誠,你怎麼看這個決定可能帶來的影響？"
+
+    chencheng "民眾可能會有些不安,但為了國家安全,這是必要之舉。我們必須防止共匪滲透。自從二二八事件後,台灣社會一直不穩定。"
+
+    voice "voihui2.wav"
+    j "我明白。我們必須盡一切努力防止共產黨滲透。為了國家安全,實施戒嚴是必要的。但我們也要謹慎行事,避免重蹈二二八事件的覆轍。柯遠芬,你有什麼看法？"
+
+    hide chencheng
+    hide johndraw
+
+    show keyuanfen at right_to_middle
+    show johndraw at middle_to_left
+    keyuanfen "是的,委座。我建議我們加強宣傳,讓民眾理解這是為了他們的安全。同時,我們需要建立一個有效的情報系統,以便及時發現和打擊共產黨的滲透活動。"
+
+    voice "voihui3.wav"
+    j "這個想法不錯。彭孟緝,你來負責組建這個情報系統。"
+
+    show p at left
+
+    p "是,委座。我會立即著手進行。不過,我們是否需要考慮對某些特定群體加強監控？比如知識分子和學生。"
+
+    voice "voihui4.wav"
+    j "這是個敏感問題。我們必須小心行事,不要激起不必要的反彈。"
+
+    show chencheng at right
+
+    chencheng "我同意彭將軍的建議。知識分子和學生往往最容易受到共產主義思想的影響。"
+
+    voice "voihui5.wav"
+    j "那麼我們可以適度加強監控,但要注意方式方法。絕不能讓人感覺我們在針對特定群體。"
+
+    keyuanfen "委座,我們是否需要制定一些具體的執行細則？比如,如何界定'叛亂'行為？"
+
+    voice "voihui6.wav"
+    j "這個問題很重要。我們需要一個明確的標準,但同時也要保留一定的彈性。陳誠,你和法務部門商議一下,擬定一個初步方案。"
+
+    chencheng "明白,我會盡快安排。"
+
+    voice "voihui7.wav"
+    j "記住,我們的目標是保護國家安全,不要過度擴大打擊範圍。我們要讓人民感到安全,而不是恐懼。以和日掩護外交,以交通掩護軍事,以實業掩護經濟,以教育掩護國防,韜光養晦乃為國家唯一自處之道。"
+
+    hide chencheng
+    hide johndraw
+    hide keyuanfen
+    hide p
+    voice "voihui8.wav"
+    "當時,我們都沒有意識到這個決定會帶來如此深遠的影響。我們低估了權力的誘惑和濫用的危險。這個決定開啟了長達數十年的白色恐怖時期。"
+    jump chapter7_act2
+
+# 第二幕：大規模肅清行動（1950年）
+label chapter7_act2:
+    scene bg imghui2
+    with fade
+    $ now_venue = place("警備總部")
+
+    show screen location_ui
+
+    show keyuanfen at left
+    keyuanfen "報告司令,我們發現多起疑似共產黨滲透的案件。"
+
+    show p at right
+    p "詳細說明。"
+
+    keyuanfen "基隆中學有學生組織名為《光明報》的地下刊物,疑似受共產黨影響。另外,澎湖也發現大規模的共黨組織。"
+
+    p "情況比我們想像的要嚴重。立即採取行動！逮捕所有涉案人員。"
+
+    show g at center
+    g "司令,是否需要擴大調查範圍？我懷疑還有更多隱藏的共產黨員。"
+
+    p "可以,但要注意分寸。我們不能引起民眾的恐慌。"
+
+    keyuanfen "還有一件事,司令。我們在調查中發現,有些人可能只是無意中接觸了這些思想,並不是真正的共產黨員。"
+
+    p "即便如此,我們也不能掉以輕心。寧可錯抓一百,不可漏網一個。"
+
+    g "司令,我們是否需要使用...特殊手段來獲取情報？"
+
+    p "如果必要的話,可以。但要控制在合理範圍內。我們不是在製造恐怖,而是在維護安全。"
+
+    keyuanfen "我有些擔心,這樣做會不會引起民眾的不滿？"
+
+    p "這就是為什麼我們需要加強宣傳。要讓民眾明白,我們這麼做都是為了保護他們。"
+
+    hide keyuanfen
+    hide p
+    hide g
+
+    show johndraw at center
+    j "奢言抗日者,殺無赦。對於共產黨的滲透,我們也要採取同樣堅決的態度。但要注意,不要過度擴大打擊範圍,避免造成無辜者的傷害。"
+
+    voice "voihui9.wav"
+    j "1950年,我們展開了多起大規模逮捕行動,包括基隆中學的《光明報案》和造成大量山東籍軍人傷亡的《澎湖七一三事件》。"
+    hide johndraw
+   
+    voice "voihui10.wav"
+    "當時,我們認為這些行動是必要的,但現在看來,我們犯了嚴重的錯誤。我們的恐懼和猜疑導致了無數無辜者遭受牽連。這些行動不僅沒有增強國家安全,反而埋下了社會分裂的種子。"
+
+    jump chapter7_act3  
+
+# 第三幕：軍中白色恐怖（1955年）
+label chapter7_act3:
+    scene bg imghui3
+    with fade
+    $ now_venue = place("總統辦公室")
+
+    show screen location_ui
+    show johndraw at left
+    voice "voihui11.wav"
+    j "這個孫立人似乎野心勃勃,我們必須警惕。"
+
+    show g at right
+    g "是的,總統。我們掌握了一些情報,顯示孫立人可能有不軌企圖。他近期頻繁與美國官員接觸,而且在軍中的影響力越來越大。"
+
+    voice "voihui12.wav"
+    j "這確實值得關注。你有什麼具體證據嗎？"
+
+    g "目前還沒有確鑿證據,但有多個可靠線人的報告。他們說孫立人私下批評我們的軍事策略,甚至暗示要 '改變現狀'。"
+
+    voice "voihui13.wav"
+    j "'改變現狀'？這話什麼意思？"
+
+    g "我們認為,他可能在醞釀一場軍事政變。"
+
+    voice "voihui14.wav"
+    j "這是個嚴重的指控。我們不能僅憑猜測就採取行動。"
+
+    show p at center
+    p "報告總統,我們在孫立人的親信中安插了一名線人。他提供了一些有趣的信息。"
+
+    voice "voihui15.wav"
+    j "說說看。"
+
+    p "孫立人最近幾次與美國軍事顧問的會面都沒有事先報備。而且,他正在秘密調動一些忠於他的部隊。"
+
+    voice "voihui16.wav"
+    j "這確實可疑。但我們還是需要更多證據。"
+
+    g "總統,如果我們等到有確鑿證據,可能就為時已晚了。"
+
+    voice "voihui17.wav"
+    j "我明白你的顧慮。但是,孫立人在軍中威望很高,如果我們貿然行動,可能會引起軍中動盪。我們必須確保軍隊的忠誠,但也要避免無端的猜疑。能戰始能言和,不能戰而言和,是投降,投降後就是繳械,繳械後就是被屠殺。我們要保持警惕,但不能失去理智。"
+
+    p "那麼,我們是否可以先進行秘密調查?同時,密切監視孫立人的一舉一動。"
+
+    voice "voihui18.wav"
+    j "好主意。郭廷亮,你負責這項工作。記住,要謹慎行事,不要打草驚蛇。"
+
+    voice "voihui19.wav"
+    "1955年的『孫立人兵變案』,又稱『郭廷亮匪諜案』,牽連了約三百餘人。這次事件嚴重打擊了軍中異己,但也埋下了日後軍中不信任的種子。蔣中正開始意識到,過度的猜疑可能會傷害我們自己。權力的行使如履薄冰,一個不慎,就可能造成無法挽回的錯誤。"
+
+    hide johndraw
+    hide g
+    hide p
+    jump chapter7_act4  
+
+# 第四幕：知識分子的迫害（1960年）
+label chapter7_act4:
+    scene bg imghui4
+    with fade
+    $ now_venue = place("《自由中國》雜誌社")
+
+    show screen location_ui
+
+    show l at left
+    l "諸位,最新一期的稿件我都看過了。內容很好,但我擔心可能會引起當局的不滿。"
+
+    show y at center
+    y "雷老,我們是不是該考慮稍微溫和一些?最近的政治氛圍越來越緊張了。"
+
+    show f at right
+    f "但如果我們自我審查,那還有什麼言論自由可言?"
+
+    show l at left
+    l "傅正說得對。我們辦這份雜誌,就是為了說出真話。"
+
+    show y at center
+    y "我完全理解,但我們也要為員工的安全著想。上週,有人跟蹤我回家。"
+
+    l "我明白你們的顧慮。但是,如果我們不說,誰來說?我們不能讓台灣陷入完全的言論黑暗。"
+
+    show f at right
+    f "那麼,我們是否可以採取一些策略?比如用更委婉的語言?"
+
+    l "不,現在不是妥協的時候。我們必須堅持真理,即使付出代價。"
+
+    y "雷老,我敬佩你的勇氣。但我擔心的不只是我們自己,還有我們的家人和朋友。他們也可能因此受到牽連。"
+
+    l "我明白你們的顧慮。但請相信我,堅持正義終將得到回報。台灣需要我們的聲音。"
+
+    hide l
+    hide y
+    hide f
+
+    voice "voihui20.wav"
+    "對於知識分子的控制,蔣中正曾說過:'中國在國民黨以外,除了共產黨,再沒有什麼其他黨派了。所謂其他黨派實際是不能算數的。'這種思維導致了對異見者的打壓。現在看來,這是一個嚴重的錯誤。"
+    jump chapter7_act5  
+# 第五幕中的對話需要相應修改
+label chapter7_act5:
+    scene bg imghui5
+    with fade
+    $ now_venue = place("總統府")
+
+    show screen location_ui
+
+    show johndraw at left
+    voice "voihui21.wav"
+    j "美國對我們的人權狀況越來越不滿了。"
+
+    show yan at right
+    yan "是的,總統。特別是在1970年的『泰源監獄案』之後,國際輿論對我們非常不利。聯合國也開始關注台灣的人權問題。"
+
+    voice "voihui22.wav"
+    j "這個趨勢很危險。我們如何在維護國家安全和應對國際壓力之間取得平衡?歷來亡國之原因,並不在於敵寇外患之強大,而是在於內部之分崩離析。我們必須在維護國家安全和推進改革之間找到平衡。"
+
+    yan "我們可以考慮逐步放寬一些限制,展現我們改革的決心。比如,可以減少對新聞媒體的管控。"
+
+    show johnson at center  # 使用 johnson 而不是 jj
+    johnson "父親,同意嚴副總統的看法。世界在變,我們也必須改變。"
+    
+    voice "voihui23.wav"
+    j "但是,如果我們放鬆管控,共產黨會不會趁機滲透?"
+
+    johnson "這個風險確實存在。但我認為,我們可以通過其他方式來防範,比如加強經濟建設,提高人民生活水平。"
+
+    yan "沒錯,一個繁榮的社會更容易抵禦共產主義的誘惑。"
+
+    voice "voihui24.wav"
+    j "你們說得有道理。但這些年來,我們付出了這麼多代價,難道就這樣放棄嗎?"
+
+    johnson "父親,這不是放棄,而是轉變。我們可以通過經濟發展和逐步的政治改革來鞏固政權,而不是單純依賴高壓政策。"
+
+    j "（長嘆一聲）"
+
+    hide johndraw
+    hide yan
+    hide johnson
+
+    # 這裡可以添加一個結束的旁白或過場動畫
+    "隨著時代的變遷,蔣中正和他的政府開始反思過去的政策。白色恐怖時期逐漸走向尾聲,但它留下的傷痕將長期影響台灣社會。"
+
+    # 跳轉到下一章或結束畫面
+    jump chapter8_act1  # 假設下一章是第八章
 # 第八章：後期統治
 label chapter8_act1:
     $ renpy.block_rollback()

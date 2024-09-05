@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 2298: expected end of line
-    play music "chapter8.mp3" volumn 0.4
-                              ^
+File "game/script.rpy", line 2868: is not terminated with a newline. (Check strings and parenthesis.)
+(Perhaps you left out a " at the end of the first line.)
+        jj "父親,我同意嚴副總統的看
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Thu Sep  5 16:50:34 2024
+Thu Sep  5 18:41:19 2024
