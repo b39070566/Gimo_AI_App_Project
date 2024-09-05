@@ -1,64 +1,41 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-  File "game/script.rpy", line 424, in prepare_screen
-    screen choice_screen():
-  File "game/script.rpy", line 424, in prepare
-    screen choice_screen():
-  File "game/script.rpy", line 425, in prepare
-    frame:
-  File "game/script.rpy", line 425, in prepare
-    frame:
-  File "game/script.rpy", line 429, in prepare
-    vbox:
-  File "game/script.rpy", line 429, in prepare
-    vbox:
-  File "game/script.rpy", line 430, in prepare
-    textbutton "確認" action Jump(now_chapter.chapter)(size 40)
-  File "game/script.rpy", line 430, in prepare
-    textbutton "確認" action Jump(now_chapter.chapter)(size 40)
-SyntaxError: invalid syntax (game/script.rpy, line 430)
+While running game code:
+  File "game/script.rpy", line 2654, in script
+    with fade
+OSError: Couldn't find file 'ch7bgm.wav'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\main.py", line 635, in main
-    run(restart)
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\main.py", line 94, in run
-    renpy.display.screen.prepare_screens()
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\screen.py", line 1026, in prepare_screens
-    s.ast.prepare_screen()
-  File "game/script.rpy", line 424, in prepare_screen
-    screen choice_screen():
-  File "game/script.rpy", line 424, in prepare
-    screen choice_screen():
-  File "game/script.rpy", line 425, in prepare
-    frame:
-  File "game/script.rpy", line 425, in prepare
-    frame:
-  File "game/script.rpy", line 429, in prepare
-    vbox:
-  File "game/script.rpy", line 429, in prepare
-    vbox:
-  File "game/script.rpy", line 430, in prepare
-    textbutton "確認" action Jump(now_chapter.chapter)(size 40)
-  File "game/script.rpy", line 430, in prepare
-    textbutton "確認" action Jump(now_chapter.chapter)(size 40)
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\py3analysis.py", line 803, in ast_eval
-    return self.ast_eval_literal(expr)[0]
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\py3analysis.py", line 785, in ast_eval_literal
-    expr = py_compile(expr, 'eval', ast_node=True)
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\python.py", line 1144, in py_compile
-    raise e
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\python.py", line 1081, in py_compile
-    raise orig_e
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\python.py", line 1073, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: invalid syntax (game/script.rpy, line 430)
+  File "game/script.rpy", line 2654, in script
+    with fade
+  File "D:\renpy-8.2.1-sdk\renpy\ast.py", line 1363, in execute
+    renpy.exports.with_statement(trans, paired=paired)
+  File "D:\renpy-8.2.1-sdk\renpy\exports.py", line 1781, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "D:\renpy-8.2.1-sdk\renpy\display\core.py", line 1548, in do_with
+    return self.interact(trans_pause=True,
+  File "D:\renpy-8.2.1-sdk\renpy\display\core.py", line 2165, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "D:\renpy-8.2.1-sdk\renpy\display\core.py", line 3022, in interact_core
+    renpy.audio.audio.periodic()
+  File "D:\renpy-8.2.1-sdk\renpy\audio\audio.py", line 1205, in periodic
+    raise_(exc[0], exc[1], exc[2])
+  File "lib/python3.9/future/utils/__init__.py", line 444, in raise_
+  File "D:\renpy-8.2.1-sdk\renpy\audio\audio.py", line 1183, in periodic_thread_main
+    periodic_pass()
+  File "D:\renpy-8.2.1-sdk\renpy\audio\audio.py", line 1125, in periodic_pass
+    c.periodic()
+  File "D:\renpy-8.2.1-sdk\renpy\audio\audio.py", line 534, in periodic
+    topf = load(filename)
+  File "D:\renpy-8.2.1-sdk\renpy\audio\audio.py", line 72, in load
+    rv = renpy.loader.load(fn, directory="audio")
+  File "D:\renpy-8.2.1-sdk\renpy\loader.py", line 672, in load
+    raise IOError("Couldn't find file '%s'." % name)
+OSError: Couldn't find file 'ch7bgm.wav'.
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.2.1.24030407
 Fantasy Ren'py GUI template 1.0
-Thu Sep  5 19:27:01 2024
+Thu Sep  5 22:33:08 2024
