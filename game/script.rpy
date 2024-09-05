@@ -18,6 +18,10 @@
         def __init__(self, location):
             self.location = location
 
+    class chaptchoosing:
+        def __init__(self, chapter):
+            self.chapter = chapter
+
 
     class Fighter:
         def __init__(self, name, level=1, max_hp=10, hp=10, max_mp=4, mp=4, attack=2, defense=1, element="None"):
@@ -120,6 +124,10 @@ define saramy = Character("軍官")
 define wangshijie = Character("王世傑")
 define allp = Character("全場")
 
+define minister = Character("經濟部長")
+define johnson = Character("蔣經國")
+define diplomat = Character("外交部長")
+
 
 define audio.gamemusic = "audio/chapter1.wav"
 
@@ -141,6 +149,11 @@ image bg imgchi10 = "imgchi10.jpg"
 image bg imgchi11 = "imgchi11.jpg"
 image bg imgchi12 = "imgchi12.jpg"
 image bg imgchi13 = "imgchi13.jpg"
+image bg imgchi14 = "imgchi14.png"
+image bg imgchi15 = "imgchi15.jpg"
+image bg imgchi16 = "imgchi16.jpg"
+image bg imgchi17 = "imgchi17.jpg"
+image bg imgchi18 = "imgchi18.jpg"
 
 image bg imgfeng1 = "imgfeng1.png"
 image bg imgfeng2 = "imgfeng2.png"
@@ -183,6 +196,9 @@ image bg imgjcs2 = "imgjcs2.jpg"
 image bg imgjcs3 = "imgjcs3.jpg"
 image bg imgjcs4 = "imgjcs4.jpg"
 image bg imgjcs6 = "imgjcs6.jpg"
+
+image imgjcf7 = "imgjcf7.jpg"
+image imgjcs5 = "imgjcs5.jpg"
 
 
 image johndraw = "johndraw.png"
@@ -227,9 +243,8 @@ image dustbroken = "dustbroken.png"
 image wall = "wall.png"
 image prison = "prison.png"
 
-image imgjcf7 = "imgjcf7.jpg"
 
-image imgjcs5 = "imgjcs5.jpg"
+
 
 
 #角色動作的線性變化區域
@@ -333,18 +348,125 @@ label battle_system:
             $ renpy.block_rollback()
             return "defeat"
 
+screen imagemap():
+    imagemap:
+        idle "hugemap idle"
+        hover "hugemap hover"
 
+        hotspot (1424, 633, 67, 66) action Jump("chap1go") alt "Chap1go"
+        hotspot (999, 462, 69, 68) action Jump("chap2go") alt "Chap2go"
+        hotspot (1221, 208, 66, 67) action Jump("chap3go") alt "Chap3go"
+        hotspot (1525, 787, 73, 70) action Jump("chap4go") alt "Chap4go"
+        hotspot (801, 599, 69, 67) action Jump("chap5go") alt "Chap5go"
+        hotspot (1485, 477, 69, 67) action Jump("chap6go") alt "Chap6go"
+        hotspot (1403, 853, 67, 64) action Jump("chap7go") alt "Chap7go"
+        hotspot (1495, 918, 70, 66) action Jump("chap8go") alt "Chap8go"
+
+screen choice_screen():
+    frame:
+        xpadding 13
+        ypadding 14
+        xalign 0.5 yalign 0.5
+        vbox:
+            textbutton "確認" action Jump(now_chapter.chapter)
+            textbutton "返回" action Jump("start")
+
+
+label chap1go:
+    $ now_chapter.chapter = "chapter1_act1"
+    $ renpy.block_rollback()
+    show maofumei:
+        xalign 0.4
+        yalign 0.4
+    "是否確認進入章節1?"
+    $ renpy.block_rollback()
+    call screen choice_screen
+
+label chap2go:
+    $ now_chapter.chapter = "chapter2_act1"
+    $ renpy.block_rollback()
+    show maofumei:
+        xalign 0.4
+        yalign 0.4
+    "是否確認進入章節2?"
+    $ renpy.block_rollback()
+    call screen choice_screen
+
+label chap3go:
+    $ now_chapter.chapter = "chapter3_act1"
+    $ renpy.block_rollback()
+    show maofumei:
+        xalign 0.4
+        yalign 0.4
+    "是否確認進入章節3?"
+    $ renpy.block_rollback()
+    call screen choice_screen
+ 
+label chap4go:
+    $ now_chapter.chapter = "chapter4_act1"
+    $ renpy.block_rollback()
+    show maofumei:
+        xalign 0.4
+        yalign 0.4
+    "是否確認進入章節4?"
+    $ renpy.block_rollback()
+    call screen choice_screen
+
+label chap5go:
+    $ now_chapter.chapter = "chapter5_act1"
+    $ renpy.block_rollback()
+    show maofumei:
+        xalign 0.4
+        yalign 0.4
+    "是否確認進入章節5?"
+    $ renpy.block_rollback()
+    call screen choice_screen
+
+
+label chap6go:
+    $ now_chapter.chapter = "chapter6_act1"
+    $ renpy.block_rollback()
+    show maofumei:
+        xalign 0.4
+        yalign 0.4
+    "是否確認進入章節6?"
+    $ renpy.block_rollback()
+    call screen choice_screen
+
+label chap7go:
+    $ now_chapter.chapter = "chapter7_act1"
+    $ renpy.block_rollback()
+    show maofumei:
+        xalign 0.4
+        yalign 0.4
+    "是否確認進入章節7?"
+    $ renpy.block_rollback()
+    call screen choice_screen
+
+label chap8go:
+    $ now_chapter.chapter = "chapter8_act1"
+    $ renpy.block_rollback()
+    show maofumei:
+        xalign 0.4
+        yalign 0.4
+    "是否確認進入章節8?"
+    $ renpy.block_rollback()
+    call screen choice_screen
+ 
 # 遊戲開始
 label start:
+    $now_venue = place("startplace")
+    $now_chapter = chaptchoosing("init")
     play music gamemusic
-    jump chapter1_act1
+    call screen imagemap
 
 
 # 第一幕：家世背景
 label chapter1_act1:
+    $ renpy.block_rollback()
     scene bg yutai
     with fade
-    $ now_venue = place("玉泰鹽鋪")
+    $ now_venue.location = "玉泰鹽鋪"
     "第一章：早年生活與革命生涯"
 
 
@@ -485,7 +607,7 @@ label chapter1_act3:
 label chapter1_act4:
     scene bg imgchi3
     with fade
-    $ now_venue = place("奉化鳳麓學堂")
+    $ now_venue.location = "奉化鳳麓學堂"
     "1903年，奉化鳳麓學堂"
 
     show johnyoung
@@ -508,7 +630,7 @@ label chapter1_act4:
 label chapter1_act5:
     scene bg imgchi4
     with fade
-    $ now_venue = place("上海碼頭")
+    $ now_venue.location = "上海碼頭"
     "1906年4月，上海碼頭"
     show johnyoung
     "志清" "母親，我一定會在日本好好學習，為祖國爭光。"
@@ -527,7 +649,7 @@ label chapter1_act5:
     j "結果，在我抵達日本後，才發現公費生不能入軍校，只好在同年冬天返回中國，並進入了清政府開辦的陸軍速成學堂"
 
     scene bg imgchi5
-    $ now_venue = place("陸軍速成學堂")
+    $ now_venue.location = "陸軍速成學堂"
     "陸軍速成學堂，學校教室"
 
     show dust:
@@ -552,7 +674,7 @@ label chapter1_act5:
 label chapter1_act6:
     scene bg imgchi6
     with fade
-    $ now_venue = place("東京")
+    $ now_venue.location = "東京"
     "1908年，東京"
 
     
@@ -574,7 +696,7 @@ label chapter1_act6:
 label chapter1_act7:
     scene bg imgchi12
     with fade
-    $ now_venue = place("日本振武學校")
+    $ now_venue.location = "日本振武學校"
     "1910年11月，日本振武學校畢業典禮"
 
     show johndraw 
@@ -591,7 +713,7 @@ label chapter1_act7:
 label chapter1_act8:
     scene bg imgchi4
     with fade
-    $ now_venue = place("上海碼頭")
+    $ now_venue.location = "上海碼頭"
     "1911年10月，上海碼頭"
 
     show johndraw
@@ -601,7 +723,7 @@ label chapter1_act8:
     "志清" "是啊，我們必須立即行動。陳其美大哥在上海已經開始準備了。"
     z "那我們趕快去找他吧。祖國需要我們了。"
 
-    $ now_venue = place("陳其美居所")
+    $ now_venue.location = "陳其美居所"
     scene bg imgchi13 
     
     "上海，陳其美的住所"
@@ -619,7 +741,7 @@ label chapter1_act8:
 label chapter1_act9:
     scene bg imgchi8
     with fade
-    $ now_venue = place("浙江杭州")
+    $ now_venue.location = "浙江杭州"
     "武昌起義開始，參加光復浙江之戰"
 
         
@@ -652,7 +774,7 @@ label chapter1_act9:
 label chapter1_act10:
     scene bg imgchi9
     with fade
-    $ now_venue = place("中華革命黨總部")
+    $ now_venue.location = "中華革命黨總部"
     "1913年，中華革命黨總部"
 
     show sunzhongshan
@@ -667,7 +789,7 @@ label chapter1_act10:
 
     scene bg imgchi10
     with fade
-    $ now_venue = place("上海")
+    $ now_venue.location = "上海"
     "1913年7月，上海"
 
     voice "voichi14.wav"
@@ -699,7 +821,7 @@ label chapter1_act10:
 label chapter1_act11:
     scene bg imgchi11
     with fade
-    $ now_venue = place("張靜江家")
+    $ now_venue.location = "張靜江家"
     "上海，張靜江家中，1919年"
 
     show johndraw
@@ -714,7 +836,7 @@ label chapter1_act11:
 
     scene bg imgchi11
     with fade
-    $ now_venue = place("陳氏宅")
+    $ now_venue.location = "陳氏宅"
     "陳家"
 
     show johndraw
@@ -737,10 +859,11 @@ label chapter1_act11:
 
 # 第一幕：事變前夕
 label chapter2_act1:
+    $ renpy.block_rollback()
     scene bg imgfeng1
     
     with fade
-    $ now_venue = place("西安行營")
+    $ now_venue.location = "西安行營"
     "1936年12月11日，西安行營"
 
     show screen location_ui
@@ -945,9 +1068,10 @@ label chapter2_act5:
 
 #第一幕：七七事變
 label chapter3_act1:
+    $ renpy.block_rollback()
     scene bg imgyalan1
     with fade
-    $ now_venue = place("南京，國民政府軍事委員會")
+    $ now_venue.location = "南京，國民政府軍事委員會"
     "1937年7月7日"
 
     show johndraw
@@ -1538,6 +1662,7 @@ label chapter3_act6:
 
 # 第一幕：事件爆發
 label chapter4_act1:
+    $ renpy.block_rollback()
     scene bg imgjcf1
     with fade
 
@@ -1927,6 +2052,7 @@ label chapter4_act6:
 
 # 第六章：中華民國政府遷台 (此章沒分幕)
 label chapter6_act1:
+    $ renpy.block_rollback()
     scene bg imgjcs1 :
         size(1920,1080)
     with fade
@@ -2163,6 +2289,116 @@ label chapter6_act1:
     voice "voijcs17.wav"
     "這段歷史，不僅見證了一個政權的轉折，一個島嶼的蛻變，更記錄了無數人在動盪中奮鬥、在逆境中重生的故事。"
 
+# 第八章：後期統治
+label chapter8_act1:
+    $ renpy.block_rollback()
+    scene bg imgchi14
+    with fade
+    $ now_venue.location = "台北總統府花園"
+    "第八章：後期統治"
+    "第一幕：十大建設"
+    "1973年，台北總統府"
+
+    show screen location_ui
+    show johndraw at left
+
+    j "1973年，我們正式啟動了十大建設計劃。這是台灣經濟發展的關鍵時刻。"
+
+    show minion at right
+    minister "總統，十大建設計劃已經開始實施。我們預計這將大大提升台灣的經濟實力。"
+
+    j "很好。記住，我們不僅要追求經濟增長，更要為人民創造更好的生活。"
+
+    show minion at center
+    johnson "父親，您放心。我會親自監督這些項目的進展。"
+
+    hide minion
+
+    jump chapter8_act2
+
+label chapter8_act2:
+    scene bg imgchi15
+    with fade
+    $ now_venue.location = "總統府會議室"
+    "第二幕：外交挑戰"
+    "1975年，總統府會議室"
+
+    show johndraw at left
+
+    j "1975年，我們失去了在聯合國的席位。這是一個巨大的外交挫折。"
+
+    show minion at right
+    diplomat "總統，美國已經與中共建交。我們在國際上的處境越來越困難了。"
+
+    j "哼，短視！他們不明白這樣做的後果。但我們不能就此放棄。要積極尋求新的外交突破口。"
+
+    hide minion
+
+    jump chapter8_act3
+
+label chapter8_act3:
+    scene bg imgchi16
+    with fade
+    $ now_venue.location = "蔣中正的私人書房"
+    "第三幕：政治改革的壓力"
+    "1977年，蔣中正的私人書房"
+
+    show johndraw at left
+
+    j "隨著社會的發展，要求政治改革的聲音越來越大。我知道改變是必要的，但如何改變，是個艱難的抉擇。"
+
+    show minion at right
+    johnson "父親，中壢事件後，民間對政治改革的呼聲更高了。我們是否應該考慮放寬一些政策？"
+
+    j "經國，改革是必要的，但必須謹慎。我們要在保持穩定和推動變革之間找到平衡。"
+
+    hide minion
+
+    jump chapter8_act4
+
+label chapter8_act4:
+    scene bg imgchi17
+    with fade
+    $ now_venue.location = "行政院會議室"
+    "第四幕：經濟奇蹟"
+    "1979年，行政院會議室"
+
+    show johndraw at left
+
+    j "看著台灣的經濟快速發展，我感到欣慰。但我也知道，經濟發展帶來的社會變革，將給我們的統治帶來新的挑戰。"
+
+    show minion at right
+    minister "報告總統，我們的經濟增長率連續多年保持在高位，外國媒體稱之為'台灣奇蹟'。"
+
+    j "經濟發展很重要，但我們更要關注財富分配和社會公平。不能讓發展的果實只被少數人享有。"
+
+    hide minion
+
+    jump chapter8_act5
+
+label chapter8_act5:
+    scene bg imgchi18
+    with fade
+    $ now_venue.location = "陽明山中興賓館"
+    "第五幕：最後的日子"
+    "1975年，陽明山中興賓館"
+
+    show johndraw at left
+
+    j "我知道自己時日無多，但我仍然牽掛著這個國家的未來。"
+
+    show minion at right
+    johnson "父親，您要保重身體。國家還需要您的指導。"
+
+    j "經國，未來的路還很長。記住，國家利益高於一切。但也要明白，只有贏得人民的心，才能真正穩固政權。時代在變，我們也必須與時俱進。"
+
+    j "看著經國，我既感到欣慰，又充滿擔憂。我知道，我的時代即將結束，新的挑戰不斷出現。我只希望，我的經驗教訓能夠成為後人的借鑒，讓這個國家走向更好的未來。"
+
+    hide minion
+
+    "完結。"
+
     return
+
 
 
