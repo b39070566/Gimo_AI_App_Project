@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 509: Indentation mismatch.
+File "game/script.rpy", line 366: 'j' is not a keyword argument or valid child of the screen statement.
+    j"是否確認進入章節3?"
+     ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Thu Sep  5 14:26:48 2024
+Thu Sep  5 14:36:29 2024

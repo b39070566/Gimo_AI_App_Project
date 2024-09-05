@@ -258,8 +258,6 @@ screen quick_menu():
             textbutton _("跳過") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("自動") action Preference("auto-forward", "toggle")
             textbutton _("儲存") action ShowMenu('save')
-            textbutton _("Q.儲存") action QuickSave()
-            textbutton _("Q.載入") action QuickLoad()
             textbutton _("設定") action ShowMenu('preferences')
 
 
