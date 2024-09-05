@@ -131,6 +131,7 @@ define diplomat = Character("外交部長")
 
 define audio.gamemusic = "audio/chapter1.wav"
 
+
 #圖檔區域 角色跟背景要分開放，每個人不同的背景也都要分開
 image bg blackscreen = "bg blackscreen.png"
 image bg yutai = "imgoldhouse"
@@ -2294,6 +2295,7 @@ label chapter6_act1:
 # 第八章：後期統治
 label chapter8_act1:
     $ renpy.block_rollback()
+    play music "chapter8.mp3" volume 0.4
     scene bg imgchi14
     with fade
     $ now_venue.location = "台北總統府花園"
