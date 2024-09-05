@@ -1,22 +1,66 @@
+<<<<<<< HEAD
 2024-09-05 11:49:25 UTC
+=======
+2024-09-05 11:27:53 UTC
+>>>>>>> e9ed8f5106e46fc7f57ba21ab5dae7ae2b57d27d
 Windows-10-10.0.22621
 Ren'Py 8.2.1.24030407
 
 Early init took 0.04s
 Loading error handling took 0.02s
+<<<<<<< HEAD
 Loading script took 0.15s
 Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
  - Init at game/script.rpy:1 took 4.18736 s.
 Running init code took 4.23s
+=======
+Loading script took 0.17s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 430: the text_size keyword argument was not given a value.
+    textbutton "確認" action Jump(now_chapter.chapter) text_size=32
+                                                              ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 0.21s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 12.61s
+Loading error handling took 0.02s
+Loading script took 0.19s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.15662 s.
+Running init code took 4.19s
+>>>>>>> e9ed8f5106e46fc7f57ba21ab5dae7ae2b57d27d
 Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.02s
 Index archives took 0.00s
+<<<<<<< HEAD
+=======
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+>>>>>>> e9ed8f5106e46fc7f57ba21ab5dae7ae2b57d27d
 Dump and make backups took 0.03s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc took 0.02s
+<<<<<<< HEAD
 DPI scale factor: 1.250000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
@@ -61,6 +105,9 @@ Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc took 0.03s
 DPI scale factor: 1.250000
+=======
+DPI scale factor: 1.000000
+>>>>>>> e9ed8f5106e46fc7f57ba21ab5dae7ae2b57d27d
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
 Creating interface object took 0.15s
@@ -74,19 +121,26 @@ Prepare screens took 0.03s
 Save pyanalysis. took 0.01s
 Save bytecode. took 0.01s
 Running _start took 0.00s
+<<<<<<< HEAD
 Interface start took 0.09s
+=======
+Interface start took 0.03s
+>>>>>>> e9ed8f5106e46fc7f57ba21ab5dae7ae2b57d27d
 
 Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
+primary display bounds: (0, 0, 2560, 1440)
 swap interval: 1 frames
-Fullscreen mode.
+Windowed mode.
 Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 555.85'
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
 Maximum texture size: 4096x4096
 Resetting cache.
+<<<<<<< HEAD
 Early init took 320.89s
 Loading error handling took 0.02s
 Loading script took 0.21s
@@ -94,19 +148,180 @@ Loading save slot metadata took 0.02s
 Loading persistent took 0.00s
  - Init at game/script.rpy:1 took 4.09560 s.
 Running init code took 4.12s
+=======
+Early init took 37.79s
+Loading error handling took 0.01s
+Loading script took 0.20s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.08301 s.
+Running init code took 4.11s
+>>>>>>> e9ed8f5106e46fc7f57ba21ab5dae7ae2b57d27d
 Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.02s
 Index archives took 0.00s
-Backing up script files to 'C:\\Users\\馮雅嵐\\AppData\\Roaming/RenPy/backups\\school5.16':
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+<<<<<<< HEAD
+Initial gc took 0.04s
+DPI scale factor: 1.250000
+=======
+Initial gc took 0.03s
+DPI scale factor: 1.000000
+>>>>>>> e9ed8f5106e46fc7f57ba21ab5dae7ae2b57d27d
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.17s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+<<<<<<< HEAD
+Early init took 370.75s
+Loading error handling took 0.01s
+Loading script took 0.23s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.10774 s.
+Running init code took 4.13s
+=======
+Early init took 52.98s
+Loading error handling took 0.01s
+Loading script took 0.20s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.09568 s.
+Running init code took 4.12s
+>>>>>>> e9ed8f5106e46fc7f57ba21ab5dae7ae2b57d27d
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+<<<<<<< HEAD
+Initial gc took 0.04s
+DPI scale factor: 1.250000
+=======
+Initial gc took 0.03s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.02s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 57.85s
+Loading error handling took 0.01s
+Loading script took 0.21s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.08584 s.
+Running init code took 4.11s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.03s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 70.08s
+Loading error handling took 0.01s
+Loading script took 0.22s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.08567 s.
+Running init code took 4.11s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
 Dump and make backups took 0.03s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc took 0.04s
-DPI scale factor: 1.250000
+DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.17s
+Creating interface object took 0.15s
 Cleaning stores took 0.00s
 Init translation took 0.03s
 Build styles took 0.00s
@@ -117,36 +332,407 @@ Prepare screens took 0.04s
 Save pyanalysis. took 0.01s
 Save bytecode. took 0.01s
 Running _start took 0.00s
-Interface start took 0.11s
+Interface start took 0.03s
 
 Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
+primary display bounds: (0, 0, 2560, 1440)
 swap interval: 1 frames
-Fullscreen mode.
+Windowed mode.
 Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 555.85'
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 370.75s
+Early init took 174.06s
 Loading error handling took 0.01s
-Loading script took 0.23s
+Loading script took 0.22s
 Loading save slot metadata took 0.02s
 Loading persistent took 0.00s
- - Init at game/script.rpy:1 took 4.10774 s.
-Running init code took 4.13s
+ - Init at game/script.rpy:1 took 4.07798 s.
+Running init code took 4.10s
 Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.02s
 Index archives took 0.00s
-Backing up script files to 'C:\\Users\\馮雅嵐\\AppData\\Roaming/RenPy/backups\\school5.16':
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.03s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.02s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.00s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 222.46s
+Loading error handling took 0.01s
+Loading script took 0.22s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.09110 s.
+Running init code took 4.11s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
 Dump and make backups took 0.03s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc took 0.04s
-DPI scale factor: 1.250000
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 236.17s
+Loading error handling took 0.01s
+Loading script took 0.21s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.08417 s.
+Running init code took 4.11s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.02s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 245.36s
+Loading error handling took 0.01s
+Loading script took 0.23s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.08686 s.
+Running init code took 4.11s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.02s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 256.07s
+Loading error handling took 0.01s
+Loading script took 0.21s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.08435 s.
+Running init code took 4.11s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 284.92s
+Loading error handling took 0.01s
+Loading script took 0.20s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.07400 s.
+Running init code took 4.10s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 301.64s
+Loading error handling took 0.01s
+Loading script took 0.21s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.08199 s.
+Running init code took 4.10s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 325.89s
+Loading error handling took 0.01s
+Loading script took 0.21s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.09743 s.
+Running init code took 4.12s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 335.08s
+Loading error handling took 0.01s
+Loading script took 0.22s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.09446 s.
+Running init code took 4.12s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+>>>>>>> e9ed8f5106e46fc7f57ba21ab5dae7ae2b57d27d
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
 Creating interface object took 0.19s
@@ -155,24 +741,259 @@ Init translation took 0.04s
 Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.01s
+<<<<<<< HEAD
 Save screen analysis took 0.02s
+=======
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 339.97s
+Loading error handling took 0.01s
+Loading script took 0.21s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.09284 s.
+Running init code took 4.12s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.15s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 349.19s
+Loading error handling took 0.01s
+Loading script took 0.17s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 427: the xalign keyword argument was not given a value.
+    xalign = 0.5
+           ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 0.22s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 356.82s
+Loading error handling took 0.01s
+Loading script took 0.20s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.07907 s.
+Running init code took 4.11s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.03s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.15s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.00s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 382.59s
+Loading error handling took 0.01s
+Loading script took 0.16s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 427: vbox expects a non-empty block.
+    vbox:
+         ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 0.21s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 388.74s
+Loading error handling took 0.01s
+Loading script took 0.21s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.08390 s.
+Running init code took 4.11s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.03s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.17s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 393.64s
+Loading error handling took 0.01s
+Loading script took 0.21s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.09000 s.
+Running init code took 4.11s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.15s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+>>>>>>> e9ed8f5106e46fc7f57ba21ab5dae7ae2b57d27d
 Prepare screens took 0.04s
 Save pyanalysis. took 0.01s
 Save bytecode. took 0.01s
 Running _start took 0.00s
-Interface start took 0.10s
+Interface start took 0.03s
 
 Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
+primary display bounds: (0, 0, 2560, 1440)
 swap interval: 1 frames
-Fullscreen mode.
+Windowed mode.
 Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 555.85'
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
 Maximum texture size: 4096x4096
 Resetting cache.
+<<<<<<< HEAD
 Early init took 399.62s
 Loading error handling took 0.01s
 Loading script took 0.20s
@@ -260,12 +1081,824 @@ Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
 Resetting cache.
 Early init took 430.37s
+=======
+Early init took 401.31s
+>>>>>>> e9ed8f5106e46fc7f57ba21ab5dae7ae2b57d27d
 Loading error handling took 0.01s
-Loading script took 0.08s
+Loading script took 0.22s
 Loading save slot metadata took 0.02s
 Loading persistent took 0.00s
+<<<<<<< HEAD
  - Init at game/script.rpy:1 took 4.08998 s.
 Running init code took 4.11s
+=======
+ - Init at game/script.rpy:1 took 4.09070 s.
+Running init code took 4.11s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.15s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 433.09s
+Loading error handling took 0.01s
+Loading script took 0.22s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.08411 s.
+Running init code took 4.11s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.15s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.00s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 448.32s
+Loading error handling took 0.01s
+Loading script took 0.20s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.08929 s.
+Running init code took 4.11s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.03s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.15s
+Cleaning stores took 0.00s
+Init translation took 0.02s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 465.01s
+Loading error handling took 0.01s
+Loading script took 0.20s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.08286 s.
+Running init code took 4.11s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.15s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 477.22s
+Loading error handling took 0.01s
+Loading script took 0.20s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.07996 s.
+Running init code took 4.10s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 493.94s
+Loading error handling took 0.01s
+Loading script took 0.21s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.08996 s.
+Running init code took 4.11s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.15s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 510.92s
+Loading error handling took 0.01s
+Loading script took 0.21s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.06617 s.
+Running init code took 4.09s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 524.65s
+Loading error handling took 0.01s
+Loading script took 0.21s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.09154 s.
+Running init code took 4.11s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.15s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 529.55s
+Loading error handling took 0.01s
+Loading script took 0.21s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.08838 s.
+Running init code took 4.11s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.15s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 540.25s
+Loading error handling took 0.01s
+Loading script took 0.21s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.07828 s.
+Running init code took 4.10s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.17s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 545.17s
+Loading error handling took 0.01s
+Loading script took 0.22s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.07795 s.
+Running init code took 4.10s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 626.61s
+Loading error handling took 0.01s
+Loading script took 0.22s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.09417 s.
+Running init code took 4.12s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 640.32s
+Loading error handling took 0.01s
+Loading script took 0.21s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.06511 s.
+Running init code took 4.09s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.15s
+Cleaning stores took 0.00s
+Init translation took 0.02s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 651.04s
+Loading error handling took 0.01s
+Loading script took 0.21s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.08407 s.
+Running init code took 4.11s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.15s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 660.24s
+Loading error handling took 0.01s
+Loading script took 0.21s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.08915 s.
+Running init code took 4.11s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.14s
+Cleaning stores took 0.00s
+Init translation took 0.02s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 665.10s
+Loading error handling took 0.01s
+Loading script took 0.20s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.07367 s.
+Running init code took 4.10s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.15s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.00s
+Save screen analysis took 0.01s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 680.34s
+Loading error handling took 0.01s
+Loading script took 0.24s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.08276 s.
+Running init code took 4.11s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 695.57s
+Loading error handling took 0.01s
+Loading script took 0.20s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.09407 s.
+Running init code took 4.12s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\a3196\\AppData\\Roaming/RenPy/backups\\school5.16':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.15s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 712.36s
+Loading error handling took 0.01s
+Loading script took 0.09s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+ - Init at game/script.rpy:1 took 4.07917 s.
+Running init code took 4.10s
+>>>>>>> e9ed8f5106e46fc7f57ba21ab5dae7ae2b57d27d
 Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.02s
@@ -273,13 +1906,13 @@ Index archives took 0.00s
 Dump and make backups took 0.03s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.03s
-DPI scale factor: 1.250000
+Initial gc took 0.04s
+DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.15s
+Creating interface object took 0.16s
 Cleaning stores took 0.00s
-Init translation took 0.02s
+Init translation took 0.03s
 Build styles took 0.00s
 Load screen analysis took 0.02s
 Analyze screens took 0.00s
@@ -288,18 +1921,19 @@ Prepare screens took 0.04s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.00s
 Running _start took 0.00s
-Interface start took 0.11s
+Interface start took 0.04s
 
 Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
+primary display bounds: (0, 0, 2560, 1440)
 swap interval: 1 frames
-Fullscreen mode.
+Windowed mode.
 Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 555.85'
+Renderer: b'NVIDIA GeForce RTX 4060 Ti/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 552.44'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
 Maximum texture size: 4096x4096
+<<<<<<< HEAD
 Resetting cache.
 Early init took 459.29s
 Loading error handling took 0.01s
@@ -563,4 +2197,7 @@ Renderer: b'NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2'
 Version: b'4.6.0 NVIDIA 555.85'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
+=======
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+>>>>>>> e9ed8f5106e46fc7f57ba21ab5dae7ae2b57d27d
 Maximum texture size: 4096x4096
