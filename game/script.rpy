@@ -348,12 +348,14 @@ transform right_:
     yalign 1.0
     xalign 0.75
 
-transform plane_landing: 
+transform plane_landing:
+    xzoom -1  
     xanchor 0.5 yanchor 0.5  
-    xpos -100 ypos -100  
-    rotate 20  
+    xpos 2100 ypos -200  
+    rotate -20  
     zoom 0.5  
-    linear 5.0 xpos 1100 ypos 700 zoom 1.0 rotate 0
+    linear 2.0 xpos 1600 ypos 200 zoom 0.7 rotate -15  
+    linear 3.0 xpos 450 ypos 650 zoom 1.0 rotate 0
 
 
 label battle_system:
@@ -1100,10 +1102,17 @@ label chapter2_act5:
     with fade
 
     $ now_venue.location = "西安機場"
-    "1936年12月25日，西安機場"
-    show plane at plane_landing
-    $ renpy.pause(3.0, hard=True)  
     
+    "1936年12月25日，西安機場"
+
+    show plane at plane_landing
+    
+    "這是波音247。"(what_color="#808080")
+
+    "軍閥「少帥」張學良購買兩架波音247D給他的空軍部隊。其中一架為他本人所用，名為「白鷹號」。"(what_color="#808080")
+
+    $ renpy.pause(3.0, hard=True)
+
     show xueliang
     
 
