@@ -1,24 +1,64 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 2661, in script
-    k "是的,委座。我建議我們加強宣傳,讓民眾理解這是為了他們的安全。同時,我們需要建立一個有效的情報系統,以便及時發現和打擊共產黨的滲透活動。"
-Exception: Sayer 'k' is not defined.
+After initialization, but before game start.
+  File "game/script.rpy", line 424, in prepare_screen
+    screen choice_screen():
+  File "game/script.rpy", line 424, in prepare
+    screen choice_screen():
+  File "game/script.rpy", line 425, in prepare
+    frame:
+  File "game/script.rpy", line 425, in prepare
+    frame:
+  File "game/script.rpy", line 429, in prepare
+    vbox:
+  File "game/script.rpy", line 429, in prepare
+    vbox:
+  File "game/script.rpy", line 430, in prepare
+    textbutton "確認" action Jump(now_chapter.chapter)(size 40)
+  File "game/script.rpy", line 430, in prepare
+    textbutton "確認" action Jump(now_chapter.chapter)(size 40)
+SyntaxError: invalid syntax (game/script.rpy, line 430)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 2661, in script
-    k "是的,委座。我建議我們加強宣傳,讓民眾理解這是為了他們的安全。同時,我們需要建立一個有效的情報系統,以便及時發現和打擊共產黨的滲透活動。"
-  File "D:\renpy-8.2.1-sdk\renpy\ast.py", line 2557, in execute
-    Say.execute(self)
-  File "D:\renpy-8.2.1-sdk\renpy\ast.py", line 575, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "D:\renpy-8.2.1-sdk\renpy\ast.py", line 464, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'k' is not defined.
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\bootstrap.py", line 359, in bootstrap
+    renpy.main.main()
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\main.py", line 635, in main
+    run(restart)
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\main.py", line 94, in run
+    renpy.display.screen.prepare_screens()
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\screen.py", line 1026, in prepare_screens
+    s.ast.prepare_screen()
+  File "game/script.rpy", line 424, in prepare_screen
+    screen choice_screen():
+  File "game/script.rpy", line 424, in prepare
+    screen choice_screen():
+  File "game/script.rpy", line 425, in prepare
+    frame:
+  File "game/script.rpy", line 425, in prepare
+    frame:
+  File "game/script.rpy", line 429, in prepare
+    vbox:
+  File "game/script.rpy", line 429, in prepare
+    vbox:
+  File "game/script.rpy", line 430, in prepare
+    textbutton "確認" action Jump(now_chapter.chapter)(size 40)
+  File "game/script.rpy", line 430, in prepare
+    textbutton "確認" action Jump(now_chapter.chapter)(size 40)
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\py3analysis.py", line 803, in ast_eval
+    return self.ast_eval_literal(expr)[0]
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\py3analysis.py", line 785, in ast_eval_literal
+    expr = py_compile(expr, 'eval', ast_node=True)
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\python.py", line 1144, in py_compile
+    raise e
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\python.py", line 1081, in py_compile
+    raise orig_e
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\python.py", line 1073, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: invalid syntax (game/script.rpy, line 430)
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.2.1.24030407
 Fantasy Ren'py GUI template 1.0
-Thu Sep  5 18:42:42 2024
+Thu Sep  5 19:27:01 2024

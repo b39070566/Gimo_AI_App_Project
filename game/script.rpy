@@ -412,23 +412,25 @@ screen imagemap():
         idle "hugemap idle"
         hover "hugemap hover"
 
-        hotspot (1424, 633, 67, 66) action Jump("chap1go") alt "Chap1go"
-        hotspot (999, 462, 69, 68) action Jump("chap2go") alt "Chap2go"
-        hotspot (1221, 208, 66, 67) action Jump("chap3go") alt "Chap3go"
-        hotspot (1525, 787, 73, 70) action Jump("chap4go") alt "Chap4go"
-        hotspot (801, 599, 69, 67) action Jump("chap5go") alt "Chap5go"
-        hotspot (1485, 477, 69, 67) action Jump("chap6go") alt "Chap6go"
-        hotspot (1405, 853, 64, 65) action Jump("chap7go") alt "Chap7go"
-        hotspot (1495, 918, 70, 66) action Jump("chap8go") alt "Chap8go"
+        hotspot (91, 250, 392, 229) action Jump("chap1go") alt "Chap1go"
+        hotspot (529, 250, 392, 229) action Jump("chap2go") alt "Chap2go"
+        hotspot (986, 248, 389, 230) action Jump("chap3go") alt "Chap3go"
+        hotspot (1435, 252, 393, 227) action Jump("chap4go") alt "Chap4go"
+        hotspot (95, 679, 388, 223) action Jump("chap5go") alt "Chap5go"
+        hotspot (530, 680, 393, 225) action Jump("chap6go") alt "Chap6go"
+        hotspot (981, 675, 393, 233) action Jump("chap7go") alt "Chap7go"
+        hotspot (1435, 676, 397, 232) action Jump("chap8go") alt "Chap8go"
 
 screen choice_screen():
-    frame:
-        xpadding 13
-        ypadding 14
-        xalign 0.5 yalign 0.5
+    window id "window":
         vbox:
-            textbutton "確認" action Jump(now_chapter.chapter)
-            textbutton "返回" action Jump("start")
+            xalign 0.4
+            ypos 65
+            textbutton "確認" action Jump(now_chapter.chapter) text_size 100
+        vbox:
+            xalign 0.6
+            ypos 65
+            textbutton "返回" action Jump("start") text_size 100
 
 
 label chap1go:
