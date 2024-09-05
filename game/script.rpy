@@ -402,7 +402,7 @@ screen imagemap():
         hotspot (1525, 787, 73, 70) action Jump("chap4go") alt "Chap4go"
         hotspot (801, 599, 69, 67) action Jump("chap5go") alt "Chap5go"
         hotspot (1485, 477, 69, 67) action Jump("chap6go") alt "Chap6go"
-        hotspot (1403, 853, 67, 64) action Jump("chap7go") alt "Chap7go"
+        hotspot (1405, 853, 64, 65) action Jump("chap7go") alt "Chap7go"
         hotspot (1495, 918, 70, 66) action Jump("chap8go") alt "Chap8go"
 
 screen choice_screen():
@@ -498,15 +498,16 @@ label chap8go:
  
 # 遊戲開始
 label start:
+    $ renpy.block_rollback()
     $now_venue = place("startplace")
     $now_chapter = chaptchoosing("init")
-    play music gamemusic
     call screen imagemap
 
 
 # 第一幕：家世背景
 label chapter1_act1:
     $ renpy.block_rollback()
+    play music gamemusic
     scene bg yutai
     with fade
     $ now_venue.location = "玉泰鹽鋪"
@@ -897,7 +898,7 @@ label chapter1_act11:
     voice "voichi12.wav"
     "回顧我的婚姻生活，我確實有過四個妻子。當時覺得自己很幸運，但現在看來，我的行為確實有些不妥。"
 
-    jump chapter2_act1
+    return
 
 
 # 第一幕：事變前夕
@@ -1106,8 +1107,7 @@ label chapter2_act5:
     voice "voifeng15.wav"
     j "我知道，未來還有更艱巨的任務等待著我，等待著整個中國。西安事變後，我更加堅定了抗日的決心，也開始重新思考國內政策。這次經歷，無疑是我政治生涯中的一個重要轉折點。"
 
-    jump chapter3_act1
-
+    return
 
 #第一幕：七七事變
 label chapter3_act1:
@@ -1701,7 +1701,7 @@ label chapter3_act6:
     j"我們必須銘記這段歷史，珍惜來之不易的和平，為中華民族的偉大復興而繼續奮鬥。"
 
 
-    jump chapter4_act1
+    return
 
 # 第一幕：事件爆發
 label chapter4_act1:
@@ -2090,7 +2090,7 @@ label chapter4_act6:
     voice "voijcf13.mp3"
     "這段歷史提醒我們，面對矛盾與衝突，對話與理解比暴力更能解決問題。今天的臺灣，正是在這樣的反思和和解中，逐步走向更加開放、民主的社會。"
 
-    jump chapter6_act1 #跳過第五章
+    return
 
 # 第五章：第二次國共內戰  
 
@@ -2600,6 +2600,8 @@ label chapter6_act1:
 
     voice "voijcs17.wav"
     "這段歷史，不僅見證了一個政權的轉折，一個島嶼的蛻變，更記錄了無數人在動盪中奮鬥、在逆境中重生的故事。"
+
+    return
 
 # 第八章：後期統治
 label chapter8_act1:

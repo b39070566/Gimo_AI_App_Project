@@ -1,86 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 476, in script
-    j "我是西元1887年10月31日出生於浙江奉化溪口鎮玉泰鹽鋪。家裡很有錢，是當地的五大首富之一，我祖父開設的鹽鋪後來給我爸經營"
-  File "game/script.rpy", line 58, in execute
-    screen location_ui:
-  File "game/script.rpy", line 58, in execute
-    screen location_ui:
-  File "game/script.rpy", line 59, in execute
-    frame:
-  File "game/script.rpy", line 63, in execute
-    vbox:
-  File "game/script.rpy", line 64, in execute
-    text "位置: [$ now_venue.location]" size 40
-SyntaxError: invalid syntax (<none>, line 1)
+  File "game/script.rpy", line 423, in script
+    call screen choice_screen
+ScriptError: could not find label 'chapter5_act1'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 476, in script
-    j "我是西元1887年10月31日出生於浙江奉化溪口鎮玉泰鹽鋪。家裡很有錢，是當地的五大首富之一，我祖父開設的鹽鋪後來給我爸經營"
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\ast.py", line 615, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\exports.py", line 1493, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\character.py", line 1394, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\character.py", line 1045, in do_display
-    display_say(who,
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\character.py", line 741, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\core.py", line 2165, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\core.py", line 2687, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\displayable.py", line 431, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\displayable.py", line 431, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\displayable.py", line 431, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\core.py", line 2687, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\screen.py", line 697, in update
-    self.screen.function(**self.scope)
-  File "game/script.rpy", line 58, in execute
-    screen location_ui:
-  File "game/script.rpy", line 58, in execute
-    screen location_ui:
-  File "game/script.rpy", line 59, in execute
-    frame:
-  File "game/script.rpy", line 63, in execute
-    vbox:
-  File "game/script.rpy", line 64, in execute
-    text "位置: [$ now_venue.location]" size 40
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\text\text.py", line 1738, in __init__
-    self.set_text(text, scope, substitute) # type: ignore
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\text\text.py", line 1868, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\substitutions.py", line 368, in substitute
-    s = interpolate(s, kwargs) # type: ignore
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\substitutions.py", line 86, in interpolate
-    raise e
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\substitutions.py", line 78, in interpolate
-    value = renpy.python.py_eval(code, {}, scope)
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\python.py", line 1207, in py_eval
-    code = py_compile(code, 'eval')
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\python.py", line 1144, in py_compile
-    raise e
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\python.py", line 1081, in py_compile
-    raise orig_e
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\python.py", line 1073, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: invalid syntax (<none>, line 1)
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\bootstrap.py", line 359, in bootstrap
+    renpy.main.main()
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\main.py", line 635, in main
+    run(restart)
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\main.py", line 145, in run
+    renpy.execution.run_context(True)
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\execution.py", line 955, in run_context
+    context.run()
+  File "game/script.rpy", line 423, in script
+    call screen choice_screen
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'chapter5_act1'.
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.2.1.24030407
 Fantasy Ren'py GUI template 1.0
-Thu Sep  5 14:29:03 2024
+Thu Sep  5 16:14:12 2024
