@@ -1266,7 +1266,12 @@ label chapter3_act3:
     $ now_venue.location = "南京指揮部"
     "1937年12月，南京指揮部"
 
-    show johndraw
+    
+    show johndraw:
+        yalign 1.0
+        linear 2 xalign 0.6
+        xzoom -1
+        linear 1 xalign 0.45
 
     voice "voiyalan12.wav"
     j "1937年12月，日軍向南京推進。我面臨著一個艱難的抉擇。"
@@ -1450,7 +1455,11 @@ label chapter3_act4:
     hide zhangzhizhong
     hide heyingqin
 
-    show johndraw
+    show johndraw:
+        yalign 1.0
+        xzoom -1
+        xalign 0.5
+        linear 1 xalign 0.1
 
     voice "voiyalan25.wav"
     j "記住，這是一條艱難的道路，但我相信，只要我們堅持下去，最終的勝利一定是屬於我們的。"
