@@ -2138,6 +2138,7 @@ label chapter5:
     label chapter5_act1:
         scene bg imgli1
         with fade
+        play music "ch5bgm.wav" volume 0.4
 
         $ now_venue.location = "重慶談判現場"
 
