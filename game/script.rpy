@@ -18,6 +18,10 @@
         def __init__(self, location):
             self.location = location
 
+    class chaptchoosing:
+        def __init__(self, chapter):
+            self.chapter = chapter
+
 
     class Fighter:
         def __init__(self, name, level=1, max_hp=10, hp=10, max_mp=4, mp=4, attack=2, defense=1, element="None"):
@@ -120,6 +124,38 @@ define saramy = Character("軍官")
 define wangshijie = Character("王世傑")
 define allp = Character("全場")
 
+define minister = Character("經濟部長")
+define johnson = Character("蔣經國")
+define diplomat = Character("外交部長")
+
+#第五章角色
+define mzd = Character("毛澤東")
+define solc = Character("士兵甲")
+define gmdg = Character("國民黨將軍")
+define soli = Character("士兵乙")
+define igl = Character("指揮官")
+define zc = Character("戰士甲")
+define zi = Character("戰士乙")
+define gsol = Character("國民黨士兵")
+define gz = Character("共產黨戰士")
+define gigl = Character("共軍指揮官")
+define gg = Character("國民黨將領")
+define ggz = Character("共軍戰士")
+define znl = Character("周恩來")
+define igl2 = Character("副官")
+define zhu = Character("指揮員")
+define ggunz = Character("國民黨高官甲")
+define gguni = Character("國民黨高官乙")
+define gunb = Character("高官丙")
+define gunz = Character("高官甲")
+define crowd = Character("群眾")
+define gzg = Character("共產黨幹部")
+define nonz = Character("農民甲")
+define noni = Character("農民乙")
+define zu = Character("助手")
+define amegun = Character("美國官員")
+define su = Character("蘇聯顧問")
+define chd = Character("中共代表")
 
 define audio.gamemusic = "audio/chapter1.wav"
 
@@ -141,6 +177,11 @@ image bg imgchi10 = "imgchi10.jpg"
 image bg imgchi11 = "imgchi11.jpg"
 image bg imgchi12 = "imgchi12.jpg"
 image bg imgchi13 = "imgchi13.jpg"
+image bg imgchi14 = "imgchi14.png"
+image bg imgchi15 = "imgchi15.jpg"
+image bg imgchi16 = "imgchi16.jpg"
+image bg imgchi17 = "imgchi17.jpg"
+image bg imgchi18 = "imgchi18.jpg"
 
 image bg imgfeng1 = "imgfeng1.png"
 image bg imgfeng2 = "imgfeng2.png"
@@ -183,6 +224,24 @@ image bg imgjcs2 = "imgjcs2.jpg"
 image bg imgjcs3 = "imgjcs3.jpg"
 image bg imgjcs4 = "imgjcs4.jpg"
 image bg imgjcs6 = "imgjcs6.jpg"
+
+#第五章背景
+image bg imgli1 ="imgli1@3.jpg"
+image bg imgli2 ="imgli2.png"
+image bg imgli3 ="imgli3.png"
+image bg imgli4 ="imgli4.png"
+image bg imgli5 ="imgli5.png"
+image bg imgli6 ="imgli6.png"
+image bg imgli7 ="imgli7.png"
+image bg imgli8 ="imgli8.jpg"
+image bg imgli9 ="imgli9.png"
+image bg imgli10 ="imgli10.jpg"
+image bg imgli11 ="imgli11.jpg"
+image bg imgli12 ="imgli12.jpg"
+image bg imgli13 ="imgli13.jpg"
+
+image imgjcf7 = "imgjcf7.jpg"
+image imgjcs5 = "imgjcs5.jpg"
 
 
 image johndraw = "johndraw.png"
@@ -229,9 +288,8 @@ image prison = "prison.png"
 image plane = "plane.png"
 
 
-image imgjcf7 = "imgjcf7.jpg"
 
-image imgjcs5 = "imgjcs5.jpg"
+
 
 
 #角色動作的線性變化區域
@@ -342,18 +400,126 @@ label battle_system:
             $ renpy.block_rollback()
             return "defeat"
 
+screen imagemap():
+    imagemap:
+        idle "hugemap idle"
+        hover "hugemap hover"
 
+        hotspot (1424, 633, 67, 66) action Jump("chap1go") alt "Chap1go"
+        hotspot (999, 462, 69, 68) action Jump("chap2go") alt "Chap2go"
+        hotspot (1221, 208, 66, 67) action Jump("chap3go") alt "Chap3go"
+        hotspot (1525, 787, 73, 70) action Jump("chap4go") alt "Chap4go"
+        hotspot (801, 599, 69, 67) action Jump("chap5go") alt "Chap5go"
+        hotspot (1485, 477, 69, 67) action Jump("chap6go") alt "Chap6go"
+        hotspot (1405, 853, 64, 65) action Jump("chap7go") alt "Chap7go"
+        hotspot (1495, 918, 70, 66) action Jump("chap8go") alt "Chap8go"
+
+screen choice_screen():
+    frame:
+        xpadding 13
+        ypadding 14
+        xalign 0.5 yalign 0.5
+        vbox:
+            textbutton "確認" action Jump(now_chapter.chapter)
+            textbutton "返回" action Jump("start")
+
+
+label chap1go:
+    $ now_chapter.chapter = "chapter1_act1"
+    $ renpy.block_rollback()
+    show maofumei:
+        xalign 0.4
+        yalign 0.4
+    "是否確認進入章節1?"
+    $ renpy.block_rollback()
+    call screen choice_screen
+
+label chap2go:
+    $ now_chapter.chapter = "chapter2_act1"
+    $ renpy.block_rollback()
+    show maofumei:
+        xalign 0.4
+        yalign 0.4
+    "是否確認進入章節2?"
+    $ renpy.block_rollback()
+    call screen choice_screen
+
+label chap3go:
+    $ now_chapter.chapter = "chapter3_act1"
+    $ renpy.block_rollback()
+    show maofumei:
+        xalign 0.4
+        yalign 0.4
+    "是否確認進入章節3?"
+    $ renpy.block_rollback()
+    call screen choice_screen
+ 
+label chap4go:
+    $ now_chapter.chapter = "chapter4_act1"
+    $ renpy.block_rollback()
+    show maofumei:
+        xalign 0.4
+        yalign 0.4
+    "是否確認進入章節4?"
+    $ renpy.block_rollback()
+    call screen choice_screen
+
+label chap5go:
+    $ now_chapter.chapter = "chapter5_act1"
+    $ renpy.block_rollback()
+    show maofumei:
+        xalign 0.4
+        yalign 0.4
+    "是否確認進入章節5?"
+    $ renpy.block_rollback()
+    call screen choice_screen
+
+
+label chap6go:
+    $ now_chapter.chapter = "chapter6_act1"
+    $ renpy.block_rollback()
+    show maofumei:
+        xalign 0.4
+        yalign 0.4
+    "是否確認進入章節6?"
+    $ renpy.block_rollback()
+    call screen choice_screen
+
+label chap7go:
+    $ now_chapter.chapter = "chapter7_act1"
+    $ renpy.block_rollback()
+    show maofumei:
+        xalign 0.4
+        yalign 0.4
+    "是否確認進入章節7?"
+    $ renpy.block_rollback()
+    call screen choice_screen
+
+label chap8go:
+    $ now_chapter.chapter = "chapter8_act1"
+    $ renpy.block_rollback()
+    show maofumei:
+        xalign 0.4
+        yalign 0.4
+    "是否確認進入章節8?"
+    $ renpy.block_rollback()
+    call screen choice_screen
+ 
 # 遊戲開始
 label start:
-    play music gamemusic
-    jump chapter1_act1
+    $ renpy.block_rollback()
+    $now_venue = place("startplace")
+    $now_chapter = chaptchoosing("init")
+    call screen imagemap
 
 
 # 第一幕：家世背景
 label chapter1_act1:
+    $ renpy.block_rollback()
+    play music gamemusic
     scene bg yutai
     with fade
-    $ now_venue = place("玉泰鹽鋪")
+    $ now_venue.location = "玉泰鹽鋪"
     "第一章：早年生活與革命生涯"
 
 
@@ -494,7 +660,7 @@ label chapter1_act3:
 label chapter1_act4:
     scene bg imgchi3
     with fade
-    $ now_venue = place("奉化鳳麓學堂")
+    $ now_venue.location = "奉化鳳麓學堂"
     "1903年，奉化鳳麓學堂"
 
     show johnyoung
@@ -517,7 +683,7 @@ label chapter1_act4:
 label chapter1_act5:
     scene bg imgchi4
     with fade
-    $ now_venue = place("上海碼頭")
+    $ now_venue.location = "上海碼頭"
     "1906年4月，上海碼頭"
     show johnyoung
     "志清" "母親，我一定會在日本好好學習，為祖國爭光。"
@@ -536,7 +702,7 @@ label chapter1_act5:
     j "結果，在我抵達日本後，才發現公費生不能入軍校，只好在同年冬天返回中國，並進入了清政府開辦的陸軍速成學堂"
 
     scene bg imgchi5
-    $ now_venue = place("陸軍速成學堂")
+    $ now_venue.location = "陸軍速成學堂"
     "陸軍速成學堂，學校教室"
 
     show dust:
@@ -561,7 +727,7 @@ label chapter1_act5:
 label chapter1_act6:
     scene bg imgchi6
     with fade
-    $ now_venue = place("東京")
+    $ now_venue.location = "東京"
     "1908年，東京"
 
     
@@ -583,7 +749,7 @@ label chapter1_act6:
 label chapter1_act7:
     scene bg imgchi12
     with fade
-    $ now_venue = place("日本振武學校")
+    $ now_venue.location = "日本振武學校"
     "1910年11月，日本振武學校畢業典禮"
 
     show johndraw 
@@ -600,7 +766,7 @@ label chapter1_act7:
 label chapter1_act8:
     scene bg imgchi4
     with fade
-    $ now_venue = place("上海碼頭")
+    $ now_venue.location = "上海碼頭"
     "1911年10月，上海碼頭"
 
     show johndraw
@@ -610,7 +776,7 @@ label chapter1_act8:
     "志清" "是啊，我們必須立即行動。陳其美大哥在上海已經開始準備了。"
     z "那我們趕快去找他吧。祖國需要我們了。"
 
-    $ now_venue = place("陳其美居所")
+    $ now_venue.location = "陳其美居所"
     scene bg imgchi13 
     
     "上海，陳其美的住所"
@@ -628,7 +794,7 @@ label chapter1_act8:
 label chapter1_act9:
     scene bg imgchi8
     with fade
-    $ now_venue = place("浙江杭州")
+    $ now_venue.location = "浙江杭州"
     "武昌起義開始，參加光復浙江之戰"
 
         
@@ -661,7 +827,7 @@ label chapter1_act9:
 label chapter1_act10:
     scene bg imgchi9
     with fade
-    $ now_venue = place("中華革命黨總部")
+    $ now_venue.location = "中華革命黨總部"
     "1913年，中華革命黨總部"
 
     show sunzhongshan
@@ -676,7 +842,7 @@ label chapter1_act10:
 
     scene bg imgchi10
     with fade
-    $ now_venue = place("上海")
+    $ now_venue.location = "上海"
     "1913年7月，上海"
 
     voice "voichi14.wav"
@@ -708,7 +874,7 @@ label chapter1_act10:
 label chapter1_act11:
     scene bg imgchi11
     with fade
-    $ now_venue = place("張靜江家")
+    $ now_venue.location = "張靜江家"
     "上海，張靜江家中，1919年"
 
     show johndraw
@@ -723,7 +889,7 @@ label chapter1_act11:
 
     scene bg imgchi11
     with fade
-    $ now_venue = place("陳氏宅")
+    $ now_venue.location = "陳氏宅"
     "陳家"
 
     show johndraw
@@ -741,15 +907,16 @@ label chapter1_act11:
     voice "voichi12.wav"
     "回顧我的婚姻生活，我確實有過四個妻子。當時覺得自己很幸運，但現在看來，我的行為確實有些不妥。"
 
-    jump chapter2_act1
+    return
 
 
 # 第一幕：事變前夕
 label chapter2_act1:
+    $ renpy.block_rollback()
     scene bg imgfeng1
     
     with fade
-    $ now_venue = place("西安行營")
+    $ now_venue.location = "西安行營"
     "1936年12月11日，西安行營"
 
     show screen location_ui
@@ -954,14 +1121,14 @@ label chapter2_act5:
     voice "voifeng15.wav"
     j "我知道，未來還有更艱巨的任務等待著我，等待著整個中國。西安事變後，我更加堅定了抗日的決心，也開始重新思考國內政策。這次經歷，無疑是我政治生涯中的一個重要轉折點。"
 
-    jump chapter3_act1
-
+    return
 
 #第一幕：七七事變
 label chapter3_act1:
+    $ renpy.block_rollback()
     scene bg imgyalan1
     with fade
-    $ now_venue = place("南京，國民政府軍事委員會")
+    $ now_venue.location = "南京，國民政府軍事委員會"
     "1937年7月7日"
 
     show johndraw
@@ -1548,10 +1715,11 @@ label chapter3_act6:
     j"我們必須銘記這段歷史，珍惜來之不易的和平，為中華民族的偉大復興而繼續奮鬥。"
 
 
-    jump chapter4_act1
+    return
 
 # 第一幕：事件爆發
 label chapter4_act1:
+    $ renpy.block_rollback()
     scene bg imgjcf1
     with fade
 
@@ -1936,11 +2104,281 @@ label chapter4_act6:
     voice "voijcf13.mp3"
     "這段歷史提醒我們，面對矛盾與衝突，對話與理解比暴力更能解決問題。今天的臺灣，正是在這樣的反思和和解中，逐步走向更加開放、民主的社會。"
 
-    jump chapter6_act1 #跳過第五章
+    return
+
+# 第五章：第二次國共內戰  
+
+label chapter5:
+    scene bg blackscreen
+    with fade
+
+        
+
+    "第五章：第二次國共內戰"
+
+    # 第一幕：和平破裂 
+    label chapter5_act1:
+        scene bg imgli1
+        with fade
+
+        $ now_venue.location = "重慶談判現場"
+
+        voice "voili1.wav"
+        j "1945年8月,日本投降。表面上國共同慶勝利,暗地裡卻已劍拔弩張。這場看似和平的較量,很快就要演變成一場你死我活的較量。"
+
+        
+
+        
+        voice "voili2.wav"
+        j "毛先生,抗戰勝利了,是時候放下成見,接受國民政府的領導,共建統一的中國了。"
+
+        
+
+        mzd "蔣委員長,您這是要當大家長啊?我們可都長大了,誰也不願意被誰領導。"
+
+
+        voice "voili3.wav"
+        j "荒唐!沒有國民政府,哪來的抗戰勝利?你們應該感恩戴德!"
+
+        
+
+        mzd "別氣嘛,蔣委員長。我們在敵後打游擊,也沒閒著。這勝利,是全中國人民共同奮鬥的結果。"
+
+
+        voice "voili4.wav"
+        j "那你的意思是?"
+
+
+        mzd "很簡單,平起平坐,共組聯合政府。"
+
+
+        voice "voili5.wav"
+        j "休想!"
+
+        voice "voili6.wav"
+        j "就這樣,雙方進行了長達43天的談判,你來我往,唇槍舌劍,最終不歡而散。和平的希望,像泡沫一樣破滅了。"
+
+       
+
+    # 第二幕：內戰爆發
+    label chapter5_act2:
+        scene bg imgli2
+        with fade
+
+        $ now_venue.location = "國民黨軍營"
+
+        voice "voili7.wav"
+        j "1946年6月,國共衝突全面爆發。這場內戰,就像是一場你死我活的麻將對弈,誰也不肯認輸。"
+
+
+        gmdg "弟兄們,共軍那些土八路,連像樣的槍都沒有,還想跟我們鬥?我們有美國大爺的先進武器,這仗不打都要贏!"
+
+        solc "將軍,我們一定能把他們打得落花流水!"
+
+        soli "就是!到時候我們就能吃香的喝辣的了!"
+
+        gmdg "少說兩句,小心舌頭把腦袋給害了。"
+
+        scene bg imgli3
+        with fade
+
+        $ now_venue.location = "共軍陣地"
+
+    
+
+        igl "同志們,國民黨那些傢伙以為有洋槍洋炮就了不起了。他們忘了一句老話:槍再好,沒有人也不中用!"
+
+        zc "報告首長,我們的武器確實不如國軍..."
+
+        igl "沒關係!我們有最厲害的武器 - 人民群眾!只要我們依靠群眾,就能以小搏大,以弱勝強!"
+
+        zi "對!我們還可以打游擊,讓國民黨的坦克都用不上勁!"
+
+        igl "說得好!我們就要像泥鰍一樣,滑溜溜的,讓國民黨這條大鯉魚抓不住我們!"
+
+        gsol "長官,不好了!共軍的游擊戰術太厲害了,我們被包圍了!"
+
+        gz "同志們,衝啊!讓國民黨的洋槍洋炮都變成我們的玩具!"
+
+        voice "voili8.wav"
+        j "就這樣,中國大地上再次硝煙四起。這場內戰,註定要改變中國的命運..."
+
+        
+
+    # 第三幕：三大戰役
+    label chapter5_act3:
+        scene bg imgli4
+        with fade
+        "：遼沈戰役"
+
+        $ now_venue.location = "遼沈戰役"
+
+        voice "voili9.wav"
+        j "1948年下半年到1949年初,共產黨發動了改變戰局的三大戰役。這三場戰役,就像是三記重拳,直接把國民黨打得找不到北。"
+
+        
+
+        gigl "同志們,我們要圍點打援,全殲國民黨東北軍!這就像下棋,把對方的軍隊圍在中間,然後一口一口吃掉!"
+
+        zc "首長,這仗要怎麼打?"
+
+        gigl "很簡單,我們先裝作很弱,引誘國民黨軍隊進來。等他們進來了,我們再關上門,一網打盡!"
+
+        zi "哦!這不就是關門打狗嗎?"
+
+        gigl "聰明!不過千萬別讓國民黨聽見,不然他們肯定不上當。"
+
+        scene bg imgli5
+        with fade
+        $ now_venue.location = "國民黨指揮部"
+
+        "國民黨指揮部"
+
+        gg "援軍呢?為什麼還不到?我們快要撐不住了!"
+
+        igl2 "將軍,共軍已經...已經把我們包圍了..."
+
+        gg "完了...這下我們成了甕中之鱉..."
+
+        scene bg imgli6
+        with fade
+        $ now_venue.location = "平津戰役"
+
+        "平津戰役"
+
+        ggz "報告!北平城內的同志發來消息,說傅作義將軍有意投誠!"
+
+        mzd "好!要促成和平解放北平!這可比打仗省事多了。"
+
+        znl "是啊,這樣既保存了實力,又贏得了民心。"
+
+        mzd "沒錯!這就叫做不戰而屈人之兵。孫子兵法果然博大精深啊!"
+
+        scene bg imgli7
+        with fade
+        $ now_venue.location = "淮海戰役"
+
+        "淮海戰役"
+
+        gg "我們被包圍了,彈藥糧食都快耗盡了...這下真的是山窮水盡了..."
+
+        igl2 "將軍,我們...我們要不要投降?"
+
+        gg "投降?我寧可戰死!"
+
+        zhu "同志們,勝利在望!再加把勁!我們就要徹底殲滅國民黨的精銳部隊了!"
+
+        ggz "報告首長,我們繳獲了大量武器彈藥!"
+
+        zhu "好啊!這下我們不但打敗了敵人,還發了一筆橫財!"
+
+    # 第四幕：國共策略對比
+    label chapter5_act4:
+        scene bg imgli8
+        with fade
+        $ now_venue.location = "國民黨高層會議"
+
+        "國民黨高層會議"
+
+        ggunz "我們需要更多的資金來維持戰爭。再這樣下去,連軍餉都發不出來了。"
+
+        gguni "那還不簡單?再加稅唄,反正老百姓已經習慣了。"
+
+        gunb "對對對!再來個臨時條例,把老百姓的口袋都掏空!"
+
+        voice"voili10.wav"
+        j "混帳!你們這是要逼民反嗎?"
+
+        
+
+        gunz "委員長息怒,我們也是為了江山社稷著想啊..."
+
+        voice"voili11.wav"
+        j "唉...我看這江山社稷怕是保不住了..."
+
+        
+
+        scene bg imgli9
+        with fade
+        $ now_venue.location = "共產黨群眾大會"
+
+        "共產黨群眾大會"
+
+        mzd "同志們,我們要與人民站在一起,依靠他們的力量取得勝利!人民,只有人民,才是創造世界歷史的動力!"
+
+        crowd "毛主席萬歲!共產黨萬歲!"
+
+        gzg "同志們,我們要減租減息,把土地分給農民!讓大家都能吃飽飯,穿暖衣!"
+
+        nonz "真的嗎?我們真的能有自己的土地了?"
+
+        noni "共產黨好啊!共產黨是我們老百姓的救星!"
+
+    # 第五幕：國際影響
+    label chapter5_act5:
+        scene bg imgli10
+        with fade
+        $ now_venue.location = "美國大使館"
+
+        "美國大使館"
+
+        amegun "我們必須支持蔣委員長,以遏制共產主義在亞洲的擴張。"
+
+        zu "可是長官,國民黨的腐敗問題很嚴重..."
+
+        amegun "管不了那麼多了!先把這批武器送過去再說!"
+
+        scene bg imgli11
+        with fade
+        $ now_venue.location = "中蘇邊境"
+
+        "中蘇邊境"
+
+        su "同志,這些先進武器和作戰經驗,會幫助你們取得勝利的。"
+
+        chd "謝謝!我們一定不負蘇聯同志的期望!"
+
+    # 第六幕：戰局逆轉
+    label chapter5_act6:
+        scene bg imgli12
+        with fade
+        $ now_venue.location = "南京總統府"
+
+        "南京總統府"
+
+        voice"voili12.wav"
+        j "我們...輸了嗎..."
+
+        
+
+        igl2 "委員長,我們必須立即撤退到台灣!"
+
+        voice"voili13.wav"
+        j "好,帶上能帶的一切。我們還有機會東山再起!"
+
+        
+
+    # 第七幕：開國大典
+    label chapter5_act7:
+        scene bg imgli13
+        with fade
+        $ now_venue.location = "北京天安門廣場"
+
+        "北京天安門廣場"
+
+        mzd "中華人民共和國,中央人民政府,今天成立了!"
+
+        crowd "毛主席萬歲!新中國萬歲!"
+
+        voice"voili14.wav"
+        j "就這樣,歷時四年的國共內戰落下帷幕。中國大陸易主,進入了新的歷史階段。這場內戰不僅改變了中國的政治格局,也對整個亞洲乃至世界產生了深遠的影響。"
+
+
 
 
 # 第六章：中華民國政府遷台 (此章沒分幕)
 label chapter6_act1:
+    $ renpy.block_rollback()
     scene bg imgjcs1 :
         size(1920,1080)
     with fade
@@ -2178,5 +2616,117 @@ label chapter6_act1:
     "這段歷史，不僅見證了一個政權的轉折，一個島嶼的蛻變，更記錄了無數人在動盪中奮鬥、在逆境中重生的故事。"
 
     return
+
+# 第八章：後期統治
+label chapter8_act1:
+    $ renpy.block_rollback()
+    scene bg imgchi14
+    with fade
+    $ now_venue.location = "台北總統府花園"
+    "第八章：後期統治"
+    "第一幕：十大建設"
+    "1973年，台北總統府"
+
+    show screen location_ui
+    show johndraw at left
+
+    j "1973年，我們正式啟動了十大建設計劃。這是台灣經濟發展的關鍵時刻。"
+
+    show minion at right
+    minister "總統，十大建設計劃已經開始實施。我們預計這將大大提升台灣的經濟實力。"
+
+    j "很好。記住，我們不僅要追求經濟增長，更要為人民創造更好的生活。"
+
+    show minion at center
+    johnson "父親，您放心。我會親自監督這些項目的進展。"
+
+    hide minion
+
+    jump chapter8_act2
+
+label chapter8_act2:
+    scene bg imgchi15
+    with fade
+    $ now_venue.location = "總統府會議室"
+    "第二幕：外交挑戰"
+    "1975年，總統府會議室"
+
+    show johndraw at left
+
+    j "1975年，我們失去了在聯合國的席位。這是一個巨大的外交挫折。"
+
+    show minion at right
+    diplomat "總統，美國已經與中共建交。我們在國際上的處境越來越困難了。"
+
+    j "哼，短視！他們不明白這樣做的後果。但我們不能就此放棄。要積極尋求新的外交突破口。"
+
+    hide minion
+
+    jump chapter8_act3
+
+label chapter8_act3:
+    scene bg imgchi16
+    with fade
+    $ now_venue.location = "蔣中正的私人書房"
+    "第三幕：政治改革的壓力"
+    "1977年，蔣中正的私人書房"
+
+    show johndraw at left
+
+    j "隨著社會的發展，要求政治改革的聲音越來越大。我知道改變是必要的，但如何改變，是個艱難的抉擇。"
+
+    show minion at right
+    johnson "父親，中壢事件後，民間對政治改革的呼聲更高了。我們是否應該考慮放寬一些政策？"
+
+    j "經國，改革是必要的，但必須謹慎。我們要在保持穩定和推動變革之間找到平衡。"
+
+    hide minion
+
+    jump chapter8_act4
+
+label chapter8_act4:
+    scene bg imgchi17
+    with fade
+    $ now_venue.location = "行政院會議室"
+    "第四幕：經濟奇蹟"
+    "1979年，行政院會議室"
+
+    show johndraw at left
+
+    j "看著台灣的經濟快速發展，我感到欣慰。但我也知道，經濟發展帶來的社會變革，將給我們的統治帶來新的挑戰。"
+
+    show minion at right
+    minister "報告總統，我們的經濟增長率連續多年保持在高位，外國媒體稱之為'台灣奇蹟'。"
+
+    j "經濟發展很重要，但我們更要關注財富分配和社會公平。不能讓發展的果實只被少數人享有。"
+
+    hide minion
+
+    jump chapter8_act5
+
+label chapter8_act5:
+    scene bg imgchi18
+    with fade
+    $ now_venue.location = "陽明山中興賓館"
+    "第五幕：最後的日子"
+    "1975年，陽明山中興賓館"
+
+    show johndraw at left
+
+    j "我知道自己時日無多，但我仍然牽掛著這個國家的未來。"
+
+    show minion at right
+    johnson "父親，您要保重身體。國家還需要您的指導。"
+
+    j "經國，未來的路還很長。記住，國家利益高於一切。但也要明白，只有贏得人民的心，才能真正穩固政權。時代在變，我們也必須與時俱進。"
+
+    j "看著經國，我既感到欣慰，又充滿擔憂。我知道，我的時代即將結束，新的挑戰不斷出現。我只希望，我的經驗教訓能夠成為後人的借鑒，讓這個國家走向更好的未來。"
+
+    hide minion
+
+    "完結。"
+
+    return
+
 
 
