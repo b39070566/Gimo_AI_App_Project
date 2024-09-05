@@ -226,6 +226,8 @@ image dust = "dust.png"
 image dustbroken = "dustbroken.png"
 image wall = "wall.png"
 image prison = "prison.png"
+image plane = "plane.png"
+
 
 image imgjcf7 = "imgjcf7.jpg"
 
@@ -280,6 +282,13 @@ transform middle_to_left:
 transform right_:
     yalign 1.0
     xalign 0.75
+
+transform plane_landing: 
+    xanchor 0.5 yanchor 0.5  
+    xpos -100 ypos -100  
+    rotate 20  
+    zoom 0.5  
+    linear 5.0 xpos 1100 ypos 700 zoom 1.0 rotate 0
 
 
 label battle_system:
@@ -916,10 +925,15 @@ label chapter2_act5:
 
     $ now_venue.location = "西安機場"
     "1936年12月25日，西安機場"
-        
+    show plane at plane_landing
+    $ renpy.pause(3.0, hard=True)  
+    
     show xueliang
     
+
+    
     xueliang "委座，我們已經準備好送您回南京了。我知道我的行為可能會招致嚴重後果，但為了國家，我願意承擔。"
+    
 
     hide xueliang
     show johndraw

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1872: is not terminated with a newline. (Check strings and parenthesis.)
-(Perhaps you left out a " at the end of the first line.)
-        "二二八事件不僅是一場悲劇，更成為臺灣社會長期分裂的根源。它深刻影響了臺灣的政治發展，也成為推動臺灣民主化的重要動力。
+File "game/script.rpy", line 287: expected 'comma or end of line' not found.
+    zorder 1  
+    ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Sat Aug 17 18:19:47 2024
+Thu Sep  5 16:21:47 2024
