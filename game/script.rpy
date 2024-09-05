@@ -1751,6 +1751,8 @@ label chapter4_act1:
     with fade
 
     $ now_venue.location = "臺北市延平北路"
+    show screen location_ui
+
     "1947年2月27日傍晚，臺北市延平北路"
 
     show igov at right
@@ -2412,6 +2414,8 @@ label chapter6_act1:
     with fade
 
     $ now_venue.location = "南京總統府"
+    show screen location_ui
+
     "南京總統府，1949年1月"
 
     voice "voijcs1.wav"
