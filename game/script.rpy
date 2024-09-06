@@ -1750,6 +1750,8 @@ label chapter4_act1:
     scene bg imgjcf1
     with fade
 
+    play music "ch4bgm.mp3" volume 0.4
+
     $ now_venue.location = "臺北市延平北路"
     show screen location_ui
 
@@ -2412,6 +2414,8 @@ label chapter6_act1:
     scene bg imgjcs1 :
         size(1920,1080)
     with fade
+
+    play music "ch6bgm.mp3" volume 0.4
 
     $ now_venue.location = "南京總統府"
     show screen location_ui
