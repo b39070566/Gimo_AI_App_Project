@@ -92,6 +92,7 @@ define zhou = Character("周恩來")
 define chencheng = Character("陳誠")
 define heyingqin = Character("何應欽")
 define zhangzhizhong = Character("張治中")
+define jo = Character("中年蔣中正")
 
 define igov = Character("專賣局查緝員")
 define cshop = Character("菸販")
@@ -280,12 +281,13 @@ image johnkid = "johnyoung@7.png"
 image johnkidsad = "johnyoungsad@7.png"
 
 image johnyoungpic = "johnyoung1.jpg"
-image johndrawold = "johndrawold.png"
+image johndrawold = "johnold.png"
 
 
 image xueliang = "xueliang.png"
 image chencheng = "chencheng.png"
 image zhangzhizhong = "zhangzhizhong.png"
+image heyingqin = "yingqin.png"
 
 
 image paper1 = "paper.jpg"
@@ -940,10 +942,10 @@ label chapter2_act1:
         
 
     voice "voifeng1.wav"
-    j "1936年12月11日，我察覺到張學良的行為有些異常，這引起了我的警覺。我在日記中寫道：『今日漢卿形色急遽，精神恍惚，甚覺有異。』但我沒想到第二天凌晨就發生了驚人的變故。"
+    jo "1936年12月11日，我察覺到張學良的行為有些異常，這引起了我的警覺。我在日記中寫道：『今日漢卿形色急遽，精神恍惚，甚覺有異。』但我沒想到第二天凌晨就發生了驚人的變故。"
 
     voice "voifeng2.wav"
-    j "張將軍，你最近看起來心事重重啊。是否有什麼困擾？"
+    jo "張將軍，你最近看起來心事重重啊。是否有什麼困擾？"
 
     show johndrawold :
         xalign 0.5
@@ -959,7 +961,7 @@ label chapter2_act1:
     xueliang "委座，只是有些疲勞罷了，請不必擔心。我們在剿共問題上或許有些分歧，但這並不影響我對您的忠誠。"
 
     voice "voifeng3.wav"
-    j "希望如此。記得好好休息，我們還有很多事情要做。明天我們還要討論新一輪的剿共計劃。"
+    jo "希望如此。記得好好休息，我們還有很多事情要做。明天我們還要討論新一輪的剿共計劃。"
 
     show johndrawold:
         xalign 0.25 
@@ -1001,7 +1003,7 @@ label chapter2_act2:
     show johndrawold 
 
     voice "voifeng4.wav"
-    j "什麼？張學良竟敢...快，準備撤退！"
+    jo "什麼？張學良竟敢...快，準備撤退！"
 
     
     xiaozhen "委座，我來掩護您，跟我來！"
@@ -1011,15 +1013,15 @@ label chapter2_act2:
     show johndrawold at left
 
     voice "voifeng5.wav"
-    j "在那混亂之中，蔣孝鎮背著我翻牆逃走。我甚至來不及穿鞋，是他將自己的鞋子脫下給我穿上。我們分頭逃跑，希望能分散追兵的注意力。"
+    jo "在那混亂之中，蔣孝鎮背著我翻牆逃走。我甚至來不及穿鞋，是他將自己的鞋子脫下給我穿上。我們分頭逃跑，希望能分散追兵的注意力。"
 
 
     voice "voifeng6.wav"
-    j "啊！"
+    jo "啊！"
 
 
     voice "voifeng7.wav"
-    j "我從牆上跳下，重重地摔進了牆外的溝裡，腰部劇痛。但我不敢停下，忍著疼痛繼續向驪山方向逃去。最後，我躲進了一個窪坑裡。"
+    jo "我從牆上跳下，重重地摔進了牆外的溝裡，腰部劇痛。但我不敢停下，忍著疼痛繼續向驪山方向逃去。最後，我躲進了一個窪坑裡。"
     jump chapter2_act3
 
 
@@ -1045,7 +1047,7 @@ label chapter2_act3:
         linear 1.0 yalign 0.7
    
     voice "voifeng8.wav"
-    j "你們...你們這是要做什麼？知道自己在犯什麼罪嗎？"
+    jo "你們...你們這是要做什麼？知道自己在犯什麼罪嗎？"
 
 
     hide johndrawold
@@ -1063,7 +1065,7 @@ label chapter2_act3:
     show prison
 
     voice "voifeng9.wav"
-    j "張學良！你可知道這樣做的後果？"
+    jo "張學良！你可知道這樣做的後果？"
 
     jump chapter2_act4
 
@@ -1086,7 +1088,7 @@ label chapter2_act4:
     show johndrawold
 
     voice "voifeng10.wav"
-    j "你們以為用這種方式能解決問題嗎？這只會讓國家更加動盪！你們這是在破壞國家統一！"
+    jo "你們以為用這種方式能解決問題嗎？這只會讓國家更加動盪！你們這是在破壞國家統一！"
   
     
     yang "但是委座，如果我們不團結一致對外，國家將會面臨更大的危機。請您三思啊！"
@@ -1096,7 +1098,7 @@ label chapter2_act4:
     zhou "蔣委員長，我代表中國共產黨，也希望能與您坦誠相談。我們願意在您的領導下，共同抗日。"
 
     voice "voifeng11.wav"
-    j "在多次艱難的談判後，我逐漸理解了他們的用意。雖然我依然認為他們的方式是錯誤的，但我也意識到，國家確實需要改變。最終，我同意了停止內戰，改組政府，加強對日抗戰，並進行一系列政治改革。"
+    jo "在多次艱難的談判後，我逐漸理解了他們的用意。雖然我依然認為他們的方式是錯誤的，但我也意識到，國家確實需要改變。最終，我同意了停止內戰，改組政府，加強對日抗戰，並進行一系列政治改革。"
 
     jump chapter2_act5
 
@@ -1129,20 +1131,20 @@ label chapter2_act5:
     show johndrawold
 
     voice "voifeng12.wav"
-    j "張學良，你們的行為雖然錯誤，但出發點我能理解。記住，國家的未來需要我們共同努力。我會考慮你們的建議，但你必須為自己的行為負責。"
+    jo "張學良，你們的行為雖然錯誤，但出發點我能理解。記住，國家的未來需要我們共同努力。我會考慮你們的建議，但你必須為自己的行為負責。"
 
     "蔣介石最終沒有對張學良痛下殺手，而是讓張學良失去了54年的自由。"(what_color="#808080")
     "臨終前更是對蔣經國說「絕對不可放虎歸山」。"(what_color="#808080")
     "楊虎城的結局與張學良不同，楊虎城在事變後被處決，他的家人也遭到迫害。"(what_color="#808080")
     
     voice "voifeng13.wav"
-    j "1936年12月25日，我終於重獲自由。這次西安事變，讓我深刻認識到國內的矛盾和挑戰，也讓我更加重視對外的抗戰準備。這段經歷對我來說，既是挑戰，也是轉機。"
+    jo "1936年12月25日，我終於重獲自由。這次西安事變，讓我深刻認識到國內的矛盾和挑戰，也讓我更加重視對外的抗戰準備。這段經歷對我來說，既是挑戰，也是轉機。"
 
     voice "voifeng14.wav"
-    j "當飛機起飛時，我望著窗外的西安，心中充滿了複雜的情緒。這次事變雖然結束了，但它所揭示的問題卻遠未解決。"
+    jo "當飛機起飛時，我望著窗外的西安，心中充滿了複雜的情緒。這次事變雖然結束了，但它所揭示的問題卻遠未解決。"
 
     voice "voifeng15.wav"
-    j "我知道，未來還有更艱巨的任務等待著我，等待著整個中國。西安事變後，我更加堅定了抗日的決心，也開始重新思考國內政策。這次經歷，無疑是我政治生涯中的一個重要轉折點。"
+    jo "我知道，未來還有更艱巨的任務等待著我，等待著整個中國。西安事變後，我更加堅定了抗日的決心，也開始重新思考國內政策。這次經歷，無疑是我政治生涯中的一個重要轉折點。"
 
     return
 
@@ -1174,15 +1176,14 @@ label chapter3_act1:
     with move
     $ renpy.pause(0.2)
 
-    show heying at right_to_middle
+    show heyingqin at right_to_middle
         
     heyingqin "委座，是否考慮先與日方談判，爭取時間？我們的軍備還不足以應對全面戰爭。"
 
     voice "voiyalan3.wav"
     j "談判可以進行，但絕不能放棄抵抗。發布全國總動員令，我們要讓全國上下都明白，這是一場關乎民族存亡的戰爭。何應欽，你立即安排各戰區的防禦部署。"
 
-    hide heying
-
+    hide heyingqin
     show chencheng at right_to_middle
 
     chencheng "委座，我認為我們應該採取積極防禦的策略。在正面戰場上消耗日軍的實力，同時在敵後發動游擊戰。"
