@@ -925,6 +925,8 @@ label chapter1_act11:
 label chapter2_act1:
     $ renpy.block_rollback()
     scene bg imgfeng1
+
+    play music "chapter2.mp3" 
     
     with fade
     $ now_venue.location = "西安行營"
@@ -981,6 +983,7 @@ label chapter2_act1:
 
 #第二幕：突襲與逃脫
 label chapter2_act2:
+
     scene bg imgfeng2
     with fade
 
@@ -1146,6 +1149,9 @@ label chapter3_act1:
     $ renpy.block_rollback()
     scene bg imgyalan1
     with fade
+
+    play music "chapter3.mp3" 
+
     $ now_venue.location = "南京，國民政府軍事委員會"
     "1937年7月7日"
 
@@ -1749,8 +1755,6 @@ label chapter4_act1:
     $ renpy.block_rollback()
     scene bg imgjcf1
     with fade
-
-    play music "ch4bgm.mp3" volume 0.4
 
     $ now_venue.location = "臺北市延平北路"
     show screen location_ui
@@ -2415,8 +2419,6 @@ label chapter6_act1:
         size(1920,1080)
     with fade
 
-    play music "ch6bgm.mp3" volume 0.4
-
     $ now_venue.location = "南京總統府"
     show screen location_ui
 
@@ -2658,7 +2660,6 @@ label chapter6_act1:
 # 第一幕：戒嚴令頒布（1949年5月）
 label chapter7_act1:
     scene bg imghui1
-    play music "ch7bgm.mp3" volume 0.4
     with fade
     $ now_venue = place("台灣省政府會議室")
     "台灣省政府會議室"
@@ -2914,9 +2915,8 @@ label chapter7_act5:
     # 這裡可以添加一個結束的旁白或過場動畫
     "隨著時代的變遷,蔣中正和他的政府開始反思過去的政策。白色恐怖時期逐漸走向尾聲,但它留下的傷痕將長期影響台灣社會。"
 
-   return
-   
-
+    # 跳轉到下一章或結束畫面
+    jump chapter8_act1  # 假設下一章是第八章
 # 第八章：後期統治
 label chapter8_act1:
     $ renpy.block_rollback()
