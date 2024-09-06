@@ -280,6 +280,8 @@ image johnkid = "johnyoung@7.png"
 image johnkidsad = "johnyoungsad@7.png"
 
 image johnyoungpic = "johnyoung1.jpg"
+image johndrawold = "johndrawold.png"
+
 
 image xueliang = "xueliang.png"
 image chencheng = "chencheng.png"
@@ -934,7 +936,7 @@ label chapter2_act1:
 
     show screen location_ui
 
-    show johndraw
+    show johndrawold
         
 
     voice "voifeng1.wav"
@@ -943,7 +945,7 @@ label chapter2_act1:
     voice "voifeng2.wav"
     j "張將軍，你最近看起來心事重重啊。是否有什麼困擾？"
 
-    show johndraw :
+    show johndrawold :
         xalign 0.5
         xzoom -1
         linear 0.5 xalign 0.25
@@ -959,7 +961,7 @@ label chapter2_act1:
     voice "voifeng3.wav"
     j "希望如此。記得好好休息，我們還有很多事情要做。明天我們還要討論新一輪的剿共計劃。"
 
-    show johndraw:
+    show johndrawold:
         xalign 0.25 
         xzoom -1
         linear 1.0 xalign -0.5
@@ -996,7 +998,7 @@ label chapter2_act2:
 
     hide soldier
 
-    show johndraw 
+    show johndrawold 
 
     voice "voifeng4.wav"
     j "什麼？張學良竟敢...快，準備撤退！"
@@ -1006,7 +1008,7 @@ label chapter2_act2:
 
     show wall
 
-    show johndraw at left
+    show johndrawold at left
 
     voice "voifeng5.wav"
     j "在那混亂之中，蔣孝鎮背著我翻牆逃走。我甚至來不及穿鞋，是他將自己的鞋子脫下給我穿上。我們分頭逃跑，希望能分散追兵的注意力。"
@@ -1035,7 +1037,7 @@ label chapter2_act3:
 
     hide soldier
 
-    show johndraw
+    show johndrawold
 
     show prison:
         xalign 0.5
@@ -1046,7 +1048,7 @@ label chapter2_act3:
     j "你們...你們這是要做什麼？知道自己在犯什麼罪嗎？"
 
 
-    hide johndraw
+    hide johndrawold
     hide prison
 
     show xueliang
@@ -1056,7 +1058,7 @@ label chapter2_act3:
 
     hide xueliang
 
-    show johndraw
+    show johndrawold
 
     show prison
 
@@ -1081,7 +1083,7 @@ label chapter2_act4:
 
     hide xueliang
 
-    show johndraw
+    show johndrawold
 
     voice "voifeng10.wav"
     j "你們以為用這種方式能解決問題嗎？這只會讓國家更加動盪！你們這是在破壞國家統一！"
@@ -1124,7 +1126,7 @@ label chapter2_act5:
     
 
     hide xueliang
-    show johndraw
+    show johndrawold
 
     voice "voifeng12.wav"
     j "張學良，你們的行為雖然錯誤，但出發點我能理解。記住，國家的未來需要我們共同努力。我會考慮你們的建議，但你必須為自己的行為負責。"
