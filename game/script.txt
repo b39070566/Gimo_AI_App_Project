@@ -57,16 +57,6 @@
         base_damage = attacker.attack - defender.defense
         return max(1, base_damage + random.randint(-1, 1))
 
-    
-    class SetFocus(Action):
-        def __init__(self, id):
-            self.id = id
-        
-        def __call__(self):
-            renpy.set_focus(self.id)
-            return True
-
-
 screen battle_ui:
     frame:
         xpadding 13
@@ -112,27 +102,6 @@ screen vpgrid_test():
         xalign 0.5
 
         text intro_text
-
-screen input_form():
-    frame:
-        xalign 0.5
-        yalign 0.5
-        vbox:
-            spacing 20
-            label "Please enter your information:"
-            
-            vbox:
-                spacing 10
-                text "Name:"
-                input id "name_input" default "" value VariableInputValue("player_name") changed SetFocus("age_input")
-  
-                text "Age:"
-                input id "age_input" default "" value VariableInputValue("player_age") changed SetFocus("color_input")
-
-                text "Favorite Color:"
-                input id "color_input" default "" value VariableInputValue("player_color")
-            
-            textbutton "Submit" action Return()
 
 
 # Ren'Py 腳本部分
@@ -605,11 +574,6 @@ label chapter1_act1:
     play music gamemusic
     scene bg yutai
     with fade
-
-    $ player_name = ""
-    $ player_age = ""
-    $ player_color = ""
-
     $ now_venue.location = "玉泰鹽鋪"
     "第一章：早年生活與革命生涯"
 
@@ -617,7 +581,6 @@ label chapter1_act1:
     show screen location_ui
     show johndraw at left
     voice "john01_01.wav"
-    call screen input_form
     j "我是西元1887年10月31日出生於浙江奉化溪口鎮玉泰鹽鋪。家裡很有錢，是當地的五大首富之一，我祖父開設的鹽鋪後來給我爸經營"
     
 
