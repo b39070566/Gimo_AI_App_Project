@@ -688,7 +688,7 @@ label chapter1_act1:
     show screen location_ui
     show johndraw at left
     voice "john01_01.wav"
-    call screen input_form
+
     j "我是西元1887年10月31日出生於浙江奉化溪口鎮玉泰鹽鋪。家裡很有錢，是當地的五大首富之一，我祖父開設的鹽鋪後來給我爸經營"
     
 
@@ -1281,7 +1281,7 @@ label chapter2_act5:
     voice "voifeng12.wav"
     jo "張學良，你們的行為雖然錯誤，但出發點我能理解。記住，國家的未來需要我們共同努力。我會考慮你們的建議，但你必須為自己的行為負責。"
 
-    "蔣介石最終沒有對張學良痛下殺手，而是讓張學良失去了54年的自由。"(what_color="#808080")
+    "蔣介石,蔣中正最終沒有對張學良痛下殺手，而是讓張學良失去了54年的自由。"(what_color="#808080")
     "臨終前更是對蔣經國說「絕對不可放虎歸山」。"(what_color="#808080")
     "楊虎城的結局與張學良不同，楊虎城在事變後被處決，他的家人也遭到迫害。"(what_color="#808080")
     
@@ -1304,7 +1304,10 @@ label chapter3_act1:
 
     play music "chapter3.mp3" 
 
-    $ now_venue.location = "南京，國民政府軍事委員會"
+    $ now_venue.location = "南京國軍委員會"
+
+    show screen location_ui
+ 
     "1937年7月7日"
 
     show johndraw
