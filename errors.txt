@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 130: keyword argument 'spacing' appears more than once in a vbox statement.
-    spacing 10
-           ^
+File "game/script.rpy", line 74: invalid syntax
+        return str(renpy.input("請輸入您的問題：", default=""))S
+                                                        ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Fri Sep 20 00:08:49 2024
+Tue Sep 24 17:26:05 2024

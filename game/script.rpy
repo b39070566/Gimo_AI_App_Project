@@ -2,26 +2,85 @@
     import random
     import time
     import requests
-    import requests
+    import threading
+    import re
+    import jieba
+    import jieba.posseg as pseg
+    
 
     intro_text = "正在加載..."
     is_loading = False
 
-    def async_get_intro(location):
+    def extract_info(question):
+        question = str(question)  # 確保 question 是字符串
+        # 提取年份
+        year_match = re.search(r'\b\d{4}\b', question)
+        year = year_match.group() if year_match else None
+
+        # 使用结巴分词进行词性标注
+        words = pseg.cut(question)
+        
+        # 提取人名、地点和事件
+        names = []
+        locations = []
+        events = []
+        for word, flag in words:
+            if flag == 'nr':  # 人名
+                names.append(word)
+            elif flag in ['ns', 'nt', 'nz']:  # 地名、机构名、其他专名
+                locations.append(word)
+            elif flag == 'v':  # 动词，可能表示事件
+                events.append(word)
+
+        # 如果没有找到人名，尝试提取两个或三个连续的中文字符
+        if not names:
+            name_match = re.search(r'[\u4e00-\u9fa5]{2,3}', question)
+            if name_match:
+                names.append(name_match.group())
+
+        return year, names[0] if names else None, locations[0] if locations else None, events[0] if events else None
+
+    def async_get_intro(character, location, question):
         global intro_text, is_loading
+        character = str(character)
+        location = str(location)
+        question = str(question)
         is_loading = True
-        try:
-            response = requests.get(f'http://localhost:8000/character_and_location_intro?character_name=Sun%20Wukong&location_name={location}')
-            response.raise_for_status()
-            data = response.json()
-            intro_text = data['combined_intro']
-        except requests.RequestException as e:
-            intro_text = f"未連上網路: {str(e)}"
-        except Exception as e:
-            intro_text = f"發生錯誤: {str(e)}"
-        finally:
-            is_loading = False
-        renpy.restart_interaction()
+        
+        def network_request():
+            global intro_text, is_loading
+            try:
+                # 提取问题中的关键信息
+                year, extracted_name, extracted_location, extracted_event = extract_info(question)
+                
+                # 使用提取的信息构建查询参数
+                params = {
+                    'character_name': str(extracted_name or character),
+                    'location_name': str(extracted_location or location),
+                    'question': str(question),
+                    'event': str(extracted_event) if extracted_event else None
+                }
+                if year:
+                    params['year'] = str(year)
+
+                response = requests.get('http://localhost:8000/character_and_location_intro', params=params, timeout=10)
+                response.encoding = 'utf-8'  # 指定響應的編碼
+                response.raise_for_status()
+                data = response.json()
+                intro_text = data['combined_intro']
+            except requests.RequestException as e:
+                intro_text = f"未連上網路: {str(e)}"
+            except Exception as e:
+                intro_text = f"發生錯誤: {str(e)}"
+            finally:
+                is_loading = False
+                renpy.restart_interaction()
+
+        thread = threading.Thread(target=network_request)
+        thread.start()
+
+    def get_user_question():
+        return str(renpy.input("請輸入您的問題：", default=""))
 
     def get_first_title(location):
         global is_loading
@@ -89,12 +148,14 @@ screen location_ui:
         ypadding 14
         xalign 0.99 yalign 0.02
         vbox:
-            textbutton "位置: [now_venue.location]":
-                action [
-                    Function(get_first_title, now_venue.location),
-                    Show("vpgrid_test")
-                ]
-                text_size 40
+            text "位置: [now_venue.location]"
+                #########
+                ######action [
+                    ######Function(get_first_title, now_venue.location),
+                    ######Show("vpgrid_test")
+                ######]
+                ######text_size 40
+                ######
 
 # 修改 vpgrid_test 屏幕以处理可能的 None 值
 screen vpgrid_test():
@@ -611,6 +672,16 @@ label chapter1_act1:
     $ player_color = ""
 
     $ now_venue.location = "玉泰鹽鋪"
+
+    $ user_question = get_user_question()
+    $ year, extracted_name, extracted_location, extracted_event = extract_info(user_question)
+    $ character = extracted_name if extracted_name else "此訊息代表用戶沒輸入人名"
+    $ location = extracted_location if extracted_location else "此訊息代表用戶沒輸入地點"
+    $ event = extracted_event if extracted_event else "此訊息代表用戶沒輸入事件"
+    $ async_get_intro(character, location, user_question)
+    "請稍等，正在獲取回答..."
+    "[intro_text]"
+
     "第一章：早年生活與革命生涯"
 
 
