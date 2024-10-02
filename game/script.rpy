@@ -11,8 +11,49 @@
         except requests.RequestException:
             return "未連上網路"
 
+<<<<<<< Updated upstream
     url = "https://travel.ettoday.net/category/%E6%A1%83%E5%9C%92/"
     title_text = get_first_title(url)
+=======
+    intro_text = "正在加載..."
+    is_loading = False
+
+    def async_get_intro(question):
+        global intro_text, is_loading
+        is_loading = True
+    
+        def network_request():
+            global intro_text, is_loading
+            try:
+                params = {'question': str(question)}
+                response = requests.get('http://localhost:8000/ask', params=params, timeout=10)
+                response.encoding = 'utf-8'
+                response.raise_for_status()
+                data = response.json()
+                intro_text = data['answer']
+            except requests.RequestException as e:
+                intro_text = f"未連上網路: {str(e)}"
+            except Exception as e:
+                intro_text = f"發生錯誤: {str(e)}"
+            finally:
+                is_loading = False
+                renpy.restart_interaction()
+
+        thread = threading.Thread(target=network_request)
+        thread.start()
+
+    def get_user_question():
+        return str(renpy.input("請輸入您的問題：", default=""))
+
+    def get_first_title(location):
+        global is_loading
+        is_loading = True
+        intro_text = "正在加載..."
+        renpy.invoke_in_thread(async_get_intro, location)
+
+# 呼叫函數獲取介紹
+    
+>>>>>>> Stashed changes
 
     class place:
         def __init__(self, location):
@@ -533,7 +574,18 @@ label chapter1_act1:
     play music gamemusic
     scene bg yutai
     with fade
+<<<<<<< Updated upstream
     $ now_venue.location = "玉泰鹽鋪"
+=======
+
+    $ now_venue.location = "玉泰鹽鋪"
+
+    $ question = get_user_question()
+    $ async_get_intro(question)
+    "請稍等，正在獲取回答..."
+    "[intro_text]"
+
+>>>>>>> Stashed changes
     "第一章：早年生活與革命生涯"
 
 
