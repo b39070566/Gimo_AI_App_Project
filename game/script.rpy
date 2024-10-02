@@ -288,6 +288,9 @@ image bg imgli13 ="imgli13.jpg"
 image imgjcf7 = "imgjcf7.jpg"
 image imgjcs5 = "imgjcs5.jpg"
 
+image imgchung = "imgchung.jpg"
+
+
 
 image johndraw = "johndraw.png"
 image maofumei = "maofumei.png"
@@ -2206,7 +2209,7 @@ label chapter5:
 
     # 第一幕：和平破裂 
     label chapter5_act1:
-        scene bg imgli1
+        scene bg imgchung
         with fade
         play music "ch5bgm.wav" volume 0.4
 
