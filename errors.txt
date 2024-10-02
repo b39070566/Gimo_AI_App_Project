@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 74: invalid syntax
-        return str(renpy.input("請輸入您的問題：", default=""))S
-                                                        ^
+File "game/script.rpy", line 15: expected an indented block
+    global intro_text, is_loading
+     ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Tue Sep 24 17:26:05 2024
+Mon Sep 30 11:15:47 2024
