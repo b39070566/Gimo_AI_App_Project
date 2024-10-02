@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 15: expected an indented block
-    global intro_text, is_loading
-     ^
+File "game/script.rpy", line 572: expected statement.
+    <<<<<<< Updated upstream
+                            ^
+
+File "game/script.rpy", line 574: expected statement.
+    =======
+          ^
+
+File "game/script.rpy", line 583: expected statement.
+    >>>>>>> Stashed changes
+                           ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Mon Sep 30 11:15:47 2024
+Wed Oct  2 13:04:50 2024

@@ -11,10 +11,6 @@
         except requests.RequestException:
             return "未連上網路"
 
-<<<<<<< Updated upstream
-    url = "https://travel.ettoday.net/category/%E6%A1%83%E5%9C%92/"
-    title_text = get_first_title(url)
-=======
     intro_text = "正在加載..."
     is_loading = False
 
@@ -53,7 +49,6 @@
 
 # 呼叫函數獲取介紹
     
->>>>>>> Stashed changes
 
     class place:
         def __init__(self, location):
@@ -574,9 +569,6 @@ label chapter1_act1:
     play music gamemusic
     scene bg yutai
     with fade
-<<<<<<< Updated upstream
-    $ now_venue.location = "玉泰鹽鋪"
-=======
 
     $ now_venue.location = "玉泰鹽鋪"
 
@@ -585,7 +577,6 @@ label chapter1_act1:
     "請稍等，正在獲取回答..."
     "[intro_text]"
 
->>>>>>> Stashed changes
     "第一章：早年生活與革命生涯"
 
 
