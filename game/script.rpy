@@ -2,6 +2,8 @@
     import random
     import time
     import requests
+    import threading
+    
     def get_first_title(url):
         try:
             response = requests.get(f'http://localhost:8000/get_title?url={url}')
