@@ -1212,9 +1212,12 @@ label chapter3_act1:
     play music "chapter3.mp3" 
 
     $ now_venue.location = "南京，國民政府軍事委員會"
+
+    show screen location_ui
+
     "1937年7月7日"
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan1.wav"
     j "1937年7月7日晚，駐紮在豐台的日軍在盧溝橋附近進行所謂的「夜間演習」。這次演習成為了全面抗戰的導火線。"
@@ -1222,7 +1225,7 @@ label chapter3_act1:
     voice "voiyalan2.wav"
     j "諸位，日軍已經在華北發動全面進攻，我們必須立即做出反應。這不再是局部衝突，而是關乎國家存亡的戰爭。"
 
-    show johndraw:
+    show johndrawold:
         xalign 0.5
         xzoom -1
         linear 0.5 xalign 0.25
@@ -1265,7 +1268,7 @@ label chapter3_act2:
     $ now_venue.location = "上海指揮部"
     "1937年8月，上海指揮部"
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan6.wav"
     j "為了分散日軍注意力，減輕華北戰場的壓力，我決定在上海發動一場大規模戰役。這是一個冒險的決定，但我們別無選擇。"
@@ -1273,7 +1276,7 @@ label chapter3_act2:
     voice "voiyalan7.wav"
     j "張治中，你來指揮這次淞滬會戰。記住，我們不僅是在打仗，更是在向世界展示中國人民的抗戰決心。"
 
-    hide johndraw
+    hide johndrawold
 
     show zhangzhizhong
 
@@ -1287,12 +1290,12 @@ label chapter3_act2:
 
     hide heyingqin
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan8.wav"
     j "我明白這個風險。但是我們有地利，有民心。更重要的是，我們是在保衛自己的國家。這種精神力量是無法估量的。"
 
-    hide johndraw
+    hide johndrawold
 
     show chencheng
 
@@ -1300,7 +1303,7 @@ label chapter3_act2:
 
     hide chencheng
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan9.wav"
     j "沒錯。張治中，你要充分利用租界的特殊地位，在國際社會面前展示日軍的暴行。"
@@ -1329,7 +1332,7 @@ label chapter3_act2:
 
     hide zhangzhizhong
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan10.wav"
     j "堅持住，張將軍。我會調集更多部隊支援上海。記住，我們是在為時間而戰。"
@@ -1349,7 +1352,7 @@ label chapter3_act3:
     "1937年12月，南京指揮部"
 
     
-    show johndraw:
+    show johndrawold:
         yalign 1.0
         linear 2 xalign 0.6
         xzoom -1
@@ -1361,7 +1364,7 @@ label chapter3_act3:
     voice "voiyalan13.wav"
     j "諸位，南京是我們的首都，絕不能輕易放棄。但我們也要考慮長遠的抗戰大局。"
 
-    hide johndraw
+    hide johndrawold
 
     show heyingqin
 
@@ -1369,12 +1372,12 @@ label chapter3_act3:
 
     hide heyingqin
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan14.wav"
     j "是的，政府必須轉移，以保存實力。但我們絕不能放棄南京的防禦。陳誠，你留下來指揮防衛戰。"
 
-    hide johndraw
+    hide johndrawold
 
     show chencheng
 
@@ -1388,7 +1391,7 @@ label chapter3_act3:
 
     hide zhangzhizhong
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan15.wav"
     j "好主意。但要注意保護平民。我們打仗，是為了保護百姓，而不是為了增加他們的苦難。"
@@ -1402,12 +1405,12 @@ label chapter3_act3:
     $ now_venue.location = "重慶臨時指揮部"
     "重慶臨時指揮部"
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan17.wav"
     j "南京的慘劇讓我們心如刀割，但也更堅定了我們抗戰到底的決心。從現在起，我們要實行持久戰略，消耗日軍的實力，等待國際局勢的變化。"
 
-    hide johndraw
+    hide johndrawold
 
     show heyingqin
 
@@ -1421,7 +1424,7 @@ label chapter3_act3:
 
     hide chencheng
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan18.wav"
     j "很好。陳誠，你負責組織和協調各地的游擊隊。何應欽，你負責與國際社會聯絡，爭取更多支持。張治中，你負責重新整編我們的部隊，為下一階段的反攻做準備。"
@@ -1436,7 +1439,7 @@ label chapter3_act4:
     $ now_venue.location = "武漢指揮部"
     "1938年，武漢指揮部"
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan19.wav"
     j "1938年，日軍開始向武漢發起進攻。武漢是我們的臨時首都，也是抗戰的重要基地，我們必須全力防守。"
@@ -1444,7 +1447,7 @@ label chapter3_act4:
     voice "voiyalan20.wav"
     j "諸位，武漢是我們最後的防線。我們必須不惜一切代價守住它！"
 
-    hide johndraw
+    hide johndrawold
 
     show chencheng
 
@@ -1464,7 +1467,7 @@ label chapter3_act4:
 
     hide zhangzhizhong
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan21.wav"
     j "很好。我們還要充分利用地形優勢。長江、漢水，這些天然屏障要成為日軍的噩夢。"
@@ -1494,7 +1497,7 @@ label chapter3_act4:
 
     hide chencheng
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan22.wav"
     j "儘管我們奮勇抵抗，但最終還是不得不放棄武漢。然而，這場戰役極大地消耗了日軍的實力，為我們的持久戰略贏得了時間。"
@@ -1505,12 +1508,12 @@ label chapter3_act4:
     $ now_venue.location = "撤退路上"
     "撤退路上"
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan23.wav"
     j "諸位，武漢的失守並不意味著我們的失敗。相反，這標誌著我們抗戰進入了一個新的階段。我們將採取持久戰略，消耗日軍的實力，等待國際局勢的變化。"
 
-    hide johndraw
+    hide johndrawold
 
     show heyingqin
 
@@ -1518,12 +1521,12 @@ label chapter3_act4:
 
     hide heyingqin
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan24.wav"
     j "陳誠，你負責組織游擊戰，騷擾日軍後方。張治中，你負責重新整編我們的部隊。何應欽，你負責與國際社會聯絡，爭取更多支持。"
 
-    hide johndraw
+    hide johndrawold
 
     show chencheng
     show zhangzhizhong at left
@@ -1537,7 +1540,7 @@ label chapter3_act4:
     hide zhangzhizhong
     hide heyingqin
 
-    show johndraw:
+    show johndrawold:
         yalign 1.0
         xzoom -1
         xalign 0.5
@@ -1556,7 +1559,7 @@ label chapter3_act5:
     $ now_venue.location = "長沙指揮部"
     "1939年，長沙指揮部"
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan26.wav"
     j "1939年，日軍向長沙發起進攻。這是一個重要的轉折點，我們終於在正面戰場上取得了重大勝利。"
@@ -1564,7 +1567,7 @@ label chapter3_act5:
     voice "voiyalan27.wav"
     j "陳誠，長沙的防務就交給你了。記住，這可能是我們扭轉戰局的機會。"
 
-    hide johndraw
+    hide johndrawold
 
     show chencheng
 
@@ -1584,7 +1587,7 @@ label chapter3_act5:
 
     hide zhangzhizhong
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan28.wav"
     j "很好。記住，我們不僅要防守，更要主動出擊。要充分利用地形優勢，實施誘敵深入、圍而殲之的策略。"
@@ -1613,7 +1616,7 @@ label chapter3_act5:
 
     hide chencheng
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan29.wav"
     j "在陳誠的指揮下，我軍採用了聰明的戰術，先誘敵深入，然後實施包圍殲滅。這個策略取得了巨大的成功。"
@@ -1630,12 +1633,12 @@ label chapter3_act5:
 
     hide chencheng
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan30.wav"
     j "非常好！這是我們抗戰以來，第一個重大勝利，它將極大地鼓舞全國軍民的士氣！"
 
-    hide johndraw
+    hide johndrawold
 
     show heyingqin
 
@@ -1649,7 +1652,7 @@ label chapter3_act5:
 
     hide zhangzhizhong
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan31.wav"
     j "諸位說得對。這次勝利向全世界證明了中國抗戰的決心和能力。我們要乘勝追擊，繼續削弱日軍的實力。"
@@ -1664,7 +1667,7 @@ label chapter3_act6:
     $ now_venue.location = "重慶指揮部"
     "1944年，重慶指揮部"
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan32.wav"
     j "1944年，日軍發動了最後一次大規模進攻，即豫湘桂會戰。儘管我們遭受了重創，但這也為我們的最終反攻創造了條件。"
@@ -1672,7 +1675,7 @@ label chapter3_act6:
     voice "voiyalan33.wav"
     j "諸位，日軍已經開始了他們的最後一搏。我們必須堅持住，等待反攻的時機。"
 
-    hide johndraw
+    hide johndrawold
 
     show heyingqin
 
@@ -1692,7 +1695,7 @@ label chapter3_act6:
 
     hide zhangzhizhong
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan34.wav"
     j "你們說得都對。我們要既堅持抵抗，又要保存實力。更重要的是，我們要開始為最後的反攻做準備。"
@@ -1709,12 +1712,12 @@ label chapter3_act6:
 
     hide chencheng
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan35.wav"
     j "我們必須在貴州設防，絕不能讓日軍威脅到重慶！"
 
-    hide johndraw
+    hide johndrawold
 
     show heyingqin
 
@@ -1722,7 +1725,7 @@ label chapter3_act6:
 
     hide heyingqin
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan36.wav"
     j "很好。我們要抓住這個機會，加快部隊的訓練和改編。"
@@ -1733,12 +1736,12 @@ label chapter3_act6:
     $ now_venue.location = "1945年，中國軍隊反攻"
     "1945年，中國軍隊反攻"
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan37.wav"
     j "全軍聽令，現在是我們反攻的時候了！"
 
-    hide johndraw
+    hide johndrawold
 
     show heyingqin
 
@@ -1758,7 +1761,7 @@ label chapter3_act6:
 
     hide zhangzhizhong
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan38.wav"
     j "在盟軍的配合下，我們開始了大規模的反攻。我們收復了大片失地，日本侵略者節節敗退。"
@@ -1769,12 +1772,12 @@ label chapter3_act6:
     $ now_venue.location = "南京"
     "1945年8月15日，南京"
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan39.wav"
     j "今天，我們終於迎來了這一天。日本無條件投降，我們的抗戰勝利了！"
 
-    hide johndraw
+    hide johndrawold
 
     show heyingqin
 
@@ -1794,7 +1797,7 @@ label chapter3_act6:
 
     hide zhangzhizhong
 
-    show johndraw
+    show johndrawold
 
     voice "voiyalan40.wav"
     j "是的，這場勝利來之不易。我們付出了巨大的代價，但我們捍衛了國家的獨立和民族的尊嚴。現在，我們要開始重建我們的國家了。"
