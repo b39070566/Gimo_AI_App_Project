@@ -1432,20 +1432,3 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
-
-
-# AI老師按鈕
-screen ai_teacher_button():
-    zorder 100
-    
-    # 不在主選單和遊戲選單時顯示
-    if not main_menu and not _game_menu_screen:
-        # 方法1：使用圖片按鈕
-        imagebutton:
-            xalign 1.0
-            yalign 0.0
-            xoffset -20
-            yoffset 20
-            idle "images/aiicon1.png"
-            hover "images/aiicon0.png"
-            action Show("ai_chat_screen")
