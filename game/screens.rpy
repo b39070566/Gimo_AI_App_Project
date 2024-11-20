@@ -1432,6 +1432,7 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
+<<<<<<< HEAD
 
 
 
@@ -1556,3 +1557,5 @@ screen ai_chat_screen():
                         action [Function(send_message), SetVariable("player_question", "")]
                         xsize 80  
                         ysize 35  
+=======
+>>>>>>> parent of 145e7a6 (aiicon)
