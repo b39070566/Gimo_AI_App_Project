@@ -1,52 +1,57 @@
-﻿init -100 python:
-    if not hasattr(store, 'ai_chat_history'):
-        store.ai_chat_history = []
-    if not hasattr(store, 'player_question'):
-        store.player_question = ""
-
-# 添加默認值定義
-default ai_chat_history = []
-default player_question = ""
-
-# 主要初始化代碼
-init python:
+﻿init python:
     import random
     import time
-    import json
+    import requests
+    import threading
     
-    # 讀取歷史問答資料庫
-    try:
-        with open(renpy.loader.transfn("history.json"), "r", encoding="utf-8") as f:
-            history_database = json.load(f)
-    except:
-        # 如果讀取失敗，使用預設的回答
-        history_database = {
-            "你好": "你好！我是歷史小老師，很高興為你解答問題。",
-            "再見": "再見！有問題隨時來問我。",
-            "default": "這是個好問題！作為歷史小老師，讓我來為你詳細解答..."
-        }
+    def get_first_title(url):
+        try:
+            response = requests.get(f'http://localhost:8000/get_title?url={url}')
+            response.raise_for_status()
+            data = response.json()
+            return data['title']
+        except requests.RequestException:
+            return "未連上網路"
+
+    intro_text = "正在加載..."
+    is_loading = False
+
+    def async_get_intro(question):
+        global intro_text, is_loading
+        is_loading = True
     
-    # 註冊浮動按鈕和聊天界面
-    config.overlay_screens.append("ai_teacher_button")
+        def network_request():
+            global intro_text, is_loading
+            try:
+                params = {'question': str(question)}
+                response = requests.get('http://localhost:8000/ask', params=params, timeout=10)
+                response.encoding = 'utf-8'
+                response.raise_for_status()
+                data = response.json()
+                intro_text = data['answer']
+            except requests.RequestException as e:
+                intro_text = f"未連上網路: {str(e)}"
+            except Exception as e:
+                intro_text = f"發生錯誤: {str(e)}"
+            finally:
+                is_loading = False
+                renpy.restart_interaction()
+
+        thread = threading.Thread(target=network_request)
+        thread.start()
+
+    def get_user_question():
+        return str(renpy.input("請輸入您的問題：", default=""))
+
+    def get_first_title(location):
+        global is_loading
+        is_loading = True
+        intro_text = "正在加載..."
+        renpy.invoke_in_thread(async_get_intro, location)
+
+# 呼叫函數獲取介紹
     
-    def get_ai_response(question):
-        # 搜尋JSON資料庫中的關鍵字
-        for key in history_database:
-            if key in question:
-                return history_database[key]
-        
-        # 如果沒找到相符的關鍵字，回傳預設回答
-        return history_database.get("default", "這是個好問題！讓我想想...")
-    
-    def send_message():
-        if store.player_question.strip() and not is_loading:  # 增加is_loading的檢查
-            store.ai_chat_history.append("你: " + store.player_question)
-            response = get_ai_response(store.player_question)
-            store.ai_chat_history.append("老師: " + response)
-            store.player_question = ""  # 清空輸入
-            renpy.restart_interaction()  # 重繪界面
-        
-    # 遊戲類定義
+
     class place:
         def __init__(self, location):
             self.location = location
@@ -54,6 +59,7 @@ init python:
     class chaptchoosing:
         def __init__(self, chapter):
             self.chapter = chapter
+
 
     class Fighter:
         def __init__(self, name, level=1, max_hp=10, hp=10, max_mp=4, mp=4, attack=2, defense=1, element="None"):
@@ -70,7 +76,6 @@ init python:
     def calculate_damage(attacker, defender):
         base_damage = attacker.attack - defender.defense
         return max(1, base_damage + random.randint(-1, 1))
-
 
 screen battle_ui:
     frame:

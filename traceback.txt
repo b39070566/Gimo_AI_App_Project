@@ -1,26 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 578, in script
-    $ question = get_user_question()
-  File "game/script.rpy", line 578, in <module>
-    $ question = get_user_question()
-NameError: name 'get_user_question' is not defined
+  File "game/script.rpy", line 576, in script
+    $ async_get_intro(question)
+  File "game/script.rpy", line 576, in <module>
+    $ async_get_intro(question)
+  File "game/script.rpy", line 38, in async_get_intro
+    thread = threading.Thread(target=network_request)
+NameError: name 'threading' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 578, in script
-    $ question = get_user_question()
-  File "D:\renpy-8.2.1-sdk\renpy\ast.py", line 823, in execute
+  File "game/script.rpy", line 576, in script
+    $ async_get_intro(question)
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\ast.py", line 823, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "D:\renpy-8.2.1-sdk\renpy\python.py", line 1178, in py_exec_bytecode
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\python.py", line 1178, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/script.rpy", line 578, in <module>
-    $ question = get_user_question()
-NameError: name 'get_user_question' is not defined
+  File "game/script.rpy", line 576, in <module>
+    $ async_get_intro(question)
+  File "game/script.rpy", line 38, in async_get_intro
+    thread = threading.Thread(target=network_request)
+NameError: name 'threading' is not defined
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.2.1.24030407
 Fantasy Ren'py GUI template 1.0
-Wed Nov 20 13:23:32 2024
+Wed Oct  2 13:07:24 2024

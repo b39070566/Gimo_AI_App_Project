@@ -1,27 +1,42 @@
+<<<<<<< HEAD
 2024-11-20 05:44:20 UTC
 Windows-10-10.0.22621
 Ren'Py 8.2.1.24030407
 
 Early init took 0.08s
+=======
+2024-10-30 08:15:47 UTC
+Windows-10-10.0.22621
+Ren'Py 8.2.1.24030407
+
+Early init took 0.09s
+>>>>>>> parent of 12a47df (ai chat screen)
 Loading error handling took 0.02s
 Loading script took 0.08s
 Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
+<<<<<<< HEAD
 Running init code took 0.03s
 Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.02s
+=======
+Running init code took 0.11s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.03s
+>>>>>>> parent of 12a47df (ai chat screen)
 Index archives took 0.00s
 Dump and make backups took 0.03s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.02s
+Initial gc took 0.03s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
 Creating interface object took 0.17s
 Cleaning stores took 0.00s
-Init translation took 0.02s
+Init translation took 0.03s
 Build styles took 0.00s
 Load screen analysis took 0.02s
 Analyze screens took 0.00s
@@ -43,6 +58,17 @@ Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
 Maximum texture size: 4096x4096
 Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+<<<<<<< HEAD
+=======
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
+>>>>>>> parent of 12a47df (ai chat screen)
 Maximum texture size: 4096x4096
 Screen sizes: virtual=(1920, 1080) physical=(2560, 1369) drawable=(2560, 1369)
 Maximum texture size: 4096x4096
