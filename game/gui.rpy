@@ -471,3 +471,79 @@ init python:
 
         gui.nvl_button_width = 1860
         gui.nvl_button_xpos = 30
+
+
+# 字體設定
+define gui.default_font = "gui/font/jf-openhuninn-2.0.ttf"
+define gui.name_font = "gui/font/jf-openhuninn-2.0.ttf"
+define gui.interface_font = "gui/font/jf-openhuninn-2.0.ttf"
+define gui.text_font = "gui/font/jf-openhuninn-2.0.ttf"
+define gui.choice_button_text_font = "gui/font/jf-openhuninn-2.0.ttf"
+define gui.chat_text_font = "gui/font/jf-openhuninn-2.0.ttf"
+
+# 基本界面設定
+define gui.frame_borders = Borders(10, 10, 10, 10)
+define gui.chat_window_width = 800
+define gui.chat_window_height = 600
+
+# 文字大小設定
+define gui.chat_text_size = 18
+define gui.chat_title_size = 24
+define gui.interface_text_size = 18
+define gui.title_text_size = 24
+
+# 按鈕設定
+define gui.button_width = 100
+define gui.button_height = 40
+define gui.chat_button_padding = (10, 5, 10, 5)
+
+# 輸入框設定
+define gui.input_height = 40
+
+# 邊距設定
+define gui.chat_window_padding = (20, 20, 20, 20)
+define gui.message_padding = (15, 10, 15, 10)
+define gui.message_spacing = 10
+define gui.message_borders = Borders(10, 10, 10, 10)
+
+# 顏色設定
+define gui.chat_accent_color = "#4CAF50"    # 主要強調色（綠色）
+define gui.chat_text_color = "#333333"      # 文字顏色
+define gui.chat_hover_color = "#45a049"     # 懸停顏色
+define gui.chat_background = "#ffffff"       # 聊天視窗背景色
+define gui.chat_muted_color = "#666666"     # 次要文字顏色
+
+# 動畫設定
+define gui.animation_length = 0.3
+
+# AI老師圖標大小
+define gui.ai_teacher_icon_size = 100
+
+# 發送按鈕樣式
+style send_button:
+    background gui.chat_accent_color
+    hover_background gui.chat_hover_color
+    padding (10, 5, 10, 5)
+    xminimum gui.button_width
+    
+style send_button_text:
+    font "gui/font/jf-openhuninn-2.0.ttf"  # 使用中文字體
+    color "#ffffff"
+    hover_color "#ffffff"
+    size gui.chat_text_size
+    xminimum 40
+
+# 關閉按鈕樣式
+style close_button:
+    background None
+    hover_background "#f0f0f0"
+    padding (10, 5, 10, 5)
+    xminimum 40
+    
+style close_button_text:
+    font "gui/font/jf-openhuninn-2.0.ttf"  # 使用中文字體
+    color gui.chat_muted_color
+    hover_color gui.chat_text_color
+    size 24
+    xalign 0.5
+

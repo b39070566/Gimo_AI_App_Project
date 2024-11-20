@@ -1434,18 +1434,125 @@ style slider_slider:
     xsize 900
 
 
-# AI老師按鈕
+
+
+
 screen ai_teacher_button():
-    zorder 100
-    
-    # 不在主選單和遊戲選單時顯示
-    if not main_menu and not _game_menu_screen:
-        # 方法1：使用圖片按鈕
+    zorder 100  # 確保按鈕顯示在最上層
+    frame:
+        xalign 0.01  
+        yalign 0.0  
+        xoffset -20
+        yoffset 20
+        
         imagebutton:
-            xalign 1.0
-            yalign 0.0
-            xoffset -20
-            yoffset 20
-            idle "images/aiicon1.png"
-            hover "images/aiicon0.png"
+            idle "gui/ai_teacher_idle.png"
+            hover "gui/ai_teacher_hover.png"
             action Show("ai_chat_screen")
+            at transform:
+                on hover:
+                    ease .2 zoom 1.1
+                on idle:
+                    ease .2 zoom 1.0
+
+screen ai_chat_screen():
+    default player_question = ""
+    modal True
+    
+    add "gui/gallery.png":
+        size (1920, 1080)
+    
+    frame:
+        background gui.chat_background
+        xsize gui.chat_window_width
+        ysize gui.chat_window_height
+        xalign 0.5
+        yalign 0.5
+        padding gui.chat_window_padding
+        
+        at transform:
+            on show:
+                alpha 0.0 yoffset -20
+                parallel:
+                    ease gui.animation_length alpha 1.0
+                parallel:
+                    ease gui.animation_length yoffset 0
+        
+        vbox:
+            spacing gui.message_spacing
+            xfill True  
+            
+            # 標題區域
+            hbox:
+                spacing gui.message_spacing
+                xfill True
+                
+                add "gui/ai_teacher_idle.png" size (40, 40)
+                
+                text "歷史小老師":
+                    size gui.chat_title_size
+                    color gui.chat_text_color
+                    font gui.chat_text_font
+                
+                textbutton "×":
+                    style "close_button"
+                    action Hide("ai_chat_screen")
+                    xalign 1.0
+            
+            # 聊天記錄區域
+            frame:
+                background "#f8f8f8"
+                xfill True
+                ysize gui.chat_window_height - 200
+                padding gui.message_padding
+                
+                viewport:
+                    mousewheel True
+                    scrollbars "vertical"
+                    vbox:
+                        spacing gui.message_spacing
+                        for message in ai_chat_history:
+                            frame:
+                                if message.startswith("你: "):
+                                    background "#E6D5C3"
+                                    xalign 1.0
+                                else:
+                                    background "#E8E8E8"
+                                    xalign 0.0
+                                padding gui.message_padding
+                                text message:
+                                    color gui.chat_text_color
+                                    font gui.chat_text_font
+                                    size gui.chat_text_size
+            
+            # 輸入區域
+            frame:
+                xfill True
+                background "#f0f0f0"
+                padding (10, 5, 10, 5)
+                margin (0, 0, 0, 0)  
+                
+                hbox:
+                    spacing 10
+                    xfill True  
+                    
+                    # 輸入框
+                    frame:
+                        background None  # 移除內層frame的背景
+                        xfill True  # 讓輸入框填滿剩餘空間
+                        padding (5, 0, 5, 0)
+                        
+                        input:
+                            value ScreenVariableInputValue("player_question")
+                            copypaste True
+                            size gui.chat_text_size
+                            color gui.chat_text_color
+                            length 500  # 限制輸入長度
+                    
+                    # 發送按鈕
+                    textbutton "發送":
+                        style "send_button"
+                        text_style "send_button_text"
+                        action [Function(send_message), SetVariable("player_question", "")]
+                        xsize 80  
+                        ysize 35  
