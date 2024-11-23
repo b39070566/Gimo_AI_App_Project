@@ -1432,3 +1432,151 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
+
+screen ai_teacher_button():
+    zorder 100  # 確保按鈕顯示在最上層
+    
+    imagebutton:
+        xalign 0.0  # 最左邊
+        yalign 0.0  # 最上方
+        xoffset 20  # 向右偏移 20 像素
+        yoffset 20  # 向下偏移 20 像素
+        idle "gui/ai_teacher_idle.png"
+        hover "gui/ai_teacher_hover.png"
+        action Show("ai_chat_screen")
+        at transform:
+            on hover:
+                ease .2 zoom 1.1
+            on idle:
+                ease .2 zoom 1.0
+
+screen ai_chat_screen():
+    default player_question = ""
+    modal True
+    
+    add "gui/gallery.png":
+        size (1920, 1080)
+    
+    frame:
+        background "#ffffff" 
+        xsize gui.chat_window_width
+        ysize gui.chat_window_height
+        xalign 0.5
+        yalign 0.5
+        padding gui.chat_window_padding
+        
+        at transform:
+            on show:
+                alpha 0.0 yoffset -20
+                parallel:
+                    ease gui.animation_length alpha 1.0
+                parallel:
+                    ease gui.animation_length yoffset 0
+        
+        vbox:
+            spacing gui.message_spacing
+            xfill True  
+            
+            # 標題區域
+            hbox:
+                spacing gui.message_spacing
+                xfill True
+                
+                add "gui/ai_teacher_idle.png" size (40, 40)
+                
+                text "歷史小老師":
+                    xalign 0.5  
+                    size gui.chat_title_size
+                    color gui.chat_text_color
+                    font gui.chat_text_font
+                
+                textbutton "×":
+                    style "close_button"
+                    action Hide("ai_chat_screen")
+                    xalign 1.0
+            
+            # 聊天記錄區域
+            frame:
+                background "#f8f8f8"
+                xfill True
+                ysize gui.chat_window_height - 200
+                padding gui.message_padding
+                
+                viewport:
+                    mousewheel True
+                    scrollbars "vertical"
+                    vbox:
+                        spacing 10
+                        for message in ai_chat_history:
+                            $ msg_style = "player_message" if message.is_player else "ai_message"
+                            frame style msg_style:
+                                padding gui.message_padding
+                                text message.content:
+                                    color gui.chat_text_color
+                                    size gui.chat_text_size
+            
+            # 輸入區域
+            frame:
+                background "#f8f8f8"
+                xfill True
+                yminimum 40
+                
+                yfill False
+                padding (10, 5)
+                
+                hbox:
+                    spacing 10
+                    xminimum 1000
+                    
+                    frame:
+                        background "#f8f8f8"
+                        xfill True
+                        xsize 850
+                       
+                        
+                        input:
+                            value ScreenVariableInputValue("player_question")
+                            copypaste True
+                            size 20  
+                            color gui.chat_text_color
+                            xfill True
+                            pixel_width 600
+                            
+                    textbutton "發送":
+                        style "send_button"
+                        text_style "send_button_text"
+                        action [Function(send_message), SetScreenVariable("player_question", "")]
+                        xsize 80
+                        ysize 30
+
+# 在screens.rpy中定義按鈕樣式
+style send_button:
+    background "#4CAF50"  
+    hover_background "#45a049"  
+    xsize 80
+    ysize 30
+
+style send_button_text:
+    color "#ffffff"  
+    size 16
+    xalign 0.5  
+    yalign 0.5  
+    text_align 0.5  
+
+style close_button:
+    background None
+    
+style close_button_text:
+    size gui.close_button_text_size
+    color gui.close_button_text_color
+    hover_color gui.close_button_hover_color
+    
+style player_message:
+    background gui.player_message_background
+    padding gui.player_message_padding
+    xalign 1.0
+    
+style ai_message:
+    background gui.ai_message_background
+    padding gui.ai_message_padding
+    xalign 0.0

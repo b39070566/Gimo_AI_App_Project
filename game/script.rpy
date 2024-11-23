@@ -3,7 +3,20 @@
     import time
     import requests
     import threading
-    
+
+    # 初始化變數
+    ai_chat_history = []
+    intro_text = "正在加載..."
+    is_loading = False
+    API_URL = "https://f947-42-72-58-85.ngrok-free.app"  # 更新為你的 ngrok URL
+    # 消息類別定義
+    class ChatMessage:
+        def __init__(self, content, is_player=False):
+            self.content = content
+            self.is_player = is_player
+            self.timestamp = time.time()
+            
+    # 取得網頁標題
     def get_first_title(url):
         try:
             response = requests.get(f'http://localhost:8000/get_title?url={url}')
@@ -12,43 +25,78 @@
             return data['title']
         except requests.RequestException:
             return "未連上網路"
-
-    intro_text = "正在加載..."
-    is_loading = False
-
+            
+    # 非同步獲取 AI 回應
     def async_get_intro(question):
         global intro_text, is_loading
         is_loading = True
-    
+        
         def network_request():
-            global intro_text, is_loading
+            global intro_text, is_loading, ai_chat_history
             try:
-                params = {'question': str(question)}
-                response = requests.get('http://localhost:8000/ask', params=params, timeout=10)
-                response.encoding = 'utf-8'
+                print(f"正在發送問題: {question}")  # 除錯訊息
+                response = requests.get(f'{API_URL}/ask', params={'question': str(question)})
+                print(f"API 回應狀態: {response.status_code}")  # 除錯訊息
                 response.raise_for_status()
                 data = response.json()
-                intro_text = data['answer']
-            except requests.RequestException as e:
-                intro_text = f"未連上網路: {str(e)}"
+                print(f"收到回應: {data}")  # 除錯訊息
+                
+                if ai_chat_history and ai_chat_history[-1].content == "正在思考中...":
+                    ai_chat_history.pop()
+                
+                ai_chat_history.append(ChatMessage(data['answer'], is_player=False))
+                
             except Exception as e:
-                intro_text = f"發生錯誤: {str(e)}"
+                print(f"發生錯誤: {str(e)}")  # 除錯訊息
+                error_msg = f"連接失敗: {str(e)}"
+                if ai_chat_history and ai_chat_history[-1].content == "正在思考中...":
+                    ai_chat_history.pop()
+                ai_chat_history.append(ChatMessage(error_msg, is_player=False))
             finally:
                 is_loading = False
                 renpy.restart_interaction()
-
+                
         thread = threading.Thread(target=network_request)
         thread.start()
+        
+    # 發送消息函數
+    def send_message():
+        global ai_chat_history
+        screen = renpy.get_screen('ai_chat_screen')  # 獲取當前螢幕
+        if screen:
+            player_question = screen.scope["player_question"]  # 從螢幕獲取問題
+            if player_question and player_question.strip(): 
+                current_question = player_question.strip()
+                print(f"問題是: {current_question}")  # 除錯
+                
+                # 添加玩家問題到歷史
+                ai_chat_history.append(ChatMessage(current_question, is_player=True))
+                
+                # 發送API請求
+                try:
+                    print("正在發送API請求")  # 除錯
+                    response = requests.get(f'{API_URL}/ask', params={'question': current_question})
+                    print(f"API回應: {response.status_code}")  # 除錯
+                    data = response.json()
+                    
+                    # 添加AI回答到歷史
+                    ai_chat_history.append(ChatMessage(data['answer'], is_player=False))
+                except Exception as e:
+                    print(f"API錯誤: {str(e)}")  # 除錯
+                    ai_chat_history.append(ChatMessage(f"錯誤: {str(e)}", is_player=False))
+                
+                # 清空輸入框
+                screen.scope["player_question"] = ""
+                
+                # 更新界面
+                renpy.restart_interaction()
 
-    def get_user_question():
-        return str(renpy.input("請輸入您的問題：", default=""))
+# 初始化默認值
+default player_question = ""
 
-    def get_first_title(location):
-        global is_loading
-        is_loading = True
-        intro_text = "正在加載..."
-        renpy.invoke_in_thread(async_get_intro, location)
-
+# 註冊浮動按鈕
+init python:
+    config.overlay_screens.append("ai_teacher_button")
 # 呼叫函數獲取介紹
     
 

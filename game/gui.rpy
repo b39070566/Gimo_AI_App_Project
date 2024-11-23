@@ -471,3 +471,43 @@ init python:
 
         gui.nvl_button_width = 1860
         gui.nvl_button_xpos = 30
+
+# 基本視窗設定
+define gui.chat_window_width = 1000
+define gui.chat_window_height = 800
+define gui.chat_window_padding = (20, 20, 20, 20)  # 改為元組 (左, 上, 右, 下)
+
+# 動畫相關
+define gui.animation_length = 0.3
+
+# 訊息間距和邊距
+define gui.message_spacing = 10
+define gui.message_padding = (15, 15, 15, 15)  # 改為元組
+
+# 文字相關設定
+define gui.chat_title_size = 28
+define gui.chat_text_size = 20
+define gui.chat_text_color = "#000000"
+define gui.chat_text_font = "gui/font/jf-openhuninn-2.0.ttf"
+
+# 按鈕相關設定
+define gui.send_button_text_size = 16
+define gui.send_button_text_color = "#ffffff"
+define gui.send_button_idle_color = "#4CAF50"
+define gui.send_button_hover_color = "#45a049"
+define gui.send_button_padding = (10, 5, 10, 5)  # 改為元組
+
+# 聊天記錄區域設定
+define gui.chat_history_background = "#f8f8f8"
+define gui.chat_input_background = "#f0f0f0"
+
+# 玩家和AI訊息框設定
+define gui.player_message_background = "#E3F2FD"
+define gui.ai_message_background = "#FFFFFF"
+define gui.player_message_padding = (15, 10, 15, 10)  # 改為元組
+define gui.ai_message_padding = (15, 10, 15, 10)  # 改為元組
+
+# 關閉按鈕設定
+define gui.close_button_text_size = 24
+define gui.close_button_text_color = "#666666"
+define gui.close_button_hover_color = "#999999"
