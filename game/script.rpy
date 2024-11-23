@@ -3,90 +3,165 @@
     import time
     import requests
     import threading
-
+    from threading import Lock  
+    
     # 初始化變數
     ai_chat_history = []
     intro_text = "正在加載..."
     is_loading = False
-    API_URL = "https://f947-42-72-58-85.ngrok-free.app"  # 更新為你的 ngrok URL
-    # 消息類別定義
+    is_waiting_response = False  # 新增等待回應狀態
+    API_URL = "https://4f05-2001-b400-e30e-a3c4-6453-43e7-8b30-c341.ngrok-free.app"
+
     class ChatMessage:
         def __init__(self, content, is_player=False):
             self.content = content
             self.is_player = is_player
             self.timestamp = time.time()
+            self.displayed_content = ""
+            self.is_typing = False
+            self.typing_index = 0
+            self.typing_lock = Lock()  # 添加锁来保护打字状态
             
+        def start_typing(self):
+            if self.is_player:
+                self.displayed_content = self.content
+                self.is_typing = False
+                return
+            
+            with self.typing_lock:
+                if self.is_typing:  # 如果已经在打字，就不要重新开始
+                    return
+                self.is_typing = True
+                self.typing_index = 0
+                self.displayed_content = ""
+            
+            def typing_effect():
+                try:
+                    while True:
+                        with self.typing_lock:
+                            if self.typing_index >= len(self.content) or not self.is_typing:
+                                self.is_typing = False
+                                break
+                            
+                            # 每次显示 1-3 个字符，使打字效果更自然
+                            chars_to_add = min(random.randint(1, 3), 
+                                            len(self.content) - self.typing_index)
+                            self.typing_index += chars_to_add
+                            self.displayed_content = self.content[:self.typing_index]
+                        
+                        # 强制更新界面
+                        renpy.invoke_in_main_thread(renpy.restart_interaction)
+                        
+                        # 随机延迟，使打字效果更自然
+                        delay = random.uniform(0.05, 0.15)
+                        time.sleep(delay)
+                        
+                except Exception as e:
+                    print(f"打字效果错误: {str(e)}")
+                finally:
+                    with self.typing_lock:
+                        self.is_typing = False
+                        self.displayed_content = self.content  # 确保显示完整内容
+                    renpy.invoke_in_main_thread(renpy.restart_interaction)
+            
+            thread = threading.Thread(target=typing_effect)
+            thread.daemon = True
+            thread.start()
+
     # 取得網頁標題
     def get_first_title(url):
         try:
-            response = requests.get(f'http://localhost:8000/get_title?url={url}')
+            response = requests.get(f'http://localhost:8000/get_title?url={url}', timeout=5)
             response.raise_for_status()
             data = response.json()
             return data['title']
-        except requests.RequestException:
+        except requests.RequestException as e:
+            print(f"獲取標題錯誤: {str(e)}")
             return "未連上網路"
-            
+
     # 非同步獲取 AI 回應
     def async_get_intro(question):
-        global intro_text, is_loading
-        is_loading = True
+        global intro_text, is_loading, is_waiting_response
         
+        if is_waiting_response:  # 如果正在等待回應，則不執行
+            return
+            
+        is_loading = True
+        is_waiting_response = True
+
         def network_request():
-            global intro_text, is_loading, ai_chat_history
+            global intro_text, is_loading, ai_chat_history, is_waiting_response
             try:
-                print(f"正在發送問題: {question}")  # 除錯訊息
-                response = requests.get(f'{API_URL}/ask', params={'question': str(question)})
-                print(f"API 回應狀態: {response.status_code}")  # 除錯訊息
+                print(f"正在發送問題: {question}")
+                response = requests.get(f'{API_URL}/ask', 
+                                     params={'question': str(question)},
+                                     timeout=30)  # 加入超時設定
+                print(f"API 回應狀態: {response.status_code}")
+                
                 response.raise_for_status()
                 data = response.json()
-                print(f"收到回應: {data}")  # 除錯訊息
-                
+                print(f"收到回應: {data}")
+
+                # 移除等待提示（如果存在）
                 if ai_chat_history and ai_chat_history[-1].content == "正在思考中...":
                     ai_chat_history.pop()
-                
-                ai_chat_history.append(ChatMessage(data['answer'], is_player=False))
-                
+
+                # 添加 AI 回應並開始打字效果
+                new_message = ChatMessage(data['answer'], is_player=False)
+                ai_chat_history.append(new_message)
+                new_message.start_typing()  # 開始打字效果
+
+            except requests.Timeout:
+                handle_error("請求超時，請稍後再試")
+            except requests.ConnectionError:
+                handle_error("無法連接到伺服器，請檢查網路連接")
+            except requests.RequestException as e:
+                handle_error(f"API請求錯誤: {str(e)}")
             except Exception as e:
-                print(f"發生錯誤: {str(e)}")  # 除錯訊息
-                error_msg = f"連接失敗: {str(e)}"
-                if ai_chat_history and ai_chat_history[-1].content == "正在思考中...":
-                    ai_chat_history.pop()
-                ai_chat_history.append(ChatMessage(error_msg, is_player=False))
+                handle_error(f"未知錯誤: {str(e)}")
             finally:
                 is_loading = False
+                is_waiting_response = False
                 renpy.restart_interaction()
-                
+
+        def handle_error(error_message):
+            global ai_chat_history
+            print(f"發生錯誤: {error_message}")
+            if ai_chat_history and ai_chat_history[-1].content == "正在思考中...":
+                ai_chat_history.pop()
+            ai_chat_history.append(ChatMessage(error_message, is_player=False))
+
         thread = threading.Thread(target=network_request)
+        thread.daemon = True  # 設置為守護線程
         thread.start()
-        
+
     # 發送消息函數
     def send_message():
-        global ai_chat_history
-        screen = renpy.get_screen('ai_chat_screen')  # 獲取當前螢幕
+        global ai_chat_history, is_waiting_response
+        
+        if is_waiting_response:  # 如果正在等待回應，則不執行
+            return
+            
+        screen = renpy.get_screen('ai_chat_screen')
         if screen:
-            player_question = screen.scope["player_question"]  # 從螢幕獲取問題
-            if player_question and player_question.strip(): 
+            player_question = screen.scope["player_question"]
+            if player_question and player_question.strip():
                 current_question = player_question.strip()
-                print(f"問題是: {current_question}")  # 除錯
+                print(f"問題是: {current_question}")
+
+                # 清空輸入框
+                screen.scope["player_question"] = ""
                 
                 # 添加玩家問題到歷史
                 ai_chat_history.append(ChatMessage(current_question, is_player=True))
                 
-                # 發送API請求
-                try:
-                    print("正在發送API請求")  # 除錯
-                    response = requests.get(f'{API_URL}/ask', params={'question': current_question})
-                    print(f"API回應: {response.status_code}")  # 除錯
-                    data = response.json()
-                    
-                    # 添加AI回答到歷史
-                    ai_chat_history.append(ChatMessage(data['answer'], is_player=False))
-                except Exception as e:
-                    print(f"API錯誤: {str(e)}")  # 除錯
-                    ai_chat_history.append(ChatMessage(f"錯誤: {str(e)}", is_player=False))
+                # 添加等待提示
+                waiting_message = ChatMessage("正在思考中...", is_player=False)
+                ai_chat_history.append(waiting_message)
+                waiting_message.start_typing()
                 
-                # 清空輸入框
-                screen.scope["player_question"] = ""
+                # 使用非同步方式獲取回應
+                async_get_intro(current_question)
                 
                 # 更新界面
                 renpy.restart_interaction()

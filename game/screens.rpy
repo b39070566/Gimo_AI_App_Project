@@ -1454,7 +1454,7 @@ screen ai_chat_screen():
     default player_question = ""
     modal True
     
-    add "gui/gallery.png":
+    add "#000000CC":
         size (1920, 1080)
     
     frame:
@@ -1507,13 +1507,17 @@ screen ai_chat_screen():
                     scrollbars "vertical"
                     vbox:
                         spacing 10
+                        xfill True  # 確保 vbox 填滿寬度
                         for message in ai_chat_history:
                             $ msg_style = "player_message" if message.is_player else "ai_message"
                             frame style msg_style:
-                                padding gui.message_padding
-                                text message.content:
+                                text (message.content if message.is_player else message.displayed_content):
                                     color gui.chat_text_color
                                     size gui.chat_text_size
+                                    if message.is_player:
+                                        xalign 1.0  # 用户消息右对齐
+                                    else:
+                                        xalign 0.0  # AI消息左对齐
             
             # 輸入區域
             frame:
@@ -1526,26 +1530,27 @@ screen ai_chat_screen():
                 
                 hbox:
                     spacing 10
-                    xminimum 1000
+                    xminimum 1200
                     
                     frame:
                         background "#f8f8f8"
                         xfill True
-                        xsize 850
+                        xsize 1020
                        
                         
                         input:
                             value ScreenVariableInputValue("player_question")
                             copypaste True
-                            size 20  
+                            size 24  
                             color gui.chat_text_color
                             xfill True
-                            pixel_width 600
+                            pixel_width 1100
                             
                     textbutton "發送":
                         style "send_button"
                         text_style "send_button_text"
                         action [Function(send_message), SetScreenVariable("player_question", "")]
+                        keysym ['K_RETURN', 'K_KP_ENTER']
                         xsize 80
                         ysize 30
 
@@ -1558,7 +1563,7 @@ style send_button:
 
 style send_button_text:
     color "#ffffff"  
-    size 16
+    size 24
     xalign 0.5  
     yalign 0.5  
     text_align 0.5  

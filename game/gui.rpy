@@ -473,8 +473,8 @@ init python:
         gui.nvl_button_xpos = 30
 
 # 基本視窗設定
-define gui.chat_window_width = 1000
-define gui.chat_window_height = 800
+define gui.chat_window_width = 1200
+define gui.chat_window_height = 850
 define gui.chat_window_padding = (20, 20, 20, 20)  # 改為元組 (左, 上, 右, 下)
 
 # 動畫相關
@@ -485,13 +485,13 @@ define gui.message_spacing = 10
 define gui.message_padding = (15, 15, 15, 15)  # 改為元組
 
 # 文字相關設定
-define gui.chat_title_size = 28
-define gui.chat_text_size = 20
+define gui.chat_title_size = 30
+define gui.chat_text_size = 24
 define gui.chat_text_color = "#000000"
 define gui.chat_text_font = "gui/font/jf-openhuninn-2.0.ttf"
 
 # 按鈕相關設定
-define gui.send_button_text_size = 16
+define gui.send_button_text_size = 20
 define gui.send_button_text_color = "#ffffff"
 define gui.send_button_idle_color = "#4CAF50"
 define gui.send_button_hover_color = "#45a049"
