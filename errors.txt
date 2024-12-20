@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 572: expected statement.
-    <<<<<<< Updated upstream
-                            ^
-
-File "game/script.rpy", line 574: expected statement.
-    =======
+File "game/screens.rpy", line 1547: 'update' is not a keyword argument or valid child of the input statement.
+    update every 0.1
           ^
 
-File "game/script.rpy", line 583: expected statement.
-    >>>>>>> Stashed changes
-                           ^
-
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Wed Oct  2 13:04:50 2024
+Fri Dec 20 23:05:37 2024

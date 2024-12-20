@@ -1,4 +1,7 @@
-﻿init python:
+﻿
+default player_question = ""
+init python:
+
     import random
     import time
     import requests
@@ -10,7 +13,8 @@
     intro_text = "正在加載..."
     is_loading = False
     is_waiting_response = False  # 新增等待回應狀態
-    API_URL = "https://4f05-2001-b400-e30e-a3c4-6453-43e7-8b30-c341.ngrok-free.app"
+    API_URL = "http://localhost:8000"
+    config.overlay_screens.append("ai_teacher_button")
 
     class ChatMessage:
         def __init__(self, content, is_player=False):
@@ -165,15 +169,6 @@
                 
                 # 更新界面
                 renpy.restart_interaction()
-
-# 初始化默認值
-default player_question = ""
-
-# 註冊浮動按鈕
-init python:
-    config.overlay_screens.append("ai_teacher_button")
-# 呼叫函數獲取介紹
-    
 
     class place:
         def __init__(self, location):
@@ -702,10 +697,6 @@ label chapter1_act1:
 
     $ now_venue.location = "玉泰鹽鋪"
 
-    $ question = get_user_question()
-    $ async_get_intro(question)
-    "請稍等，正在獲取回答..."
-    "[intro_text]"
 
     "第一章：早年生活與革命生涯"
 
