@@ -1529,7 +1529,7 @@ screen ai_chat_screen():
                 
                 hbox:
                     spacing 10
-                    xminimum 1200
+                    xminimum 1000
                     
                     frame:
                         background "#f8f8f8"
@@ -1543,7 +1543,7 @@ screen ai_chat_screen():
                             color gui.chat_text_color
                             xfill True
 
-                            
+                    null width 25         
                     textbutton "發送":
                         style "send_button"
                         text_style "send_button_text"
