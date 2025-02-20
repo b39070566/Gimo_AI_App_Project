@@ -1507,7 +1507,7 @@ screen ai_chat_screen():
                     scrollbars "vertical"
                     vbox:
                         spacing 10
-                        xfill True  # 確保 vbox 填滿寬度
+                        xfill True
                         for message in ai_chat_history:
                             $ msg_style = "player_message" if message.is_player else "ai_message"
                             frame style msg_style:
@@ -1515,37 +1515,35 @@ screen ai_chat_screen():
                                     color gui.chat_text_color
                                     size gui.chat_text_size
                                     if message.is_player:
-                                        xalign 1.0  # 用户消息右对齐
+                                        xalign 1.0
                                     else:
-                                        xalign 0.0  # AI消息左对齐
+                                        xalign 0.0
             
             # 輸入區域
             frame:
                 background "#f8f8f8"
                 xfill True
                 yminimum 40
-                
                 yfill False
                 padding (10, 5)
                 
                 hbox:
                     spacing 10
-                    xminimum 1200
+                    xminimum 1000
                     
                     frame:
                         background "#f8f8f8"
                         xfill True
                         xsize 1020
-                       
                         
                         input:
                             value ScreenVariableInputValue("player_question")
                             copypaste True
-                            size 24  
+                            size 24
                             color gui.chat_text_color
                             xfill True
-                            pixel_width 1100
-                            
+
+                    null width 25         
                     textbutton "發送":
                         style "send_button"
                         text_style "send_button_text"

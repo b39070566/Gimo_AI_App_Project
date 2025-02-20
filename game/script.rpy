@@ -1,16 +1,23 @@
-﻿init python:
+﻿
+default player_question = ""
+init python:
+
     import random
     import time
     import requests
     import threading
-    from threading import Lock  
+    from threading import Lock
+
     
     # 初始化變數
     ai_chat_history = []
     intro_text = "正在加載..."
     is_loading = False
     is_waiting_response = False  # 新增等待回應狀態
-    API_URL = "https://4f05-2001-b400-e30e-a3c4-6453-43e7-8b30-c341.ngrok-free.app"
+    API_URL = "http://localhost:8000"
+    config.overlay_screens.append("ai_teacher_button")
+
+
 
     class ChatMessage:
         def __init__(self, content, is_player=False):
@@ -166,15 +173,6 @@
                 # 更新界面
                 renpy.restart_interaction()
 
-# 初始化默認值
-default player_question = ""
-
-# 註冊浮動按鈕
-init python:
-    config.overlay_screens.append("ai_teacher_button")
-# 呼叫函數獲取介紹
-    
-
     class place:
         def __init__(self, location):
             self.location = location
@@ -224,6 +222,11 @@ screen location_ui:
         vbox:
             text "位置: [now_venue.location]" size 40
 
+
+# 使用方式：
+# call test_combined
+
+# 使用方式：call screen test_input_screen
 
 # Ren'Py 腳本部分
 # 定義角色
@@ -526,6 +529,11 @@ transform plane_landing:
     linear 2.0 xpos 1600 ypos 200 zoom 0.7 rotate -15  
     linear 3.0 xpos 450 ypos 650 zoom 1.0 rotate 0
 
+label test_external_input:
+    $ user_input = external_input()
+    # "你輸入了：[user_input]"
+    return
+
 
 label battle_system:
     $ player = Fighter("我方士兵", level=1, max_hp=20, hp=20, max_mp=10, mp=10, attack=3, defense=2)
@@ -701,14 +709,9 @@ label chapter1_act1:
     with fade
 
     $ now_venue.location = "玉泰鹽鋪"
-
-    $ question = get_user_question()
-    $ async_get_intro(question)
-    "請稍等，正在獲取回答..."
-    "[intro_text]"
+    call test_external_input
 
     "第一章：早年生活與革命生涯"
-
 
     show screen location_ui
     show johndraw at left

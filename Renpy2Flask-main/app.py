@@ -78,7 +78,7 @@ def get_ai_response(question):
         combined_info = " ".join(doc_contents)[:1000]
         
         response = anthropic_client.messages.create(
-            model="claude-3-haiku-20240307",
+            model="claude-3-5-sonnet-20241022",
             max_tokens=150,
             system=SYSTEM_PROMPT,
             messages=[
