@@ -787,7 +787,7 @@ screen preferences():
         hotspot (547, 347, 201, 53) action Preference('display', 'window')
 
         ## SKIP
-        hotspot (547, 504, 126, 54) action Preference('skip', 'seen')
+        hotspot (547, 504, 150, 54) action Preference('skip', 'seen')
         hotspot (547, 574, 101, 54) action Preference('skip', 'all')
 
         ## AFTER CHOICES
