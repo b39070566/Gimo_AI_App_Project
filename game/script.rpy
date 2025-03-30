@@ -529,11 +529,6 @@ transform plane_landing:
     linear 2.0 xpos 1600 ypos 200 zoom 0.7 rotate -15  
     linear 3.0 xpos 450 ypos 650 zoom 1.0 rotate 0
 
-label test_external_input:
-    $ user_input = external_input()
-    # "你輸入了：[user_input]"
-    return
-
 
 label battle_system:
     $ player = Fighter("我方士兵", level=1, max_hp=20, hp=20, max_mp=10, mp=10, attack=3, defense=2)
@@ -709,7 +704,6 @@ label chapter1_act1:
     with fade
 
     $ now_venue.location = "玉泰鹽鋪"
-    call test_external_input
 
     "第一章：早年生活與革命生涯"
 

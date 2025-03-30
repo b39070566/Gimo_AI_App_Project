@@ -1,28 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 3, in script
-    init python:
-  File "game/script.rpy", line 19, in <module>
-    config.input_buffer_length = 50
-Exception: config.input_buffer_length is not a known configuration variable.
+  File "game/script.rpy", line 707, in script call
+    call test_external_input
+  File "game/script.rpy", line 707, in script call
+    call test_external_input
+ScriptError: could not find label 'test_external_input'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 3, in script
-    init python:
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\ast.py", line 827, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/script.rpy", line 19, in <module>
-    config.input_buffer_length = 50
-  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\defaultstore.py", line 101, in __setattr__
-    raise Exception('config.%s is not a known configuration variable.' % (name))
-Exception: config.input_buffer_length is not a known configuration variable.
+  File "game/script.rpy", line 707, in script call
+    call test_external_input
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\ast.py", line 1420, in execute
+    rv = renpy.game.context().call(label, return_site=self.next.name)
+  File "game/script.rpy", line 707, in script call
+    call test_external_input
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'test_external_input'.
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.3.4.24120703
 Fantasy Ren'py GUI template 1.0
-Sat Dec 21 10:15:05 2024
+Sat Dec 21 21:12:45 2024
