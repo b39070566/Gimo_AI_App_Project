@@ -616,17 +616,17 @@ screen about():
         selected_hover 'gui/abouthistory/menu_hover.png'
         cache False
 
-        hotspot (85, 263, 233, 90) action ShowMenu('history')
-        hotspot (1584, 245, 239, 91) action ShowMenu('about')
-        hotspot (1584, 411, 242, 98) action ShowMenu('help')
+        hotspot (85, 380, 233, 90) action ShowMenu('history')
+        hotspot (1584, 260, 239, 91) action ShowMenu('about')
+        hotspot (1584, 483, 242, 98) action ShowMenu('help')
 
-        hotspot (75, 613, 246, 88) action ShowMenu('preferences')
+        hotspot (75, 625, 246, 88) action ShowMenu('preferences')
         hotspot (75, 483, 257, 91) action ShowMenu('load')
         hotspot (82, 366, 265, 90) action ShowMenu('save')
-        hotspot (1584, 537, 254, 91) action MainMenu()
-        hotspot (1601, 698, 229, 96) action Quit()
+        #hotspot (1584, 537, 254, 91) action MainMenu()
+        #hotspot (1601, 698, 229, 96) action Quit()
 
-        hotspot (1448, 183, 64, 65) action Return()
+        hotspot (1584, 630, 246, 88) action Return()
 
     vbox:
         xpos 0.25
@@ -683,9 +683,9 @@ screen load:
         selected_hover 'gui/SaveLoad/saveload_hover.png'
         cache False
 
-        hotspot (458, 204, 47, 48) action FilePage(1)
-        hotspot (531, 204, 48, 48) action FilePage(2)
-        hotspot (606, 204, 45, 48) action FilePage(3)
+        hotspot (480, 212, 47, 48) action FilePage(1)
+        hotspot (541, 212, 48, 48) action FilePage(2)
+        hotspot (620, 212, 45, 48) action FilePage(3)
         hotspot (679, 204, 47, 48) action FilePage(4)
         hotspot (753, 204, 47, 48) action FilePage(5)
         hotspot (827, 204, 47, 48) action FilePage(6)
@@ -701,19 +701,18 @@ screen load:
             use load_save_slot(number=4)
 
 
-        hotspot (85, 263, 233, 90) action ShowMenu('history')
-        hotspot (1584, 245, 239, 91) action ShowMenu('about')
-        hotspot (1584, 411, 242, 98) action ShowMenu('help')
+        hotspot (85, 380, 233, 90) action ShowMenu('history')
+        hotspot (1584, 320, 239, 91) action ShowMenu('about')
+        hotspot (1584, 483, 242, 98) action ShowMenu('help')
 
-        hotspot (75, 613, 246, 88) action ShowMenu('preferences')
+        hotspot (75, 625, 246, 88) action ShowMenu('preferences')
         hotspot (75, 483, 257, 91) action ShowMenu('load')
-        hotspot (82, 366, 265, 90) action ShowMenu('save')
-        hotspot (1584, 537, 254, 91) action MainMenu()
-        hotspot (1601, 698, 229, 96) action Quit()
+       # hotspot (82, 366, 265, 90) action ShowMenu('save')
+        #hotspot (1584, 537, 254, 91) action MainMenu()
+       # hotspot (1601, 698, 229, 96) action Quit()
 
 
-        hotspot (1448, 183, 64, 65) action Return()
-
+        hotspot (1584, 630, 246, 88) action Return()
 
 
 screen save:
@@ -728,9 +727,9 @@ screen save:
         selected_hover 'gui/SaveLoad/saveload_hover.png'
         cache False
 
-        hotspot (458, 204, 47, 48) action FilePage(1)
-        hotspot (531, 204, 48, 48) action FilePage(2)
-        hotspot (606, 204, 45, 48) action FilePage(3)
+        hotspot (480, 212, 47, 48) action FilePage(1)
+        hotspot (541, 212, 48, 48) action FilePage(2)
+        hotspot (620, 212, 45, 48) action FilePage(3)
         hotspot (679, 204, 47, 48) action FilePage(4)
         hotspot (753, 204, 47, 48) action FilePage(5)
         hotspot (827, 204, 47, 48) action FilePage(6)
@@ -747,17 +746,17 @@ screen save:
 
 
 
-        hotspot (85, 263, 233, 90) action ShowMenu('history')
-        hotspot (1584, 245, 239, 91) action ShowMenu('about')
-        hotspot (1584, 411, 242, 98) action ShowMenu('help')
+        hotspot (85, 380, 233, 90) action ShowMenu('history')
+        hotspot (1584, 320, 239, 91) action ShowMenu('about')
+        hotspot (1584, 483, 242, 98) action ShowMenu('help')
 
-        hotspot (75, 613, 246, 88) action ShowMenu('preferences')
+        hotspot (75, 625, 246, 88) action ShowMenu('preferences')
         hotspot (75, 483, 257, 91) action ShowMenu('load')
-        hotspot (82, 366, 265, 90) action ShowMenu('save')
-        hotspot (1584, 537, 254, 91) action MainMenu()
-        hotspot (1601, 698, 229, 96) action Quit()
+        #hotspot (82, 366, 265, 90) action ShowMenu('save')
+        #hotspot (1584, 537, 254, 91) action MainMenu()
+        #hotspot (1601, 698, 229, 96) action Quit()
 
-        hotspot (1448, 183, 64, 65) action Return()
+        hotspot (1584, 630, 246, 88) action Return()
 
 init python:
     config.thumbnail_width = 393
@@ -782,38 +781,38 @@ screen preferences():
         selected_hover 'gui/Config/config_shover.png'
         cache False
 
-        ## DISPLAY
-        hotspot (547, 275, 201, 59) action Preference('display', 'fullscreen')
-        hotspot (547, 347, 201, 53) action Preference('display', 'window')
+       ## DISPLAY
+        hotspot (540, 445, 190, 54) action Preference('display', 'fullscreen')
+        hotspot (510, 510, 201, 54) action Preference('display', 'window')
 
         ## SKIP
-        hotspot (547, 504, 150, 54) action Preference('skip', 'seen')
-        hotspot (547, 574, 101, 54) action Preference('skip', 'all')
+        hotspot (547, 690, 155, 54) action Preference('skip', 'seen')
+        hotspot (547, 750, 155, 54) action Preference('skip', 'all')
 
         ## AFTER CHOICES
-        hotspot (547, 718, 266, 59) action Preference('text speed', 100)
-        hotspot (547, 794, 129, 55) action Preference('text speed', 75)
+        ##hotspot (547, 718, 266, 59) action Preference('text speed', 100)
+        ##hotspot (547, 794, 129, 55) action Preference('text speed', 75)
 
 
         
-        hotbar (1053, 291, 372, 37) value Preference('text speed')
-        hotbar (1053, 466, 372, 37) value Preference('music volume')
-        hotbar (1053, 640, 372, 37) value Preference('voice volume') 
-        hotbar (1053, 816, 372, 37) value Preference('auto-forward time')
+        hotbar (1100, 383, 500, 54) value Preference('text speed')
+        hotbar (1100, 552, 500, 54) value Preference('music volume')
+        hotbar (1100, 720, 500, 54) value Preference('voice volume') 
+        hotbar (1100, 888, 500, 54) value Preference('auto-forward time')
 
   
 
-        hotspot (85, 263, 233, 90) action ShowMenu('history')
-        hotspot (1584, 245, 239, 91) action ShowMenu('about')
-        hotspot (1584, 411, 242, 98) action ShowMenu('help')
+        hotspot (85, 380, 233, 95) action ShowMenu('history')
+        hotspot (1584, 320, 239, 91) action ShowMenu('about')
+        hotspot (1584, 483, 242, 98) action ShowMenu('help')
 
-        hotspot (75, 613, 246, 88) action ShowMenu('preferences')
+        hotspot (75, 625, 246, 88) action ShowMenu('preferences')
         hotspot (75, 483, 257, 91) action ShowMenu('load')
-        hotspot (82, 366, 265, 90) action ShowMenu('save')
-        hotspot (1584, 537, 254, 91) action MainMenu()
-        hotspot (1601, 698, 229, 96) action Quit()
+        #hotspot (82, 366, 265, 90) action ShowMenu('save')
+        #hotspot (1584, 537, 254, 91) action MainMenu()
+        #hotspot (1601, 698, 229, 96) action Quit()
 
-        hotspot (1448, 183, 64, 65) action Return()
+        hotspot (1584, 630, 246, 88) action Return()
 
 
 ## History screen ##############################################################
@@ -839,17 +838,17 @@ screen history():
         selected_hover 'gui/abouthistory/menu_hover.png'
         cache False
 
-        hotspot (85, 263, 233, 90) action ShowMenu('history')
-        hotspot (1584, 245, 239, 91) action ShowMenu('about')
-        hotspot (1584, 411, 242, 98) action ShowMenu('help')
+        hotspot (85, 380, 233, 90) action ShowMenu('history')
+        hotspot (1584, 320, 239, 91) action ShowMenu('about')
+        hotspot (1584, 483, 242, 98) action ShowMenu('help')
 
-        hotspot (75, 613, 246, 88) action ShowMenu('preferences')
+        hotspot (75, 625, 246, 88) action ShowMenu('preferences')
         hotspot (75, 483, 257, 91) action ShowMenu('load')
-        hotspot (82, 366, 265, 90) action ShowMenu('save')
-        hotspot (1584, 537, 254, 91) action MainMenu()
-        hotspot (1601, 698, 229, 96) action Quit()
+       # hotspot (82, 366, 265, 90) action ShowMenu('save')
+        #hotspot (1584, 537, 254, 91) action MainMenu()
+       # hotspot (1601, 698, 229, 96) action Quit()
 
-        hotspot (1448, 183, 64, 65) action Return()
+        hotspot (1584, 630, 246, 88) action Return()
     vbox:
         xalign 0.3
         ypos 250
@@ -901,17 +900,17 @@ screen help():
         selected_hover 'gui/abouthistory/menu_hover.png'
         cache False
 
-        hotspot (85, 263, 233, 90) action ShowMenu('history')
-        hotspot (1584, 245, 239, 91) action ShowMenu('about')
-        hotspot (1584, 411, 242, 98) action ShowMenu('help')
+        hotspot (85, 380, 233, 90) action ShowMenu('history')
+        hotspot (1584, 320, 239, 91) action ShowMenu('about')
+        hotspot (1584, 483, 242, 98) action ShowMenu('help')
 
-        hotspot (75, 613, 246, 88) action ShowMenu('preferences')
+        hotspot (75, 625, 246, 88) action ShowMenu('preferences')
         hotspot (75, 483, 257, 91) action ShowMenu('load')
-        hotspot (82, 366, 265, 90) action ShowMenu('save')
-        hotspot (1584, 537, 254, 91) action MainMenu()
-        hotspot (1601, 698, 229, 96) action Quit()
+       # hotspot (82, 366, 265, 90) action ShowMenu('save')
+        #hotspot (1584, 537, 254, 91) action MainMenu()
+       # hotspot (1601, 698, 229, 96) action Quit()
 
-        hotspot (1448, 183, 64, 65) action Return()
+        hotspot (1584, 630, 246, 88) action Return()
     style_prefix "help"
     default device = "keyboard"
 
