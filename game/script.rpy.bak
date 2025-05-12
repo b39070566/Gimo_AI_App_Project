@@ -983,12 +983,12 @@ label chapter1_act9:
 
         
     "打倒你的敵人!"
-    call battle_system from _call_battle_system
+    call battle_system
     if _return == "victory":
         "你成功了擊敗了敵人。"
     else:
         "你失敗了..."
-        call battle_system from _call_battle_system_1
+        call battle_system
     show screen location_ui
     scene bg imgchi8
 

@@ -644,7 +644,7 @@ screen about():
         text _("Credits:\n-{a=https://incompetech.filmmusic.io/song/4371-skye-cuillin/}Skye Cuillin{/a} by Kevin MacLeod\nLicense: {a=https://filmmusic.io/standard-license/}https://filmmusic.io/standard-license{/a}")
         text _("\n-{a=https://incompetech.filmmusic.io/song/4467-teller-of-the-tales/}Teller of tales{/a} by Kevin MacLeod\nLicense: {a=https://filmmusic.io/standard-license/}https://filmmusic.io/standard-license{/a}")
 
-        text _("\nTemplate created by Skolaztika")
+        text _("\nCC圖片版權: {a=https://github.com/b39070566/license/blob/main/license/}https://github.com/b39070566/license/blob/main/license{/a}")
 
 
 
