@@ -467,6 +467,37 @@ image prison = "prison.png"
 image plane = "plane.png"
 
 
+image igov = "igov.png"
+image cshop = "cshop.png"
+image peoplea = "peoplea.png"
+image peopleb = "peopleb.png"
+image peoplec = "peoplec.png"
+image peopled = "peopled.png"
+image peoplee = "peoplee.png"
+image peoplel = "peoplel.png"
+image reporter = "reporter.png"
+image tdstudent = "tdstudent.png"
+image ttp = "ttp.png"
+image chenyi = "chenyi.png"
+image armyl = "armyl.png"
+image armya = "armya.png"
+image tpa = "tpa.png"
+image tpb = "tpb.png"
+image pal = "pal.png"
+image cpa = "cpa.png"
+image cpb = "cpb.png"
+image cpc = "cpc.png"
+image keyuanfen = "keyuanfen.png"
+
+
+image fusinian = "fusinian.png"
+image zhujiahua = "zhujiahua.png"
+image assistant = "assistant.png"
+image peoples = "peoples.png"
+image faramy = "faramy.png"
+image saramy = "saramy.png"
+image wangshijie = "wangshijie.png"
+image allp = "allp.png"
 
 
 
@@ -2053,12 +2084,12 @@ label chapter4_act2:
 
     hide chenyi
 
-    show johndraw
+    show johndrawold
 
     voice "voijcf1.wav"
     j "具體要求是什麼？"
 
-    hide johndraw
+    hide johndrawold
 
     show chenyi
 
@@ -2066,12 +2097,12 @@ label chapter4_act2:
 
     hide chenyi
 
-    show johndraw
+    show johndrawold
 
     voice "voijcf2.wav"
     j "這已經超出了單純的民生訴求，變成了政治挑戰。陳儀，你立即採取行動穩定局勢，必要時請求軍事支援。"
 
-    hide johndraw
+    hide johndrawold
 
     show chenyi
 
@@ -2079,12 +2110,12 @@ label chapter4_act2:
 
     hide chenyi
 
-    show johndraw
+    show johndrawold
 
     voice "voijcf3.wav"
     j "我們必須維護國家統一。你先試圖安撫民眾，同時準備軍事行動。"
 
-    hide johndraw
+    hide johndrawold
 
     jump chapter4_act3
 
@@ -2150,12 +2181,12 @@ label chapter4_act3:
 
     hide imgjcf7
 
-    show johndraw
+    show johndrawold
 
     voice "voijcf4.wav"
     j "（通過電話）：務必迅速恢復秩序，但要避免過度傷亡。我們的目標是穩定局勢，不是激化矛盾。"
 
-    hide johndraw
+    hide johndrawold
 
     show chenyi
 
@@ -2163,12 +2194,12 @@ label chapter4_act3:
 
     hide chenyi
 
-    show johndraw
+    show johndrawold
 
     voice "voijcf5.wav"
     j "那就約束他們！記住，我們最終還是要在臺灣長治久安。"
 
-    hide johndraw
+    hide johndrawold
 
     jump chapter4_act4
 
@@ -2230,12 +2261,12 @@ label chapter4_act5:
 
     hide keyuanfen
 
-    show johndraw
+    show johndrawold
 
     voice "voijcf6.wav"
     j "具體有哪些人？"
 
-    hide johndraw
+    hide johndrawold
 
     show keyuanfen
 
@@ -2243,12 +2274,12 @@ label chapter4_act5:
 
     hide keyuanfen
 
-    show johndraw
+    show johndrawold
 
     voice "voijcf7.wav"
     j "依法處置。但要注意區分首謀和跟從者。我們的目的是肅清叛亂，不是濫殺無辜。"
 
-    hide johndraw
+    hide johndrawold
 
     show keyuanfen
 
@@ -2256,12 +2287,12 @@ label chapter4_act5:
 
     hide keyuanfen
 
-    show johndraw
+    show johndrawold
 
     voice "voijcf8.wav"
     j "發布通緝令。必要時可以考慮赦免那些主動投案的人，以分化瓦解他們。"
 
-    hide johndraw
+    hide johndrawold
 
     jump chapter4_act6
 
@@ -2281,12 +2312,12 @@ label chapter4_act6:
 
     hide chencheng
 
-    show johndraw
+    show johndrawold
 
     voice "voijcf9.wav"
     j "具體情況如何？"
 
-    hide johndraw
+    hide johndrawold
 
     show chencheng
 
@@ -2294,12 +2325,12 @@ label chapter4_act6:
 
     hide chencheng
 
-    show johndraw
+    show johndrawold
 
     voice "voijcf10.wav"
     j "這是個嚴峻的挑戰。威權統治是現階段的必要之舉。但長遠來看，我們需要贏得民心。"
 
-    hide johndraw
+    hide johndrawold
 
     show chencheng
 
@@ -2307,12 +2338,12 @@ label chapter4_act6:
 
     hide chencheng
 
-    show johndraw
+    show johndrawold
 
     voice "voijcf11.wav"
     j "很好。記住，治臺灣，關鍵是要讓臺灣人認同我們。"
 
-    hide johndraw
+    hide johndrawold
 
     voice "voijcf12.mp3"
     "二二八事件不僅是一場悲劇，更成為臺灣社會長期分裂的根源。它深刻影響了臺灣的政治發展，也成為推動臺灣民主化的重要動力。"
@@ -2609,12 +2640,12 @@ label chapter6_act1:
     voice "voijcs1.wav"
     "1949年，國共內戰進入最後階段。國民黨政府面臨著前所未有的危機。我們不僅要應對軍事失利，還要處理經濟崩潰、民心動搖等諸多問題。"
 
-    show johndraw
+    show johndrawold
 
     voice "voijcs2.wav"
     j "（神情凝重，手指在地圖上移動）何應欽將軍，平津已經失守，華北幾乎全部淪陷。我們必須立即啟動『國光計劃』。"
 
-    hide johndraw
+    hide johndrawold
 
     show heyingqin
 
@@ -2622,12 +2653,12 @@ label chapter6_act1:
 
     hide heyingqin
 
-    show johndraw
+    show johndrawold
 
     voice "voijcs3.wav"
     j "我明白。首先，空軍必須立即遷至台灣。你親自督促，確保300多架戰機和65艘艦艇24小時內準備就緒。"
 
-    hide johndraw
+    hide johndrawold
 
     show heyingqin
 
@@ -2635,12 +2666,12 @@ label chapter6_act1:
 
     hide heyingqin
 
-    show johndraw
+    show johndrawold
 
     voice "voijcs4.wav"
     j "（沉重地）我會在最後時刻離開。現在，立即開始疏散重要人員和物資。記住，黃金儲備和文物是重中之重。"
 
-    hide johndraw
+    hide johndrawold
 
     show heyingqin
 
@@ -2648,12 +2679,12 @@ label chapter6_act1:
 
     hide heyingqin
 
-    show johndraw
+    show johndrawold
 
     voice "voijcs5.wav"
     j "由嚴密的武裝部隊護送，務必確保安全。這是我們在台灣重建的根基。"
 
-    hide johndraw
+    hide johndrawold
 
     scene bg imgjcs2 :
         size(1920,1080)
@@ -2710,14 +2741,16 @@ label chapter6_act1:
 
     "碼頭上人山人海，混亂場面中充滿哭喊聲"
 
-    show johndraw
+    show johndrawold
 
     voice "voijcs7.wav"
     j "（對著麥克風）同胞們，我們暫時撤離，但終將光復大陸！請保持秩序，相信政府！"
 
-    hide johndraw
+    hide johndrawold
+
 
     peoples"（此起彼伏）我們的家園怎麼辦？共產黨會不會殺我們的家人？"
+
 
     show faramy
 
@@ -2725,12 +2758,12 @@ label chapter6_act1:
 
     hide faramy
 
-    show johndraw
+    show johndrawold
 
     voice "voijcs8.wav"
     j "加強警戒，維持秩序。優先撤離重要機構人員和家屬。"
 
-    hide johndraw
+    hide johndrawold
 
     "突然，遠處傳來炮聲"
 
@@ -2740,12 +2773,12 @@ label chapter6_act1:
 
     hide saramy
 
-    show johndraw
+    show johndrawold
 
     voice "voijcs9.wav"
     j "（看著岸上絕望的人群，痛苦地）「再等十分鐘。我們要盡力帶走每一個人！"
 
-    hide johndraw
+    hide johndrawold
 
     voice "voijcs10.wav"
     "1949年12月7日，國民政府正式宣布遷都台北。這不僅是一個政權的遷移，更是無數人命運的轉折點。"
@@ -2757,12 +2790,12 @@ label chapter6_act1:
     $ now_venue.location = "台北臨時總統府 "
     "台北臨時總統府，1950年3月"
 
-    show johndraw
+    show johndrawold
 
     voice "voijcs11.wav"
     j "王部長，我們的經濟情況如何？"
 
-    hide johndraw
+    hide johndrawold
 
     show wangshijie
 
@@ -2770,12 +2803,12 @@ label chapter6_act1:
 
     hide wangshijie
 
-    show johndraw
+    show johndrawold
 
     voice "voijcs12.wav"
     j "立即實施貨幣改革。以新台幣取代舊台幣，比率定為1:40,000。"
 
-    hide johndraw
+    hide johndrawold
 
     show imgjcs5 :
         yalign 0.45 
@@ -2793,12 +2826,12 @@ label chapter6_act1:
     hide wangshijie
 
 
-    show johndraw
+    show johndrawold
 
     voice "voijcs13.wav"
     j "別無選擇。同時，啟動土地改革，實施耕者有其田政策。我們必須在台灣站穩腳跟。"
 
-    hide johndraw
+    hide johndrawold
 
     scene bg imgjcs6 :
         size(1920,1080)
@@ -2807,12 +2840,12 @@ label chapter6_act1:
     $ now_venue.location = "台北中山堂"
     "台北中山堂，1952年"
 
-    show johndraw
+    show johndrawold
 
     voice "voijcs14.wav"
     j "同志們，經過艱苦努力，我們的黨員從最初5萬人增加到近30萬，其中超過一半是台灣本省人。"
 
-    hide johndraw
+    hide johndrawold
 
     show chencheng
 
@@ -2820,14 +2853,16 @@ label chapter6_act1:
 
     hide chencheng
 
-    show johndraw
+    show johndrawold
 
     voice "voijcs15.wav"
     j "很好。但我們面臨的挑戰還很多。必須加強軍事戒備，防範共軍進攻；同時推動經濟建設，為反攻大陸做準備。"
 
-    hide johndraw
+    hide johndrawold
+
 
     allp"反攻大陸！收復河山！"
+
 
     voice "voijcs16.wav"
     "就這樣，中華民國政府在台灣艱難地站穩了腳跟。雖然『反攻大陸』的夢想最終未能實現，但這個曾經的小島在之後的幾十年裡，卻創造了驚人的經濟奇蹟和政治轉型。"
