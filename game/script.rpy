@@ -456,7 +456,9 @@ image xueliang = "xueliang.png"
 image chencheng = "chencheng.png"
 image zhangzhizhong = "zhangzhizhong.png"
 image heyingqin = "yingqin.png"
-
+image chiangchingkuo = "chiangchingkuo.png"
+image economyman = "economyman.png"
+image diplomaticman = "diplomaticman.png"
 
 image paper1 = "paper.jpg"
 image flag1 = "flag1.png"
@@ -3111,16 +3113,16 @@ label chapter8_act1:
     "1973年，台北總統府"
 
     show screen location_ui
-    show johndraw at left
+    show johndrawold at left
 
     j "1973年，我們正式啟動了十大建設計劃。這是台灣經濟發展的關鍵時刻。"
 
-    show minion at right
+    show economyman at right
     minister "總統，十大建設計劃已經開始實施。我們預計這將大大提升台灣的經濟實力。"
 
     j "很好。記住，我們不僅要追求經濟增長，更要為人民創造更好的生活。"
 
-    show minion at center
+    show chiangchingkuo at center
     johnson "父親，您放心。我會親自監督這些項目的進展。"
 
     hide minion
@@ -3134,16 +3136,16 @@ label chapter8_act2:
     "第二幕：外交挑戰"
     "1975年，總統府會議室"
 
-    show johndraw at left
+    show johndrawold at left
 
     j "1975年，我們失去了在聯合國的席位。這是一個巨大的外交挫折。"
 
-    show minion at right
+    show diplomaticman at right
     diplomat "總統，美國已經與中共建交。我們在國際上的處境越來越困難了。"
 
     j "哼，短視！他們不明白這樣做的後果。但我們不能就此放棄。要積極尋求新的外交突破口。"
 
-    hide minion
+    hide diplomaticman
 
     jump chapter8_act3
 
@@ -3154,11 +3156,11 @@ label chapter8_act3:
     "第三幕：政治改革的壓力"
     "1977年，蔣中正的私人書房"
 
-    show johndraw at left
+    show johndrawold at left
 
     j "隨著社會的發展，要求政治改革的聲音越來越大。我知道改變是必要的，但如何改變，是個艱難的抉擇。"
 
-    show minion at right
+    show chiangchingkuo at right
     johnson "父親，中壢事件後，民間對政治改革的呼聲更高了。我們是否應該考慮放寬一些政策？"
 
     j "經國，改革是必要的，但必須謹慎。我們要在保持穩定和推動變革之間找到平衡。"
@@ -3174,16 +3176,16 @@ label chapter8_act4:
     "第四幕：經濟奇蹟"
     "1979年，行政院會議室"
 
-    show johndraw at left
+    show johndrawold at left
 
     j "看著台灣的經濟快速發展，我感到欣慰。但我也知道，經濟發展帶來的社會變革，將給我們的統治帶來新的挑戰。"
 
-    show minion at right
+    show economyman at right
     minister "報告總統，我們的經濟增長率連續多年保持在高位，外國媒體稱之為'台灣奇蹟'。"
 
     j "經濟發展很重要，但我們更要關注財富分配和社會公平。不能讓發展的果實只被少數人享有。"
 
-    hide minion
+    hide economyman
 
     jump chapter8_act5
 
@@ -3194,18 +3196,18 @@ label chapter8_act5:
     "第五幕：最後的日子"
     "1975年，陽明山中興賓館"
 
-    show johndraw at left
+    show johndrawold at left
 
     j "我知道自己時日無多，但我仍然牽掛著這個國家的未來。"
 
-    show minion at right
+    show chiangchingkuo at right
     johnson "父親，您要保重身體。國家還需要您的指導。"
 
     j "經國，未來的路還很長。記住，國家利益高於一切。但也要明白，只有贏得人民的心，才能真正穩固政權。時代在變，我們也必須與時俱進。"
 
     j "看著經國，我既感到欣慰，又充滿擔憂。我知道，我的時代即將結束，新的挑戰不斷出現。我只希望，我的經驗教訓能夠成為後人的借鑒，讓這個國家走向更好的未來。"
 
-    hide minion
+    hide chiangchingkuo
 
     "完結。"
 
