@@ -500,6 +500,20 @@ image faramy = "faramy.png"
 image saramy = "saramy.png"
 image wangshijie = "wangshijie.png"
 image allp = "allp.png"
+##ch5
+image mzd = "mzd@7.png"
+image gmdg = "gmdg@7.png"
+image igl = "igl@7.png"
+image zc = "zc@12.png"
+image zi = "zi@12.png"
+image gg = "gg@7.png"
+image znl = "znl@7.png"
+image gzg = "gzg.png"
+image nonz = "nonz.png"
+image noni = "noni.png"
+image amegun = "amegun.png"
+image zu = "zu.png"
+image su = "su.png"
 
 
 
@@ -2377,33 +2391,65 @@ label chapter5:
         j "1945年8月,日本投降。表面上國共同慶勝利,暗地裡卻已劍拔弩張。這場看似和平的較量,很快就要演變成一場你死我活的較量。"
 
         
-
+        show johndrawold
         
         voice "voili2.wav"
         j "毛先生,抗戰勝利了,是時候放下成見,接受國民政府的領導,共建統一的中國了。"
+
+        hide johndrawold
+
+        show mzd :
+           xalign 0.5
+           yalign 0.5
 
         
         voice "mao1.wav"
         mzd "蔣委員長,您這是要當大家長啊?我們可都長大了,誰也不願意被誰領導。"
 
+        show mzd :
+           xalign 1.0
+           yalign 1.0
+
+        show johndrawold :
+           xalign 0.0
+           yalign 3.0
+
 
         voice "voili3.wav"
         j "荒唐!沒有國民政府,哪來的抗戰勝利?你們應該感恩戴德!"
+
+        hide johndrawold
+
+        show mzd
 
         
         voice "mao2.wav"
         mzd "別氣嘛,蔣委員長。我們在敵後打游擊,也沒閒著。這勝利,是全中國人民共同奮鬥的結果。"
 
+        hide mzd
+
+        show johndrawold
+
 
         voice "voili4.wav"
         j "那你的意思是?"
 
+        hide johndrawold
+        show mzd at right
+
         voice "mao3.wav"
         mzd "很簡單,平起平坐,共組聯合政府。"
+
+        show johndrawold :
+           xalign 0.0
+           yalign 3.0
 
 
         voice "voili5.wav"
         j "休想!"
+
+        hide johndrawold
+        hide mzd
 
         voice "voili6.wav"
         j "就這樣,雙方進行了長達43天的談判,你來我往,唇槍舌劍,最終不歡而散。和平的希望,像泡沫一樣破滅了。"
@@ -2420,35 +2466,87 @@ label chapter5:
         voice "voili7.wav"
         j "1946年6月,國共衝突全面爆發。這場內戰,就像是一場你死我活的麻將對弈,誰也不肯認輸。"
 
+        show gmdg :
+            yalign 0.3
+            xalign 0.5
 
         gmdg "弟兄們,共軍那些土八路,連像樣的槍都沒有,還想跟我們鬥?我們有美國大爺的先進武器,這仗不打都要贏!"
+
+        hide gmdg
+        show minion
+
 
         solc "將軍,我們一定能把他們打得落花流水!"
 
         soli "就是!到時候我們就能吃香的喝辣的了!"
 
+        hide minion
+        show gmdg :
+            yalign 0.3
+            xalign 0.5
+
+
         gmdg "少說兩句,小心舌頭把腦袋給害了。"
+
+        hide gmdg
 
         scene bg imgli3
         with fade
 
         $ now_venue.location = "共軍陣地"
 
+        show igl :
+            yalign 0.3
+            xalign 0.5
+
     
 
         igl "同志們,國民黨那些傢伙以為有洋槍洋炮就了不起了。他們忘了一句老話:槍再好,沒有人也不中用!"
 
+        hide igl
+        show zc :
+            xalign 0.5
+            yalign 1.5
+            
+
         zc "報告首長,我們的武器確實不如國軍..."
+
+        hide zc
+        show igl :
+            yalign 0.3
+            xalign 0.5
+
 
         igl "沒關係!我們有最厲害的武器 - 人民群眾!只要我們依靠群眾,就能以小搏大,以弱勝強!"
 
+        hide igl
+        show zi :
+            xalign 0.5
+            yalign 1.5
+
         zi "對!我們還可以打游擊,讓國民黨的坦克都用不上勁!"
+
+        hide zi
+        show igl :
+            yalign 0.3
+            xalign 0.5
 
         igl "說得好!我們就要像泥鰍一樣,滑溜溜的,讓國民黨這條大鯉魚抓不住我們!"
 
+        hide igl
+        show minion
+
+
         gsol "長官,不好了!共軍的游擊戰術太厲害了,我們被包圍了!"
 
+        hide minion
+        show zi :
+            yalign 1.5
+            xalign 0.5
+
         gz "同志們,衝啊!讓國民黨的洋槍洋炮都變成我們的玩具!"
+
+        hide zi
 
         voice "voili8.wav"
         j "就這樣,中國大地上再次硝煙四起。這場內戰,註定要改變中國的命運..."
@@ -2466,17 +2564,43 @@ label chapter5:
         voice "voili9.wav"
         j "1948年下半年到1949年初,共產黨發動了改變戰局的三大戰役。這三場戰役,就像是三記重拳,直接把國民黨打得找不到北。"
 
+        show igl :
+            yalign 0.3
+            xalign 0.5
+
         
 
         gigl "同志們,我們要圍點打援,全殲國民黨東北軍!這就像下棋,把對方的軍隊圍在中間,然後一口一口吃掉!"
 
+        hide igl
+        show zc :
+            yalign 1.5
+            xalign 0.5
+
         zc "首長,這仗要怎麼打?"
+
+        hide zc
+        show igl :
+            yalign 0.3
+            xalign 0.5
 
         gigl "很簡單,我們先裝作很弱,引誘國民黨軍隊進來。等他們進來了,我們再關上門,一網打盡!"
 
+        hide igl
+        show zi :
+            yalign 1.5
+            xalign 0.5
+
         zi "哦!這不就是關門打狗嗎?"
 
+        hide zi
+        show igl :
+            yalign 0.3
+            xalign 0.5
+
         gigl "聰明!不過千萬別讓國民黨聽見,不然他們肯定不上當。"
+
+        hide igl
 
         scene bg imgli5
         with fade
@@ -2484,11 +2608,28 @@ label chapter5:
 
         "國民黨指揮部"
 
+        show gmdg :
+            xalign 0.5
+            yalign 0.3
+
         gg "援軍呢?為什麼還不到?我們快要撐不住了!"
+
+        hide gmdg
+        show gg :
+            xalign 0.5
+            yalign 0.3
+
 
         igl2 "將軍,共軍已經...已經把我們包圍了..."
 
+        hide gg
+        show gmdg :
+            xalign 0.5
+            yalign 0.3
+
         gg "完了...這下我們成了甕中之鱉..."
+
+        hide gmdg
 
         scene bg imgli6
         with fade
@@ -2496,13 +2637,35 @@ label chapter5:
 
         "平津戰役"
 
+        show zi :
+            yalign 1.5
+            xalign 0.5
+
         ggz "報告!北平城內的同志發來消息,說傅作義將軍有意投誠!"
+
+        hide zi
+        show mzd :
+            yalign 0.2
+            xalign 0.5
 
         mzd "好!要促成和平解放北平!這可比打仗省事多了。"
 
+        hide mzd
+        show znl :
+            xalign 0.5
+            yalign 0.08
+            zoom 1.5 
+
         znl "是啊,這樣既保存了實力,又贏得了民心。"
 
+        hide znl
+        show mzd :
+            yalign 0.2
+            xalign 0.5
+
+
         mzd "沒錯!這就叫做不戰而屈人之兵。孫子兵法果然博大精深啊!"
+        hide mzd
 
         scene bg imgli7
         with fade
@@ -2510,17 +2673,47 @@ label chapter5:
 
         "淮海戰役"
 
+        show gmdg :
+            xalign 0.5
+            yalign 0.3
+
         gg "我們被包圍了,彈藥糧食都快耗盡了...這下真的是山窮水盡了..."
+
+        hide gmdg
+        show gg :
+            xalign 0.5
+            yalign 0.3
 
         igl2 "將軍,我們...我們要不要投降?"
 
+        hide gg
+        show gmdg :
+            xalign 0.5
+            yalign 0.3
+
         gg "投降?我寧可戰死!"
+
+        hide gmdg
+        show igl :
+            xalign 0.5
+            yalign 0.3
 
         zhu "同志們,勝利在望!再加把勁!我們就要徹底殲滅國民黨的精銳部隊了!"
 
+        hide igl
+        show zi :
+            xalign 0.5
+            yalign 1.5
+
         ggz "報告首長,我們繳獲了大量武器彈藥!"
 
+        hide zi 
+        show igl :
+            xalign 0.5
+            yalign 0.3
+
         zhu "好啊!這下我們不但打敗了敵人,還發了一筆橫財!"
+        hide igl
 
     # 第四幕：國共策略對比
     label chapter5_act4:
@@ -2529,22 +2722,40 @@ label chapter5:
         $ now_venue.location = "國民黨高層會議"
 
         "國民黨高層會議"
+        show gg :
+            xalign 0.5
+            yalign 0.3
 
         ggunz "我們需要更多的資金來維持戰爭。再這樣下去,連軍餉都發不出來了。"
 
         gguni "那還不簡單?再加稅唄,反正老百姓已經習慣了。"
 
+        
+
         gunb "對對對!再來個臨時條例,把老百姓的口袋都掏空!"
+
+        hide gg
+        show johndrawold at center
 
         voice"voili10.wav"
         j "混帳!你們這是要逼民反嗎?"
+
+        hide johndrawold
+        show gg :
+            xalign 0.5
+            yalign 0.3
 
         
 
         gunz "委員長息怒,我們也是為了江山社稷著想啊..."
 
+        hide gg
+        show johndrawold at center
+
         voice"voili11.wav"
         j "唉...我看這江山社稷怕是保不住了..."
+
+        hide johndrawold
 
         
 
@@ -2554,15 +2765,48 @@ label chapter5:
 
         "共產黨群眾大會"
 
+        show mzd :
+            yalign 0.2
+            xalign 0.5
+
         mzd "同志們,我們要與人民站在一起,依靠他們的力量取得勝利!人民,只有人民,才是創造世界歷史的動力!"
+
+        hide mzd
+        show peoples :
+            yalign 0.5
+            xalign 0.5
+            zoom 1.4
+
 
         crowd "毛主席萬歲!共產黨萬歲!"
 
+        hide peoples
+        show gzg :
+            yalign 0.5
+            xalign 0.5
+            zoom 0.15
+
+
         gzg "同志們,我們要減租減息,把土地分給農民!讓大家都能吃飽飯,穿暖衣!"
+
+        hide gzg
+        show nonz :
+            yalign 0.5
+            xalign 0.5
+            zoom 0.15
+
+
 
         nonz "真的嗎?我們真的能有自己的土地了?"
 
+        hide nonz
+        show noni :
+            yalign 0.5
+            xalign 0.5
+            zoom 0.15
+
         noni "共產黨好啊!共產黨是我們老百姓的救星!"
+        hide noni
 
     # 第五幕：國際影響
     label chapter5_act5:
@@ -2572,11 +2816,28 @@ label chapter5:
 
         "美國大使館"
 
+        show amegun :
+            yalign 0.5
+            xalign 0.5
+            zoom 0.15
+
         amegun "我們必須支持蔣委員長,以遏制共產主義在亞洲的擴張。"
 
+        hide amegun
+        show zu :
+            yalign 0.5
+            xalign 0.5
+            zoom 0.15
+
         zu "可是長官,國民黨的腐敗問題很嚴重..."
+        hide zu 
+        show amegun :
+            yalign 0.5
+            xalign 0.5
+            zoom 0.15
 
         amegun "管不了那麼多了!先把這批武器送過去再說!"
+        hide amegun
 
         scene bg imgli11
         with fade
@@ -2584,9 +2845,21 @@ label chapter5:
 
         "中蘇邊境"
 
+        show su :
+            yalign 0.5
+            xalign 0.5
+            zoom 0.15
+
         su "同志,這些先進武器和作戰經驗,會幫助你們取得勝利的。"
 
+        hide su
+        show gzg :
+            yalign 0.5
+            xalign 0.5
+            zoom 0.15
+
         chd "謝謝!我們一定不負蘇聯同志的期望!"
+        hide gzg
 
     # 第六幕：戰局逆轉
     label chapter5_act6:
@@ -2596,15 +2869,25 @@ label chapter5:
 
         "南京總統府"
 
+        show johndrawold at center
+
         voice"voili12.wav"
         j "我們...輸了嗎..."
 
-        
+        hide johndrawold
+        show gg :
+            xalign 0.5
+            yalign 0.3
+
 
         igl2 "委員長,我們必須立即撤退到台灣!"
 
+        hide gg
+        show johndrawold at center
+
         voice"voili13.wav"
         j "好,帶上能帶的一切。我們還有機會東山再起!"
+        hide johndrawold
 
         
 
@@ -2616,13 +2899,25 @@ label chapter5:
 
         "北京天安門廣場"
 
+        show mzd :
+            yalign 0.2
+            xalign 0.5
+
         mzd "中華人民共和國,中央人民政府,今天成立了!"
 
+        hide mzd
+        show peoples :
+            yalign 0.5
+            xalign 0.5
+            zoom 1.4
+
+
         crowd "毛主席萬歲!新中國萬歲!"
+        hide peoples
 
         voice"voili14.wav"
         j "就這樣,歷時四年的國共內戰落下帷幕。中國大陸易主,進入了新的歷史階段。這場內戰不僅改變了中國的政治格局,也對整個亞洲乃至世界產生了深遠的影響。"
-        return 
+         
 
 
 
