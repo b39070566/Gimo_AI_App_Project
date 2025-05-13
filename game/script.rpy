@@ -3150,6 +3150,8 @@ label chapter8_act1:
     show screen location_ui
     show johndrawold at left
 
+    
+    voice "voichi18.wav"
     j "1973年，我們正式啟動了十大建設計劃。這是台灣經濟發展的關鍵時刻。"
 
     show economyman at right
