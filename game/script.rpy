@@ -323,6 +323,10 @@ define chd = Character("中共代表")
 
 define audio.gamemusic = "audio/chapter1.wav"
 
+define audio.gamemusic4 = "audio/ch4bgm.mp3"
+define audio.gamemusic6 = "audio/ch6bgm.mp3"
+
+
 define p = Character("彭孟緝")
 define g = Character("外交官")
 define l = Character("雷震")
@@ -1983,9 +1987,10 @@ label chapter3_act6:
 
     return
 
-# 第一幕：事件爆發
+# 第四章 第一幕：事件爆發
 label chapter4_act1:
     $ renpy.block_rollback()
+    play music gamemusic4
     scene bg imgjcf1
     with fade
 
@@ -2930,6 +2935,7 @@ label chapter5:
 # 第六章：中華民國政府遷台 (此章沒分幕)
 label chapter6_act1:
     $ renpy.block_rollback()
+    play music gamemusic6
     scene bg imgjcs1 :
         size(1920,1080)
     with fade
