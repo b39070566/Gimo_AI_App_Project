@@ -3157,6 +3157,7 @@ label chapter8_act1:
     show economyman at right
     minister "總統，十大建設計劃已經開始實施。我們預計這將大大提升台灣的經濟實力。"
 
+    voice "voichi19.wav"
     j "很好。記住，我們不僅要追求經濟增長，更要為人民創造更好的生活。"
 
     show chiangchingkuo at center
@@ -3175,11 +3176,13 @@ label chapter8_act2:
 
     show johndrawold at left
 
+    voice "voichi20.wav"
     j "1975年，我們失去了在聯合國的席位。這是一個巨大的外交挫折。"
 
     show diplomaticman at right
     diplomat "總統，美國已經與中共建交。我們在國際上的處境越來越困難了。"
 
+    voice "voichi21.wav"
     j "哼，短視！他們不明白這樣做的後果。但我們不能就此放棄。要積極尋求新的外交突破口。"
 
     hide diplomaticman
@@ -3195,11 +3198,13 @@ label chapter8_act3:
 
     show johndrawold at left
 
+    voice "voichi22.wav"
     j "隨著社會的發展，要求政治改革的聲音越來越大。我知道改變是必要的，但如何改變，是個艱難的抉擇。"
 
     show chiangchingkuo at right
     johnson "父親，中壢事件後，民間對政治改革的呼聲更高了。我們是否應該考慮放寬一些政策？"
 
+    voice "voichi23.wav"
     j "經國，改革是必要的，但必須謹慎。我們要在保持穩定和推動變革之間找到平衡。"
 
     hide minion
@@ -3215,11 +3220,13 @@ label chapter8_act4:
 
     show johndrawold at left
 
+    voice "voichi24.wav"
     j "看著台灣的經濟快速發展，我感到欣慰。但我也知道，經濟發展帶來的社會變革，將給我們的統治帶來新的挑戰。"
 
     show economyman at right
     minister "報告總統，我們的經濟增長率連續多年保持在高位，外國媒體稱之為'台灣奇蹟'。"
 
+    voice "voichi25.wav"
     j "經濟發展很重要，但我們更要關注財富分配和社會公平。不能讓發展的果實只被少數人享有。"
 
     hide economyman
@@ -3235,13 +3242,17 @@ label chapter8_act5:
 
     show johndrawold at left
 
+    voice "voichi26.wav"
     j "我知道自己時日無多，但我仍然牽掛著這個國家的未來。"
 
     show chiangchingkuo at right
     johnson "父親，您要保重身體。國家還需要您的指導。"
 
+    voice "voichi27.wav"
     j "經國，未來的路還很長。記住，國家利益高於一切。但也要明白，只有贏得人民的心，才能真正穩固政權。時代在變，我們也必須與時俱進。"
 
+
+    voice "voichi28.wav"
     j "看著經國，我既感到欣慰，又充滿擔憂。我知道，我的時代即將結束，新的挑戰不斷出現。我只希望，我的經驗教訓能夠成為後人的借鑒，讓這個國家走向更好的未來。"
 
     hide chiangchingkuo
