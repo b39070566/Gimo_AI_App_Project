@@ -623,7 +623,7 @@ screen about():
         hotspot (75, 625, 246, 88) action ShowMenu('preferences')
         hotspot (75, 483, 257, 91) action ShowMenu('load')
         hotspot (82, 366, 265, 90) action ShowMenu('save')
-        #hotspot (1584, 537, 254, 91) action MainMenu()
+        hotspot (1584, 800, 254, 91) action MainMenu()
         #hotspot (1601, 698, 229, 96) action Quit()
 
         hotspot (1584, 630, 246, 88) action Return()
@@ -708,7 +708,7 @@ screen load:
         hotspot (75, 625, 246, 88) action ShowMenu('preferences')
         hotspot (75, 483, 257, 91) action ShowMenu('load')
        # hotspot (82, 366, 265, 90) action ShowMenu('save')
-        #hotspot (1584, 537, 254, 91) action MainMenu()
+        hotspot (1584, 800, 254, 91) action MainMenu()
        # hotspot (1601, 698, 229, 96) action Quit()
 
 
@@ -753,7 +753,7 @@ screen save:
         hotspot (75, 625, 246, 88) action ShowMenu('preferences')
         hotspot (75, 483, 257, 91) action ShowMenu('load')
         #hotspot (82, 366, 265, 90) action ShowMenu('save')
-        #hotspot (1584, 537, 254, 91) action MainMenu()
+        hotspot (1584, 800, 254, 91) action MainMenu()
         #hotspot (1601, 698, 229, 96) action Quit()
 
         hotspot (1584, 630, 246, 88) action Return()
@@ -809,7 +809,7 @@ screen preferences():
         hotspot (75, 625, 246, 88) action ShowMenu('preferences')
         hotspot (75, 483, 257, 91) action ShowMenu('load')
         #hotspot (82, 366, 265, 90) action ShowMenu('save')
-        #hotspot (1584, 537, 254, 91) action MainMenu()
+        hotspot (1584, 800, 254, 91) action MainMenu()
         #hotspot (1601, 698, 229, 96) action Quit()
 
         hotspot (1584, 630, 246, 88) action Return()
@@ -845,7 +845,7 @@ screen history():
         hotspot (75, 625, 246, 88) action ShowMenu('preferences')
         hotspot (75, 483, 257, 91) action ShowMenu('load')
        # hotspot (82, 366, 265, 90) action ShowMenu('save')
-        #hotspot (1584, 537, 254, 91) action MainMenu()
+        hotspot (1584, 800, 254, 91) action MainMenu()
        # hotspot (1601, 698, 229, 96) action Quit()
 
         hotspot (1584, 630, 246, 88) action Return()
@@ -907,7 +907,7 @@ screen help():
         hotspot (75, 625, 246, 88) action ShowMenu('preferences')
         hotspot (75, 483, 257, 91) action ShowMenu('load')
        # hotspot (82, 366, 265, 90) action ShowMenu('save')
-        #hotspot (1584, 537, 254, 91) action MainMenu()
+        hotspot (1584, 800, 254, 91) action MainMenu()
        # hotspot (1601, 698, 229, 96) action Quit()
 
         hotspot (1584, 630, 246, 88) action Return()
