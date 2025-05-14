@@ -452,6 +452,7 @@ image wang2 = "wang@7.png"
 image johnkid = "johnyoung@7.png"
 image johnkidsad = "johnyoungsad@7.png"
 
+
 image johnyoungpic = "johnyoung1.jpg"
 image johndrawold = "johnold.png"
 
@@ -471,7 +472,9 @@ image dustbroken = "dustbroken.png"
 image wall = "wall.png"
 image prison = "prison.png"
 image plane = "plane.png"
-
+image dead = "dead@3.jpg"
+image tenbig = "tenbig.jpg"
+image quitun = "quitun.jpg"
 
 image igov = "igov.png"
 image cshop = "cshop.png"
@@ -503,6 +506,7 @@ image peoples = "peoples.png"
 image faramy = "faramy.png"
 image saramy = "saramy.png"
 image wangshijie = "wangshijie.png"
+image chenjieru = "chenjieru.PNG"
 image allp = "allp.png"
 ##ch5
 image mzd = "mzd@7.png"
@@ -1035,18 +1039,6 @@ label chapter1_act9:
     scene bg imgchi8
     with fade
     $ now_venue.location = "浙江杭州"
-    "武昌起義開始，參加光復浙江之戰"
-
-        
-    "打倒你的敵人!"
-    call battle_system from _call_battle_system
-    if _return == "victory":
-        "你成功了擊敗了敵人。"
-    else:
-        "你失敗了..."
-        call battle_system from _call_battle_system_1
-    show screen location_ui
-    scene bg imgchi8
 
     show soldier
 
@@ -1121,6 +1113,8 @@ label chapter1_act11:
 
     "張靜江" "中正，來，我給你介紹一下。這是陳潔如，我女兒的同學。"
     j "陳小姐，幸會。"
+    hide johndraw
+    show chenjieru
     "陳潔如" "蔣先生好。"
 
     voice "voichi11.wav"
@@ -1140,7 +1134,8 @@ label chapter1_act11:
     scene bg imgchi11
     with fade
     "陳家，幾個月後"
-
+    show johndraw
+    show chenjieru at right
     j "陳母，我還是很喜歡陳潔如，請把她嫁給我"
     "陳母" "好吧，我同意了。"
 
@@ -3454,7 +3449,9 @@ label chapter8_act1:
 
     show screen location_ui
     show johndrawold at left
-
+    show tenbig:
+        yalign 0.45 
+        xalign 0.5
     
     voice "voichi18.wav"
     j "1973年，我們正式啟動了十大建設計劃。這是台灣經濟發展的關鍵時刻。"
@@ -3480,9 +3477,11 @@ label chapter8_act2:
     "1975年，總統府會議室"
 
     show johndrawold at left
-
+    show quitun
     voice "voichi20.wav"
     j "1975年，我們失去了在聯合國的席位。這是一個巨大的外交挫折。"
+    "聯合國2758號決議: 承認中華人民共和國代替中華民國，並繼承「中國」之五常席位"(what_color="#808080")
+
 
     show diplomaticman at right
     diplomat "總統，美國已經與中共建交。我們在國際上的處境越來越困難了。"
@@ -3508,6 +3507,7 @@ label chapter8_act3:
 
     show chiangchingkuo at right
     johnson "父親，中壢事件後，民間對政治改革的呼聲更高了。我們是否應該考慮放寬一些政策？"
+    "1977年的一場桃園縣長選舉，群眾包圍警局、翻覆警車，最後把警察局都燒掉，史稱「中壢事件」。"(what_color="#808080")
 
     voice "voichi23.wav"
     j "經國，改革是必要的，但必須謹慎。我們要在保持穩定和推動變革之間找到平衡。"
@@ -3560,7 +3560,11 @@ label chapter8_act5:
     voice "voichi28.wav"
     j "看著經國，我既感到欣慰，又充滿擔憂。我知道，我的時代即將結束，新的挑戰不斷出現。我只希望，我的經驗教訓能夠成為後人的借鑒，讓這個國家走向更好的未來。"
 
+    "看著經國，我既感到欣慰，又充滿擔憂。我知道，我的時代即將結束，新的挑戰不斷出現。我只希望，我的經驗教訓能夠成為後人的借鑒，讓這個國家走向更好的未來。"
+    hide johndrawold
     hide chiangchingkuo
+    show dead
+    "1975年4月5日，蔣因突發性心臟病，於下午11時50分逝世，棺木至今尚未下葬"(what_color="#808080")
 
     "完結。"
 

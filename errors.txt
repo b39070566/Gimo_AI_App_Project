@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 1547: 'update' is not a keyword argument or valid child of the input statement.
-    update every 0.1
-          ^
+File "game/script.rpy", line 1117: expected statement.
+    chenjieru.PNG
+                 ^
 
-Ren'Py Version: Ren'Py 8.2.1.24030407
-Fri Dec 20 23:05:37 2024
+Ren'Py Version: Ren'Py 8.3.4.24120703
+Wed May 14 13:03:53 2025

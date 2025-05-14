@@ -1,73 +1,63 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <renpy.display.im.Image object ('f.png') at 0x0000000005f3b9d0>:
-  File "game/script.rpy", line 3367, in script
-    f "但如果我們自我審查,那還有什麼言論自由可言?"
-OSError: Couldn't find file 'f.png'.
+While processing the color property of anonymous style:
+  File "game/script.rpy", line 3516, in script
+    "1977年的一場桃園縣長選舉，群眾包圍警局、翻覆警車，最後把警察局都燒掉，史稱「中壢事件」。"(what_color=808080)
+TypeError: 'int' object is not iterable
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 3367, in script
-    f "但如果我們自我審查,那還有什麼言論自由可言?"
-  File "D:\renpy-8.2.1-sdk\renpy\ast.py", line 2557, in execute
+  File "game/script.rpy", line 3516, in script
+    "1977年的一場桃園縣長選舉，群眾包圍警局、翻覆警車，最後把警察局都燒掉，史稱「中壢事件」。"(what_color=808080)
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\ast.py", line 2579, in execute
     Say.execute(self)
-  File "D:\renpy-8.2.1-sdk\renpy\ast.py", line 615, in execute
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\ast.py", line 621, in execute
     renpy.exports.say(who, what, *args, **kwargs)
-  File "D:\renpy-8.2.1-sdk\renpy\exports.py", line 1493, in say
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\exports\sayexports.py", line 132, in say
     who(what, *args, **kwargs)
-  File "D:\renpy-8.2.1-sdk\renpy\character.py", line 1394, in __call__
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\character.py", line 1362, in __call__
+    return Character(kind=self, **kwargs)(what, interact=interact, _call_done=_call_done, multiple=multiple, _mode=_mode, _with_none=_with_none)
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\character.py", line 1455, in __call__
     self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "D:\renpy-8.2.1-sdk\renpy\character.py", line 1045, in do_display
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\character.py", line 1106, in do_display
     display_say(who,
-  File "D:\renpy-8.2.1-sdk\renpy\character.py", line 741, in display_say
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\character.py", line 803, in display_say
     rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "D:\renpy-8.2.1-sdk\renpy\ui.py", line 301, in interact
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\ui.py", line 301, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\renpy-8.2.1-sdk\renpy\display\core.py", line 2165, in interact
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\core.py", line 2215, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\renpy-8.2.1-sdk\renpy\display\core.py", line 2818, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "D:\renpy-8.2.1-sdk\renpy\display\core.py", line 1352, in draw_screen
-    surftree = renpy.display.render.render_screen(
-  File "render.pyx", line 486, in renpy.display.render.render_screen
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "D:\renpy-8.2.1-sdk\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "D:\renpy-8.2.1-sdk\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "D:\renpy-8.2.1-sdk\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "D:\renpy-8.2.1-sdk\renpy\display\transform.py", line 957, in render
-    return RenderTransform(self).render(width, height, st, at)
-  File "accelerator.pyx", line 978, in renpy.display.accelerator.RenderTransform.render
-  File "accelerator.pyx", line 413, in renpy.display.accelerator.RenderTransform.render_child
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "D:\renpy-8.2.1-sdk\renpy\display\image.py", line 513, in render
-    return wrap_render(self.target, width, height, st, at)
-  File "D:\renpy-8.2.1-sdk\renpy\display\image.py", line 316, in wrap_render
-    rend = render(child, w, h, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "D:\renpy-8.2.1-sdk\renpy\display\im.py", line 626, in render
-    return cache.get(self, render=True)
-  File "D:\renpy-8.2.1-sdk\renpy\display\im.py", line 309, in get
-    surf = image.load()
-  File "D:\renpy-8.2.1-sdk\renpy\display\im.py", line 761, in load
-    raise e
-  File "D:\renpy-8.2.1-sdk\renpy\display\im.py", line 711, in load
-    filelike = renpy.loader.load(self.filename, directory="images")
-  File "D:\renpy-8.2.1-sdk\renpy\loader.py", line 672, in load
-    raise IOError("Couldn't find file '%s'." % name)
-OSError: Couldn't find file 'f.png'.
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\core.py", line 2745, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\screen.py", line 485, in visit_all
+    self.child.visit_all(callback, seen=None)
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\displayable.py", line 436, in visit_all
+    callback(self)
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\display\core.py", line 2745, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\text\text.py", line 2221, in per_interact
+    if self.style.slow_abortable:
+  File "gen3-static/styleclass.pxi", line 613, in renpy.styledata.styleclass.Style.slow_abortable.__get__
+  File "style.pyx", line 493, in renpy.style.StyleCore._get
+  File "style.pyx", line 717, in renpy.style.build_style
+  File "style.pyx", line 714, in renpy.style.build_style
+  File "gen3-static/style_functions.pyx", line 349, in style_functions.color_property
+  File "C:\Users\a3196\OneDrive\桌面\renpy-8.2.1-sdk\renpy\color.py", line 172, in __new__
+    c = tuple(c)
+TypeError: 'int' object is not iterable
 
-Windows-10-10.0.22621 AMD64
-Ren'Py 8.2.1.24030407
+Windows-10-10.0.26100 AMD64
+Ren'Py 8.3.4.24120703
 MainGame 1.0
-Wed May 14 11:11:01 2025
+Wed May 14 12:55:12 2025
