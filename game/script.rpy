@@ -469,7 +469,8 @@ image paper1 = "paper.jpg"
 image flag1 = "flag1.png"
 image dust = "dust.png"
 image dustbroken = "dustbroken.png"
-image wall = "wall.png"
+image wall01 = "wall01.png"
+image wall02 = "wall02.png"
 image prison = "prison.png"
 image plane = "plane.png"
 image dead = "dead@3.jpg"
@@ -1267,13 +1268,17 @@ label chapter2_act2:
     
     xiaozhen "委座，我來掩護您，跟我來！"
 
-    show wall
+    hide johndrawold 
 
-    show johndrawold at left
+    show wall01
+
 
     voice "voifeng5.wav"
     j "在那混亂之中，蔣孝鎮背著我翻牆逃走。我甚至來不及穿鞋，是他將自己的鞋子脫下給我穿上。我們分頭逃跑，希望能分散追兵的注意力。"
 
+    hide wall01
+
+    show wall02
 
     voice "voifeng6.wav"
     j "啊！"
