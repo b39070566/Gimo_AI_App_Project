@@ -514,7 +514,12 @@ image noni = "noni.png"
 image amegun = "amegun.png"
 image zu = "zu.png"
 image su = "su.png"
-
+#ch7
+image p = "p.png"
+image l = "l.png"
+image y = "y.png"
+image f = "f.png"
+image yan = "yan.png"
 
 
 
@@ -3182,7 +3187,7 @@ label chapter7_act1:
 
     chencheng "委座,《台灣省戒嚴令》草案已經擬好,請過目。"
 
-    show johndraw:
+    show johndrawold:
         yalign 1.0
         xalign 0.5
         xzoom -1
@@ -3196,10 +3201,10 @@ label chapter7_act1:
     j "我明白。我們必須盡一切努力防止共產黨滲透。為了國家安全,實施戒嚴是必要的。但我們也要謹慎行事,避免重蹈二二八事件的覆轍。柯遠芬,你有什麼看法？"
 
     hide chencheng
-    hide johndraw
+    hide johndrawold
 
     show keyuanfen at right_to_middle
-    show johndraw at middle_to_left
+    show johndrawold at middle_to_left
     keyuanfen "是的,委座。我建議我們加強宣傳,讓民眾理解這是為了他們的安全。同時,我們需要建立一個有效的情報系統,以便及時發現和打擊共產黨的滲透活動。"
 
     voice "voihui3.wav"
@@ -3230,7 +3235,7 @@ label chapter7_act1:
     j "記住,我們的目標是保護國家安全,不要過度擴大打擊範圍。我們要讓人民感到安全,而不是恐懼。以和日掩護外交,以交通掩護軍事,以實業掩護經濟,以教育掩護國防,韜光養晦乃為國家唯一自處之道。"
 
     hide chencheng
-    hide johndraw
+    hide johndrawold
     hide keyuanfen
     hide p
     voice "voihui8.wav"
@@ -3255,8 +3260,8 @@ label chapter7_act2:
 
     p "情況比我們想像的要嚴重。立即採取行動！逮捕所有涉案人員。"
 
-    show g at center
-    g "司令,是否需要擴大調查範圍？我懷疑還有更多隱藏的共產黨員。"
+    show diplomaticman at center
+    diplomat "司令,是否需要擴大調查範圍？我懷疑還有更多隱藏的共產黨員。"
 
     p "可以,但要注意分寸。我們不能引起民眾的恐慌。"
 
@@ -3264,7 +3269,7 @@ label chapter7_act2:
 
     p "即便如此,我們也不能掉以輕心。寧可錯抓一百,不可漏網一個。"
 
-    g "司令,我們是否需要使用...特殊手段來獲取情報？"
+    diplomat "司令,我們是否需要使用...特殊手段來獲取情報？"
 
     p "如果必要的話,可以。但要控制在合理範圍內。我們不是在製造恐怖,而是在維護安全。"
 
@@ -3274,14 +3279,14 @@ label chapter7_act2:
 
     hide keyuanfen
     hide p
-    hide g
+    hide diplomaticman
 
-    show johndraw at center
+    show johndrawold at center
     j "奢言抗日者,殺無赦。對於共產黨的滲透,我們也要採取同樣堅決的態度。但要注意,不要過度擴大打擊範圍,避免造成無辜者的傷害。"
 
     voice "voihui9.wav"
     j "1950年,我們展開了多起大規模逮捕行動,包括基隆中學的《光明報案》和造成大量山東籍軍人傷亡的《澎湖七一三事件》。"
-    hide johndraw
+    hide johndrawold
    
     voice "voihui10.wav"
     "當時,我們認為這些行動是必要的,但現在看來,我們犯了嚴重的錯誤。我們的恐懼和猜疑導致了無數無辜者遭受牽連。這些行動不僅沒有增強國家安全,反而埋下了社會分裂的種子。"
@@ -3295,22 +3300,22 @@ label chapter7_act3:
     $ now_venue = place("總統辦公室")
 
     show screen location_ui
-    show johndraw at left
+    show johndrawold at left
     voice "voihui11.wav"
     j "這個孫立人似乎野心勃勃,我們必須警惕。"
 
-    show g at right
-    g "是的,總統。我們掌握了一些情報,顯示孫立人可能有不軌企圖。他近期頻繁與美國官員接觸,而且在軍中的影響力越來越大。"
+    show diplomaticman at right
+    diplomat "是的,總統。我們掌握了一些情報,顯示孫立人可能有不軌企圖。他近期頻繁與美國官員接觸,而且在軍中的影響力越來越大。"
 
     voice "voihui12.wav"
     j "這確實值得關注。你有什麼具體證據嗎？"
 
-    g "目前還沒有確鑿證據,但有多個可靠線人的報告。他們說孫立人私下批評我們的軍事策略,甚至暗示要 '改變現狀'。"
+    diplomat "目前還沒有確鑿證據,但有多個可靠線人的報告。他們說孫立人私下批評我們的軍事策略,甚至暗示要 '改變現狀'。"
 
     voice "voihui13.wav"
     j "'改變現狀'？這話什麼意思？"
 
-    g "我們認為,他可能在醞釀一場軍事政變。"
+    diplomat "我們認為,他可能在醞釀一場軍事政變。"
 
     voice "voihui14.wav"
     j "這是個嚴重的指控。我們不能僅憑猜測就採取行動。"
@@ -3326,7 +3331,7 @@ label chapter7_act3:
     voice "voihui16.wav"
     j "這確實可疑。但我們還是需要更多證據。"
 
-    g "總統,如果我們等到有確鑿證據,可能就為時已晚了。"
+    diplomat "總統,如果我們等到有確鑿證據,可能就為時已晚了。"
 
     voice "voihui17.wav"
     j "我明白你的顧慮。但是,孫立人在軍中威望很高,如果我們貿然行動,可能會引起軍中動盪。我們必須確保軍隊的忠誠,但也要避免無端的猜疑。能戰始能言和,不能戰而言和,是投降,投降後就是繳械,繳械後就是被屠殺。我們要保持警惕,但不能失去理智。"
@@ -3339,8 +3344,8 @@ label chapter7_act3:
     voice "voihui19.wav"
     "1955年的『孫立人兵變案』,又稱『郭廷亮匪諜案』,牽連了約三百餘人。這次事件嚴重打擊了軍中異己,但也埋下了日後軍中不信任的種子。蔣中正開始意識到,過度的猜疑可能會傷害我們自己。權力的行使如履薄冰,一個不慎,就可能造成無法挽回的錯誤。"
 
-    hide johndraw
-    hide g
+    hide johndrawold
+    hide diplomaticman
     hide p
     jump chapter7_act4  
 
@@ -3393,7 +3398,7 @@ label chapter7_act5:
 
     show screen location_ui
 
-    show johndraw at left
+    show johndrawold at left
     voice "voihui21.wav"
     j "美國對我們的人權狀況越來越不滿了。"
 
@@ -3405,7 +3410,7 @@ label chapter7_act5:
 
     yan "我們可以考慮逐步放寬一些限制,展現我們改革的決心。比如,可以減少對新聞媒體的管控。"
 
-    show johnson at center  # 使用 johnson 而不是 jj
+    show chiangchingkuo at center  
     johnson "父親,同意嚴副總統的看法。世界在變,我們也必須改變。"
     
     voice "voihui23.wav"
@@ -3422,10 +3427,9 @@ label chapter7_act5:
 
     j "（長嘆一聲）"
 
-    hide johndraw
+    hide johndrawold
     hide yan
-    hide johnson
-
+    hide chiangchingkuo
     # 這裡可以添加一個結束的旁白或過場動畫
     "隨著時代的變遷,蔣中正和他的政府開始反思過去的政策。白色恐怖時期逐漸走向尾聲,但它留下的傷痕將長期影響台灣社會。"
 
