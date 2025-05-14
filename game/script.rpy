@@ -529,6 +529,8 @@ image y = "y.png"
 image f = "f.png"
 image yan = "yan.png"
 
+image imghui4-1 ="imghui4-1.jpg"
+
 
 
 #角色動作的線性變化區域
@@ -574,7 +576,12 @@ transform right_to_middle:
 transform middle_to_left:
     yalign 1.0
     xalign 0.5
-    linear 0.5 xalign 0.25
+    linear 0.5 xalign 0.15
+
+transform middle_to_right:
+    yalign 1.0
+    xalign 0.5
+    linear 0.5 xalign 0.85
 
 transform right_:
     yalign 1.0
@@ -589,6 +596,38 @@ transform plane_landing:
     linear 2.0 xpos 1600 ypos 200 zoom 0.7 rotate -15  
     linear 3.0 xpos 450 ypos 650 zoom 1.0 rotate 0
 
+transform right_to_left_:
+    yalign 1.0
+    xalign 0.85
+    linear 0.75 xalign 0.15
+
+transform middle:
+    yalign 1.0
+    xalign 0.5
+
+transform left_to_middle_:
+    yalign 1.0
+    linear 0.5 xalign 0.5
+
+transform right_to_middle_:
+    yalign 1.0
+    xalign 1.0
+    linear 0.5 xalign 0.5
+
+transform out_to_right:
+    yalign 1.0
+    xalign 1.5
+    linear 0.5 xalign 1.0
+
+transform middle_to_left_:
+    yalign 1.0
+    xalign 0.35
+    linear 0.5 xalign 0.0
+
+transform left_to_right:
+    yalign 1.0
+    xalign 0.15
+    linear 0.75 xalign 0.8
 
 label battle_system:
     $ player = Fighter("我方士兵", level=1, max_hp=20, hp=20, max_mp=10, mp=10, attack=3, defense=2)
@@ -3179,20 +3218,17 @@ label chapter6_act1:
 
 # 第一幕：戒嚴令頒布（1949年5月）
 label chapter7_act1:
+    play music "ch7bgm.mp3" volume 0.4
     scene bg imghui1
     with fade
     $ now_venue = place("台灣省政府會議室")
     "台灣省政府會議室"
     show screen location_ui
-    show chencheng at left_to_middle
+    show chencheng at middle_to_left
 
     chencheng "委座,《台灣省戒嚴令》草案已經擬好,請過目。"
 
-    show johndrawold:
-        yalign 1.0
-        xalign 0.5
-        xzoom -1
-
+    show johndrawold at middle_to_right
     voice "voihui1.wav"
     j "內容很全面。陳誠,你怎麼看這個決定可能帶來的影響？"
 
@@ -3207,38 +3243,47 @@ label chapter7_act1:
     show keyuanfen at right_to_middle
     show johndrawold at middle_to_left
     keyuanfen "是的,委座。我建議我們加強宣傳,讓民眾理解這是為了他們的安全。同時,我們需要建立一個有效的情報系統,以便及時發現和打擊共產黨的滲透活動。"
+    
 
     voice "voihui3.wav"
     j "這個想法不錯。彭孟緝,你來負責組建這個情報系統。"
+    hide keyuanfen
 
-    show p at left
+    show p at right_
 
     p "是,委座。我會立即著手進行。不過,我們是否需要考慮對某些特定群體加強監控？比如知識分子和學生。"
 
     voice "voihui4.wav"
     j "這是個敏感問題。我們必須小心行事,不要激起不必要的反彈。"
+    hide p
+    
 
-    show chencheng at right
+    show johndrawold at middle_to_right
+    show chencheng at left_to_middle
 
     chencheng "我同意彭將軍的建議。知識分子和學生往往最容易受到共產主義思想的影響。"
 
     voice "voihui5.wav"
     j "那麼我們可以適度加強監控,但要注意方式方法。絕不能讓人感覺我們在針對特定群體。"
+    hide chencheng
 
+    show johndrawold at right_to_left_
+    show keyuanfen at right_to_middle
     keyuanfen "委座,我們是否需要制定一些具體的執行細則？比如,如何界定'叛亂'行為？"
 
     voice "voihui6.wav"
     j "這個問題很重要。我們需要一個明確的標準,但同時也要保留一定的彈性。陳誠,你和法務部門商議一下,擬定一個初步方案。"
+    hide keyuanfen
 
+    show chencheng at right_to_middle
     chencheng "明白,我會盡快安排。"
+    hide chencheng
 
+    show johndrawold at left_to_middle_
     voice "voihui7.wav"
     j "記住,我們的目標是保護國家安全,不要過度擴大打擊範圍。我們要讓人民感到安全,而不是恐懼。以和日掩護外交,以交通掩護軍事,以實業掩護經濟,以教育掩護國防,韜光養晦乃為國家唯一自處之道。"
-
-    hide chencheng
     hide johndrawold
-    hide keyuanfen
-    hide p
+    
     voice "voihui8.wav"
     "當時,我們都沒有意識到這個決定會帶來如此深遠的影響。我們低估了權力的誘惑和濫用的危險。這個決定開啟了長達數十年的白色恐怖時期。"
     jump chapter7_act2
@@ -3251,36 +3296,42 @@ label chapter7_act2:
 
     show screen location_ui
 
-    show keyuanfen at left
+    show keyuanfen at right_
     keyuanfen "報告司令,我們發現多起疑似共產黨滲透的案件。"
 
-    show p at right
+    show p at left
     p "詳細說明。"
 
     keyuanfen "基隆中學有學生組織名為《光明報》的地下刊物,疑似受共產黨影響。另外,澎湖也發現大規模的共黨組織。"
 
     p "情況比我們想像的要嚴重。立即採取行動！逮捕所有涉案人員。"
+    hide keyuanfen
 
-    show diplomaticman at center
+    show diplomaticman at right_to_middle
     diplomat "司令,是否需要擴大調查範圍？我懷疑還有更多隱藏的共產黨員。"
 
     p "可以,但要注意分寸。我們不能引起民眾的恐慌。"
+    hide diplomaticman
 
+    show keyuanfen at right_to_middle
     keyuanfen "還有一件事,司令。我們在調查中發現,有些人可能只是無意中接觸了這些思想,並不是真正的共產黨員。"
-
+    
     p "即便如此,我們也不能掉以輕心。寧可錯抓一百,不可漏網一個。"
+    hide keyuanfen
 
+    show diplomaticman at right_to_middle
     diplomat "司令,我們是否需要使用...特殊手段來獲取情報？"
-
+    
     p "如果必要的話,可以。但要控制在合理範圍內。我們不是在製造恐怖,而是在維護安全。"
 
     keyuanfen "我有些擔心,這樣做會不會引起民眾的不滿？"
+    hide diplomaticman
 
+    show keyuanfen at right_to_middle
     p "這就是為什麼我們需要加強宣傳。要讓民眾明白,我們這麼做都是為了保護他們。"
 
     hide keyuanfen
     hide p
-    hide diplomaticman
 
     show johndrawold at center
     j "奢言抗日者,殺無赦。對於共產黨的滲透,我們也要採取同樣堅決的態度。但要注意,不要過度擴大打擊範圍,避免造成無辜者的傷害。"
@@ -3323,7 +3374,10 @@ label chapter7_act3:
 
     show p at center
     p "報告總統,我們在孫立人的親信中安插了一名線人。他提供了一些有趣的信息。"
+    hide diplomaticman
 
+    show p at middle_to_right
+    show johndrawold at left_to_middle
     voice "voihui15.wav"
     j "說說看。"
 
@@ -3332,22 +3386,28 @@ label chapter7_act3:
     voice "voihui16.wav"
     j "這確實可疑。但我們還是需要更多證據。"
 
+    show johndrawold at middle_to_left_
+    show p at right_to_middle_
+    show diplomaticman at out_to_right
     diplomat "總統,如果我們等到有確鑿證據,可能就為時已晚了。"
-
+    
     voice "voihui17.wav"
     j "我明白你的顧慮。但是,孫立人在軍中威望很高,如果我們貿然行動,可能會引起軍中動盪。我們必須確保軍隊的忠誠,但也要避免無端的猜疑。能戰始能言和,不能戰而言和,是投降,投降後就是繳械,繳械後就是被屠殺。我們要保持警惕,但不能失去理智。"
+    hide diplomaticman
 
+    show p at middle_to_right
+    show johndrawold at left_to_middle
     p "那麼,我們是否可以先進行秘密調查?同時,密切監視孫立人的一舉一動。"
 
     voice "voihui18.wav"
     j "好主意。郭廷亮,你負責這項工作。記住,要謹慎行事,不要打草驚蛇。"
+    hide johndrawold
+    hide p
 
     voice "voihui19.wav"
     "1955年的『孫立人兵變案』,又稱『郭廷亮匪諜案』,牽連了約三百餘人。這次事件嚴重打擊了軍中異己,但也埋下了日後軍中不信任的種子。蔣中正開始意識到,過度的猜疑可能會傷害我們自己。權力的行使如履薄冰,一個不慎,就可能造成無法挽回的錯誤。"
 
-    hide johndrawold
-    hide diplomaticman
-    hide p
+    
     jump chapter7_act4  
 
 # 第四幕：知識分子的迫害（1960年）
@@ -3358,35 +3418,48 @@ label chapter7_act4:
 
     show screen location_ui
 
-    show l at left
+    show l at center
     l "諸位,最新一期的稿件我都看過了。內容很好,但我擔心可能會引起當局的不滿。"
 
-    show y at center
+    show y at left
     y "雷老,我們是不是該考慮稍微溫和一些?最近的政治氛圍越來越緊張了。"
+    hide l
 
     show f at right
     f "但如果我們自我審查,那還有什麼言論自由可言?"
+    hide f
+    hide y
 
-    show l at left
-    l "傅正說得對。我們辦這份雜誌,就是為了說出真話。"
+    show l at center
+    show imghui4-1:
+        zoom 2.5
+        xalign 0.15
+        yalign 0.5
+    l "傅正說得對。我們辦這份雜誌,就是為了說出真話。\n(左圖為雷震主辦的《自由中國》雜誌封面)"
+    hide imghui4-1
 
-    show y at center
+    show y at left
+    show l at middle_to_right
     y "我完全理解,但我們也要為員工的安全著想。上週,有人跟蹤我回家。"
 
     l "我明白你們的顧慮。但是,如果我們不說,誰來說?我們不能讓台灣陷入完全的言論黑暗。"
-
-    show f at right
+    hide y
+    
+    show f at out_to_right
+    show l at middle_to_left
     f "那麼,我們是否可以採取一些策略?比如用更委婉的語言?"
 
     l "不,現在不是妥協的時候。我們必須堅持真理,即使付出代價。"
-
+    hide f
+    
+    show l at left_to_right
+    show y at left
     y "雷老,我敬佩你的勇氣。但我擔心的不只是我們自己,還有我們的家人和朋友。他們也可能因此受到牽連。"
 
     l "我明白你們的顧慮。但請相信我,堅持正義終將得到回報。台灣需要我們的聲音。"
 
     hide l
     hide y
-    hide f
 
     voice "voihui20.wav"
     "對於知識分子的控制,蔣中正曾說過:'中國在國民黨以外,除了共產黨,再沒有什麼其他黨派了。所謂其他黨派實際是不能算數的。'這種思維導致了對異見者的打壓。現在看來,這是一個嚴重的錯誤。"
@@ -3410,15 +3483,17 @@ label chapter7_act5:
     j "這個趨勢很危險。我們如何在維護國家安全和應對國際壓力之間取得平衡?歷來亡國之原因,並不在於敵寇外患之強大,而是在於內部之分崩離析。我們必須在維護國家安全和推進改革之間找到平衡。"
 
     yan "我們可以考慮逐步放寬一些限制,展現我們改革的決心。比如,可以減少對新聞媒體的管控。"
+    hide yan
 
-    show chiangchingkuo at center  
+    show chiangchingkuo at out_to_right 
     johnson "父親,同意嚴副總統的看法。世界在變,我們也必須改變。"
     
     voice "voihui23.wav"
     j "但是,如果我們放鬆管控,共產黨會不會趁機滲透?"
 
     johnson "這個風險確實存在。但我認為,我們可以通過其他方式來防範,比如加強經濟建設,提高人民生活水平。"
-
+    show chiangchingkuo at right_to_middle_
+    show yan at out_to_right
     yan "沒錯,一個繁榮的社會更容易抵禦共產主義的誘惑。"
 
     voice "voihui24.wav"
