@@ -8,7 +8,7 @@
 
 ---
 
-##  專案核心概念
+## 🌟 專案核心概念
 
 本系統的核心設計理念為：
 
@@ -16,24 +16,24 @@
 
 透過：
 
-* 劇情遊戲提供情境（Context）
-* RAG 提供知識支撐（Knowledge Grounding）
-* LLM 負責自然語言生成（Response Generation）
+* 🎮 劇情遊戲提供情境（Context）
+* 🧠 RAG 提供知識支撐（Knowledge Grounding）
+* 🤖 LLM 負責自然語言生成（Response Generation）
 
 實現「邊玩邊學」的互動式學習模式。
 
 ---
 
-## 專案亮點（面試官重點🔥）
+## 🚀 專案亮點（面試官重點🔥）
 
-### 跨系統整合能力
+### 🧩 跨系統整合能力
 
 * 整合 **Ren'Py 遊戲引擎 + Flask API + LLM + 向量資料庫**
 * 建立完整的「前端互動 → 後端推理 → 回傳結果」資料流
 
 ---
 
-### RAG（Retrieval-Augmented Generation）架構
+### 🧠 RAG（Retrieval-Augmented Generation）架構
 
 * 使用向量檢索（FAISS）提升回答準確度
 * 避免 LLM 幻覺（Hallucination）
@@ -41,7 +41,7 @@
 
 ---
 
-### 中文歷史教學優化
+### 🇹🇼 中文歷史教學優化
 
 * 採用中文語意 embedding 模型
 * 設計教學導向 Prompt（引導式回答）
@@ -49,7 +49,7 @@
 
 ---
 
-### 可擴展知識架構
+### 🧱 可擴展知識架構
 
 * 使用 `history.json` 作為知識來源
 * 支援快速：
@@ -60,20 +60,20 @@
 
 ---
 
-## 功能說明
+## 🎯 功能說明
 
-### 劇情互動系統（Ren'Py）
+### 1️⃣ 劇情互動系統（Ren'Py）
 
 * 提供角色對話、場景切換與章節推進
 * 玩家可於劇情中觸發「歷史問答」
 * 將問題透過 HTTP 傳送至後端 AI 系統
 * 即時將 AI 回應整合回遊戲對話中
 
- 本質：**將 AI 融入 Narrative Flow（敘事流程）**
+👉 本質：**將 AI 融入 Narrative Flow（敘事流程）**
 
 ---
 
-### AI 問答 API（Flask）
+### 2️⃣ AI 問答 API（Flask）
 
 * 提供：
 
@@ -100,7 +100,7 @@
 
 ---
 
-### 檢索增強生成（RAG Pipeline）
+### 3️⃣ 檢索增強生成（RAG Pipeline）
 
 **技術流程：**
 
@@ -128,7 +128,7 @@ Answer
 
 ---
 
-## 系統架構
+## 🏗️ 系統架構
 
 ```text
 [Ren'Py Game Client]
@@ -144,29 +144,29 @@ Answer
 
 ---
 
-## 技術棧 (Tech Stack)
+## 🛠️ 技術棧 (Tech Stack)
 
-### 前端 / 遊戲層
+### 🎮 前端 / 遊戲層
 
 * Ren'Py（視覺小說引擎）
 
-###  後端
+### ⚙️ 後端
 
 * Flask（API Server）
 
-### AI / NLP
+### 🤖 AI / NLP
 
 * Anthropic Claude（LLM）
 * HuggingFace Embeddings（中文語意向量）
 
-###  檢索系統
+### 🔍 檢索系統
 
 * LangChain
 * FAISS（向量資料庫）
 
 ---
 
-##  專案結構
+## 📁 專案結構
 
 ```text
 .
@@ -180,9 +180,9 @@ Answer
 
 ---
 
-##  快速啟動
+## 🚀 快速啟動
 
-###  啟動後端 API
+### 1️⃣ 啟動後端 API
 
 ```bash
 cd Renpy2Flask-main
@@ -200,7 +200,7 @@ http://127.0.0.1:8000
 
 ---
 
-###  測試 API
+### 2️⃣ 測試 API
 
 ```bash
 curl "http://127.0.0.1:8000/ask?question=西安事變是什麼"
@@ -208,7 +208,7 @@ curl "http://127.0.0.1:8000/ask?question=西安事變是什麼"
 
 ---
 
-##  範例回應
+## 🧪 範例回應
 
 ```json
 {
@@ -222,6 +222,3 @@ curl "http://127.0.0.1:8000/ask?question=西安事變是什麼"
 
 ---
 
-
-
-https://github.com/b39070566/license/blob/main/license
