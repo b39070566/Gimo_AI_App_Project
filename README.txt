@@ -1,149 +1,170 @@
-🎮 Gimo AI App Project
+好，這版我幫你改成**更偏工程師 / 面試導向、少包裝、多實力感**的 README（沒有 emoji、語氣更「真人」一點）：
 
-面試作品說明
-本專案為一個結合「歷史劇情遊戲 × AI 教學問答系統」的跨領域應用，透過將生成式 AI 嵌入遊戲情境，打造沉浸式互動學習體驗（Game-based Learning + LLM）。
+---
 
-🌟 專案核心概念
+# Gimo AI App Project
 
-本系統的核心設計理念為：
+## 專案簡介
 
-將 AI 從「被動問答工具」轉化為「情境式教學代理人（Context-aware Tutor）」
+本專案是一個結合「歷史劇情遊戲」與「生成式 AI 問答系統」的應用，目標是在遊戲情境中提供即時的知識輔助，讓使用者在互動過程中完成學習。
 
-透過：
+與一般問答系統不同，本系統將 AI 嵌入在遊戲敘事流程中，使模型能根據當下劇情提供更具情境性的回應，而非單純的事實查詢。
 
-🎮 劇情遊戲提供情境（Context）
+---
 
-🧠 RAG 提供知識支撐（Knowledge Grounding）
+## 核心概念
 
-🤖 LLM 負責自然語言生成（Response Generation）
+本專案的設計重點在於將 AI 從單純的問答工具，轉換為具備情境感知能力的教學輔助系統。
 
-實現「邊玩邊學」的互動式學習模式。
+整體流程可分為三個部分：
 
-🚀 專案亮點（面試官重點🔥）
-🧩 跨系統整合能力
+* 遊戲提供情境（Context）
+* 檢索系統提供知識依據（Retrieval）
+* 語言模型負責生成回應（Generation）
 
-整合 Ren'Py 遊戲引擎 + Flask API + LLM + 向量資料庫
+透過這樣的架構，讓回答不僅正確，也能貼合遊戲中的對話脈絡。
 
-建立完整的「前端互動 → 後端推理 → 回傳結果」資料流
+---
 
-🧠 RAG（Retrieval-Augmented Generation）架構
+## 專案亮點
 
-使用向量檢索（FAISS）提升回答準確度
+### 跨系統整合
 
-避免 LLM 幻覺（Hallucination）
+本專案整合了遊戲引擎、後端 API、向量檢索與大型語言模型，建立完整的資料流：
 
-回答基於「歷史資料 + 語境提示」生成
+Game Client → API Server → Retrieval → LLM → Response → Game
 
-🇹🇼 中文歷史教學優化
+重點不只是模型本身，而是整體系統如何協同運作。
 
-採用中文語意 embedding 模型
+---
 
-設計教學導向 Prompt（引導式回答）
+### RAG 架構實作
 
-回答風格偏向「解釋 + 引導思考」
+使用 Retrieval-Augmented Generation（RAG）提升回答品質：
 
-🧱 可擴展知識架構
+* 透過向量檢索取得相關歷史資料
+* 將檢索結果作為 Prompt context
+* 降低模型產生錯誤資訊（hallucination）的機率
 
-使用 history.json 作為知識來源
+這部分是整個系統可靠性的關鍵。
 
-支援快速：
+---
 
-替換主題（如世界史 / 台灣史）
+### 中文語境優化
 
-擴充題庫
+針對中文歷史內容進行調整：
 
-客製教學內容
+* 使用中文語意 embedding 模型
+* 設計偏教學導向的 prompt
+* 回答風格以「解釋 + 引導」為主
 
-🎯 功能說明
-1️⃣ 劇情互動系統（Ren'Py）
+使輸出更接近實際教學場景，而不是單純生成答案。
 
-提供角色對話、場景切換與章節推進
+---
 
-玩家可於劇情中觸發「歷史問答」
+### 可擴展的知識架構
 
-將問題透過 HTTP 傳送至後端 AI 系統
+知識來源以 JSON 格式管理，具備良好的擴展性：
 
-即時將 AI 回應整合回遊戲對話中
+* 可替換不同主題（如台灣史 / 世界史）
+* 可快速擴充資料集
+* 不需修改核心程式即可調整內容
 
-👉 本質：將 AI 融入 Narrative Flow（敘事流程）
+---
 
-2️⃣ AI 問答 API（Flask）
+## 功能說明
 
-提供：
+### 劇情互動系統（Ren'Py）
+
+* 提供角色對話與劇情推進
+* 在特定節點觸發問答
+* 將問題透過 HTTP 傳送至後端
+* 將 AI 回應即時呈現在遊戲對話中
+
+這部分的重點在於將 AI 整合進 narrative flow，而不是額外功能。
+
+---
+
+### AI 問答 API（Flask）
+
+提供簡單的 REST API：
 
 GET /ask?question=...
 
 處理流程：
 
-接收使用者問題
-
-向量檢索相關歷史片段
-
-組合 Prompt（Context + Query）
-
-呼叫 LLM 生成回答
-
-回傳 JSON 結果
+1. 接收使用者問題
+2. 轉換為向量表示
+3. 進行相似度檢索（FAISS）
+4. 組合 Prompt（context + query）
+5. 呼叫 LLM 生成回答
+6. 回傳結果
 
 回傳格式：
 
+```json
 {
   "answer": "AI 生成回答",
   "retrieved_docs": ["相關歷史片段"]
 }
-3️⃣ 檢索增強生成（RAG Pipeline）
+```
 
-技術流程：
+---
+
+### RAG Pipeline
+
+系統核心流程如下：
 
 User Query
-   ↓
-Embedding（HuggingFace）
-   ↓
-Vector Search（FAISS）
-   ↓
-Top-K Documents
-   ↓
-Prompt Construction
-   ↓
-LLM（Claude）
-   ↓
-Answer
+→ Embedding
+→ Vector Search（Top-K）
+→ Context Construction
+→ LLM
+→ Answer
 
-實作細節：
+實作重點：
 
-使用 HuggingFaceEmbeddings 建立語意向量
+* 使用 HuggingFace Embeddings 建立向量
+* 使用 FAISS 作為向量資料庫
+* 採用 Top-K 檢索提升相關性
 
-使用 FAISS 建立高效向量索引
+---
 
-採 Top-K 檢索提升語境相關性
+## 系統架構
 
-🏗️ 系統架構
+```
 [Ren'Py Game Client]
-        ↓ HTTP Request
+        ↓
 [Flask API Server]
         ↓
-[Vector Database (FAISS)]
+[FAISS Vector Database]
         ↓
-[LLM (Claude)]
+[LLM Service]
         ↓
-[Response → Game UI]
-🛠️ 技術棧 (Tech Stack)
-🎮 前端 / 遊戲層
+[Response 回傳至遊戲]
+```
 
-Ren'Py（視覺小說引擎）
+---
 
-⚙️ 後端
+## 技術棧
 
-Flask（API Server）
+Frontend / Game
 
-🤖 AI / NLP
+* Ren'Py
 
-Anthropic Claude（LLM）
+Backend
 
-HuggingFace Embeddings（中文語意向量）
+* Flask
 
-🔍 檢索系統
+AI / NLP
 
-LangChain
+* Claude（LLM）
+* HuggingFace Embeddings
 
-FAISS（向量資料庫）
+Retrieval
+
+* LangChain
+* FAISS
+
+---
+
