@@ -33,7 +33,7 @@
 
 Game Client → API Server → Retrieval → LLM → Response → Game
 
-重點不只是模型本身，而是整體系統如何協同運作。
+
 
 ---
 
@@ -45,7 +45,7 @@ Game Client → API Server → Retrieval → LLM → Response → Game
 * 將檢索結果作為 Prompt context
 * 降低模型產生錯誤資訊（hallucination）的機率
 
-這部分是整個系統可靠性的關鍵。
+
 
 ---
 
@@ -57,7 +57,7 @@ Game Client → API Server → Retrieval → LLM → Response → Game
 * 設計偏教學導向的 prompt
 * 回答風格以「解釋 + 引導」為主
 
-使輸出更接近實際教學場景，而不是單純生成答案。
+
 
 ---
 
@@ -80,7 +80,7 @@ Game Client → API Server → Retrieval → LLM → Response → Game
 * 將問題透過 HTTP 傳送至後端
 * 將 AI 回應即時呈現在遊戲對話中
 
-這部分的重點在於將 AI 整合進 narrative flow，而不是額外功能。
+
 
 ---
 
